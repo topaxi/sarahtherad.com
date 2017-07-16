@@ -1,1 +1,10 @@
-{{outlet}}
+{{#link-to 'graphics' class='graphics-overlay'}}{{/link-to}}
+<div class="graphics-post">
+  <article data-post-id={{model.id}}>
+    <div class="graphics-post-title">
+      <h1>{{model.title}}</h1>
+      {{#link-to 'graphics'}}&times;{{/link-to}}
+    </div>
+    <img src={{model.src}} width={{model.width}} height={{model.height}} alt={{model.title}}>
+  </article>
+</div>

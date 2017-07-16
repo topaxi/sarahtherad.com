@@ -11,13 +11,13 @@ Ember.Route.reopen({
     if (this.routeName !== 'application') {
       let routeName = this.routeName;
       if (routeName === 'index') routeName = 'home';
-      document.body.classList.add(routeName)
+      document.body.classList.add(slug(routeName))
     }
   },
   deactivate() {
     let routeName = this.routeName;
     if (routeName === 'index') routeName = 'home';
-    document.body.classList.remove(routeName)
+    document.body.classList.remove(slug(routeName))
   },
   getParentRoute() {
     let route = this;
@@ -36,6 +36,10 @@ Ember.Route.reopen({
     }
   }
 })
+
+function slug(routeName) {
+  return routeName.replace(/\./g, '_')
+}
 
 Router.map(function() {
   this.route('graphics', function() {
