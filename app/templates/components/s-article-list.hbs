@@ -1,0 +1,4 @@
+{{log model}}
+{{#each model as |item|}}
+  {{component (concat 's-article-list-' item.type) model=item}}
+{{/each}}

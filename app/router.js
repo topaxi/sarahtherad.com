@@ -38,6 +38,14 @@ Ember.Route.reopen({
 })
 
 Router.map(function() {
+  this.route('graphics', function() {
+    this.route('post', { path: ':slug' });
+  });
+  this.route('radio-show');
+  this.route('blog', function() {
+    this.route('post', { path: ':slug' });
+  });
+  this.route('about');
 });
 
 export default Router;

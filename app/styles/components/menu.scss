@@ -4,11 +4,18 @@
   top: 4rem;
   left: 2rem;
   text-transform: uppercase;
-  font-size: 3rem;
+  font-size: 2rem;
   line-height: 1.7;
   letter-spacing: 3px;
   z-index: 10;
 }
+
+@media screen and (min-width: 480px) {
+  .menu {
+    font-size: 3rem;
+  }
+}
+
 .hamburglar.is-open + .menu {
   display: block;
 }
@@ -17,8 +24,8 @@
 }
 
 main { transition: transform 100ms }
-.menu-open main {
-  transform: translateX(20rem);
+main.menu-open {
+  transform: translateX(25rem);
 }
 .menu ul {
   margin-top: 2rem;

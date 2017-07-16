@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   classNameBindings: [ 'open:is-open', 'open::is-closed' ],
 
   click() {
-    document.documentElement.classList
-      .toggle('menu-open', this.toggleProperty('open'))
+    this.toggleProperty('open')
   }
 });

@@ -1,8 +1,5 @@
-:root {
-  --burger-color: #000;
-}
-
 .hamburglar {
+  contain: strict;
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -45,7 +42,7 @@
   width: 30px;
   height: 34px;
   margin: 0 4px 0 0;
-  background: var(--burger-color);
+  background: currentColor;
 }
 
 @keyframes rotate-out {
@@ -140,7 +137,7 @@
   height: 4px;
   width: 36px;
   border-radius: 2px;
-  background: var(--burger-color);
+  background: currentColor;
 }
 
 .burger-bun-top {
@@ -170,7 +167,7 @@
 }
 
 .svg-ring > path {
-  stroke: var(--burger-color);
+  stroke: currentColor;
 }
 
 .hamburglar.is-open .burger-bun-top {
