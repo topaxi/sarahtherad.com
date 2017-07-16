@@ -10,6 +10,11 @@ Author: sarahtherad.com + topaxi.codes
 @import 'components/menu';
 @import 'https://fonts.googleapis.com/css?family=Slabo+27px';
 
+:root {
+  font-family: 'Slabo 27px';
+  overflow-y: scroll;
+}
+
 .root {
   min-height: 100vh;
   display: flex;
@@ -45,6 +50,14 @@ main {
   margin-top: 10rem;
   padding: 1rem;
   flex: 1;
+  display: flex;
+  > .liquid-container {
+    transform: none;
+    flex: 1;
+  }
+  > .liquid-container > .liquid-child {
+    min-height: 100%;
+  }
 }
 
 @media screen and (min-width: 640px) {
@@ -63,21 +76,21 @@ main {
   }
 }
 
-.graphics-overlay {
+.graphics-overlay,
+.graphics-post {
   position: fixed;
+  height: 100vh;
   left: 0;
   right: 0;
   top: 0;
-  bottom: 0;
+  z-index: 10000;
+}
+
+.graphics-overlay {
   background: rgba(0,0,0,.5);
 }
 
 .graphics-post {
-  position: fixed;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -99,5 +112,23 @@ main {
     font-size: 3em;
     text-decoration: none;
     color: #000;
+  }
+}
+
+article.radio-show {
+  > iframe {
+    contain: strict;
+    width: 100%;
+    height: 124px;
+  }
+}
+
+.graphics-outlet {
+  position: static;
+  transform: none;
+  overflow: visible;
+  > .liquid-child {
+    overflow: visible;
+    visibility: visible !important;
   }
 }
