@@ -1,7 +1,9 @@
-import Ember from 'ember';
+import fetch from 'fetch'
+import Ember from 'ember'
 
 export default Ember.Route.extend({
   model() {
-    return Ember.$.getJSON('https://api.mixcloud.com/derdienstagmorgen/cloudcasts/')
+    return fetch('https://api.mixcloud.com/derdienstagmorgen/cloudcasts/')
+      .then(res => res.json())
   }
-});
+})

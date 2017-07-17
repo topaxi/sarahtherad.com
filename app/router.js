@@ -8,6 +8,7 @@ const Router = Ember.Router.extend({
 
 Ember.Route.reopen({
   activate() {
+    if (typeof document === 'undefined') return
     if (this.routeName !== 'application') {
       let routeName = this.routeName;
       if (routeName === 'index') routeName = 'home';
@@ -15,6 +16,7 @@ Ember.Route.reopen({
     }
   },
   deactivate() {
+    if (typeof document === 'undefined') return
     let routeName = this.routeName;
     if (routeName === 'index') routeName = 'home';
     document.body.classList.remove(slug(routeName))

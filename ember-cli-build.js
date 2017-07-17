@@ -5,6 +5,10 @@ var cssnext = require('postcss-cssnext');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    vendorFiles: { 'jquery.js': null },
+    jquery: {
+      slim: true
+    },
     postcssOptions: {
       compile: {
         enabled: false
