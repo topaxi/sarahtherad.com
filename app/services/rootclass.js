@@ -1,0 +1,29 @@
+import Ember from 'ember'
+
+const { Service, computed } = Ember
+
+export default Service.extend({
+  _classNames: computed(function() {
+    return [ 'root' ]
+  }),
+
+  classNames: computed('_classNames.[]', function() {
+    return this.get('_classNames').join(' ')
+  }),
+
+  add(className) {
+    this.get('_classNames').push(slug(className))
+  },
+
+  remove(_className) {
+    let className = slug(_className)
+
+    this.set('_classNames',
+      this.get('_classNames').filter(cn => cn !== className)
+    )
+  }
+})
+
+function slug(routeName) {
+  return routeName.replace(/\./g, '_')
+}

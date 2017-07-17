@@ -7,19 +7,21 @@ const Router = Ember.Router.extend({
 });
 
 Ember.Route.reopen({
+  rootclass: Ember.inject.service(),
+
   activate() {
     if (typeof document === 'undefined') return
     if (this.routeName !== 'application') {
       let routeName = this.routeName;
       if (routeName === 'index') routeName = 'home';
-      document.body.classList.add(slug(routeName))
+      this.get('rootclass').add(routeName)
     }
   },
   deactivate() {
     if (typeof document === 'undefined') return
     let routeName = this.routeName;
     if (routeName === 'index') routeName = 'home';
-    document.body.classList.remove(slug(routeName))
+    this.get('rootclass').remove(routeName)
   },
   getParentRoute() {
     let route = this;
@@ -38,10 +40,6 @@ Ember.Route.reopen({
     }
   }
 })
-
-function slug(routeName) {
-  return routeName.replace(/\./g, '_')
-}
 
 Router.map(function() {
   this.route('graphics', function() {
