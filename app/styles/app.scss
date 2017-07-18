@@ -135,3 +135,11 @@ article.radio-show {
     visibility: visible !important;
   }
 }
+
+.root.radio-show {
+  s-mixcloud {
+    margin: 1rem 0;
+    padding: 2rem;
+    border: 1px solid #000;
+  }
+}

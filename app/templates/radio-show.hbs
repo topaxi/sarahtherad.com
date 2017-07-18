@@ -43,8 +43,6 @@
 </article>
 <aside>
   {{#each model.data as |cast|}}
-    <article class="radio-show">
-      <iframe src="https://www.mixcloud.com/widget/iframe/?feed={{encode cast.url}}&hide_cover=1&light=1"></iframe>
-    </article>
+    {{s-mixcloud cast=cast}}
   {{/each}}
 </aside>
