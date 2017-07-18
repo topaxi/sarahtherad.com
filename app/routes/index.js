@@ -8,11 +8,14 @@ const { Promise } = RSVP
 export default Route.extend({
   model() {
     return Promise.all([
-      fetch('https://api.mixcloud.com/derdienstagmorgen/cloudcasts/')
-        .then(res => res.json())
-        .then(casts => casts.data[Math.round(Math.random() * casts.data.length)])
-        .then(cast => Object.assign({ type: 'radio-shows' }, cast))
-        .catch(_err => null),
+      Promise.race([
+        fetch('https://api.mixcloud.com/derdienstagmorgen/cloudcasts/')
+          .then(res => res.json())
+          .then(casts => casts.data[Math.round(Math.random() * casts.data.length)])
+          .then(cast => Object.assign({ type: 'radio-shows' }, cast))
+          .catch(_err => null),
+        new Promise(resolve => setTimeout(resolve, 500)),
+      ]),
       [
         {
           id: 2,
