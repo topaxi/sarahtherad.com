@@ -5,7 +5,7 @@ export function dateFormat([ dateLike ]) {
   let date = dateLike instanceof Date ? dateLike : new Date(dateLike)
 
   return padStart(date.getDate(), 2) + '.' +
-    padStart(date.getMonth() + 1) + '.' +
+    padStart(date.getMonth() + 1, 2) + '.' +
     date.getFullYear()
 }
 

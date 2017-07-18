@@ -28,7 +28,7 @@ s-mixcloud {
   > .info > .stats-row {
     display: flex;
   }
-  > .info > .stats-row > .play-count {
+  > .info > .stats-row > div:not(:last-child) {
     margin-right: 2rem;
   }
   > .info > .stats-row svg {
