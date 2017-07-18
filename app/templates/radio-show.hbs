@@ -45,4 +45,10 @@
   {{#each model.data as |cast|}}
     {{s-mixcloud cast=cast}}
   {{/each}}
+  {{#unless isFirstPage}}
+    {{link-to 'back' 'radio-show' (query-params page=previousPage)}}
+  {{/unless}}
+  {{#if hasMore}}
+    {{link-to 'more…' 'radio-show' (query-params page=nextPage)}}
+  {{/if}}
 </aside>
