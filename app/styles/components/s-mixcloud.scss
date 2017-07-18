@@ -27,13 +27,27 @@ s-mixcloud {
   }
   > .info > .stats-row {
     display: flex;
+    white-space: nowrap;
   }
-  > .info > .stats-row > div:not(:last-child) {
+  > .info > .stats-row > :not(:last-child) {
     margin-right: 2rem;
   }
   > .info > .stats-row svg {
     width: 1.2em;
     height: 1.2em;
     vertical-align: middle;
+  }
+  > .info > .stats-row > .tags {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  > .info > .stats-row > .tags > li::before {
+    content: '#';
+  }
+  > .info > .stats-row > .tags > li:not(:last-child)::after {
+    content: ',\00A0';
   }
 }

@@ -1,5 +1,7 @@
 {{log cast}}
-<img src={{cast.pictures.medium_mobile}}>
+<a href={{concat cast.url '#favorite'}}>
+  <img src={{cast.pictures.medium_mobile}}>
+</a>
 <div class="info">
   <div class="title-row">
     <button class="play" {{action 'play' cast}}>
@@ -8,7 +10,7 @@
       </svg>
     </button>
     <div class="title">
-      {{cast.name}}<br>
+      <strong>{{cast.name}}</strong><br>
       by Der Dienstag Morgen
     </div>
   </div>
@@ -24,7 +26,12 @@
     <a class="like" href={{concat cast.url '#favorite'}}>
       <svg viewBox="0 0 18 18"><path fill-rule="evenodd" d="M15.83 10.75l-6.3 6c-.1.08-.27.17-.45.17s-.35-.1-.44-.18l-6.3-6C2.24 10.67 0 8.7 0 6.3c0-2.96 1.8-4.66 4.77-4.66C6.57 1.64 8.2 2.98 9 3.8c.8-.8 2.4-2.16 4.2-2.16 3 0 4.8 1.8 4.8 4.66.17 2.4-2.08 4.38-2.17 4.47"/></svg>
     </a>
+    <ul class="tags">
+      {{#each cast.tags as |tag|}}
+        <li>{{tag.name}}</li>
+      {{/each}}
+    </ul>
   </div>
 </div>
 
-{{! date created, audio length, tags, play count (chopfhörerli) }}
+{{! date created }}
