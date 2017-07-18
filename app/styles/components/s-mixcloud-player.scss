@@ -4,8 +4,14 @@ s-mixcloud-player {
   left: 0;
   right: 0;
   height: 120px;
+  transform: translateY(120px);
+  transition: transform 200ms;
 
   > iframe {
     width: 100%;
+  }
+
+  &.visible {
+    transform: translateY(0);
   }
 }
