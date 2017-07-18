@@ -10,7 +10,6 @@ Ember.Route.reopen({
   rootclass: Ember.inject.service(),
 
   activate() {
-    if (typeof document === 'undefined') return
     if (this.routeName !== 'application') {
       let routeName = this.routeName;
       if (routeName === 'index') routeName = 'home';
@@ -18,7 +17,6 @@ Ember.Route.reopen({
     }
   },
   deactivate() {
-    if (typeof document === 'undefined') return
     let routeName = this.routeName;
     if (routeName === 'index') routeName = 'home';
     this.get('rootclass').remove(routeName)
