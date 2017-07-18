@@ -1,13 +1,15 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-const Router = Ember.Router.extend({
+const { Router: EmberRouter, Route, inject } = Ember
+
+const Router = EmberRouter.extend({
   location: config.locationType,
   rootURL: config.rootURL
 });
 
-Ember.Route.reopen({
-  rootclass: Ember.inject.service(),
+Route.reopen({
+  rootclass: inject.service(),
 
   activate() {
     if (this.routeName !== 'application') {
