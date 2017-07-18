@@ -6,5 +6,5 @@ export default Component.extend({
   tagName: 's-mixcloud-player',
   mixcloud: inject.service(),
   classNameBindings: [ 'cast:visible' ],
-  cast: computed.readOnly('mixcloud.cast'),
+  cast: computed.alias('mixcloud.cast'),
 })

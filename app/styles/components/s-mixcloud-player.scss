@@ -4,6 +4,7 @@ s-mixcloud-player {
   left: 0;
   right: 0;
   height: 120px;
+  background: #fff;
   transform: translateY(120px);
   transition: transform 200ms;
 
@@ -11,7 +12,26 @@ s-mixcloud-player {
     width: 100%;
   }
 
+  > button {
+    position: absolute;
+    appearance: none;
+    padding: 0;
+    border: 0;
+    background: #fff;
+    border: 1px solid #d7d7d7;
+    border-bottom: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    font-size: 20px;
+    transition: top 200ms;
+  }
+
   &.visible {
     transform: translateY(0);
+  }
+
+  &.visible > button {
+    top: -23px;
   }
 }
