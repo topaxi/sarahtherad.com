@@ -41,12 +41,8 @@ s-article-list {
 }
 
 .list-item--radio-show {
-  padding: 0;
   grid-row: span 1;
   grid-column: span 4;
-  display: flex;
-  align-items: center;
-  background: none;
 }
 .list-item--radio-show > iframe {
   width: 100%;

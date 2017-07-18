@@ -1,0 +1,11 @@
+s-mixcloud-player {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+
+  > iframe {
+    width: 100%;
+  }
+}

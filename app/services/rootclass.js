@@ -7,12 +7,12 @@ export default Service.extend({
     return [ 'root' ]
   }),
 
-  classNames: computed('_classNames.[]', function() {
+  classNames: computed('_classNames', function() {
     return this.get('_classNames').join(' ')
   }),
 
   add(className) {
-    this.get('_classNames').push(slug(className))
+    this.set('_classNames', [ ...this.get('_classNames'), slug(className) ])
   },
 
   remove(_className) {
