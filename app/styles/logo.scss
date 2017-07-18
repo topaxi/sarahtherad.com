@@ -16,7 +16,7 @@
   transition: transform 200ms;
   transform-origin: top right;
 }
-@media (min-width: 640px) {
+@media screen and (min-width: 640px) {
   .logo .rect {
     display: none;
   }
@@ -25,7 +25,7 @@
   }
 }
 
-@media (min-width: 800px) {
+@media screen and (min-width: 800px) {
   .home .logo > svg {
     transform: scale(2.5);
   }
@@ -34,6 +34,7 @@
 /* extra space for logo */
 s-article-list::before {
   content: '';
+  pointer-events: none;
   min-width: calc(300px - 1rem);
   min-height: calc(300px - 1rem - 2rem);
   grid-column: -3 / -1;
