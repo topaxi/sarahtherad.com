@@ -5,6 +5,13 @@ var cssnext = require('postcss-cssnext');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    imagemin: {
+      plugins: [
+        require('imagemin-jpegtran')({ progressive: true }),
+        require('imagemin-optipng')(),
+        require('imagemin-svgo')()
+      ]
+    },
     vendorFiles: { 'jquery.js': null },
     jquery: {
       slim: true

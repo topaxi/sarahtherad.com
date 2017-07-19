@@ -26,6 +26,7 @@
     "ember-cli-head": "^0.3.1",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-cli-htmlbars-inline-precompile": "^0.4.3",
+    "ember-cli-imagemin": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
     "ember-cli-postcss": "^3.4.1",
     "ember-cli-qunit": "^4.0.0",
@@ -46,6 +47,9 @@
     "ember-service-worker-index": "^0.6.1",
     "ember-source": "~2.14.0",
     "ember-web-app": "^2.0.0",
+    "imagemin-jpegtran": "^5.0.2",
+    "imagemin-optipng": "^5.2.1",
+    "imagemin-svgo": "^5.2.2",
     "liquid-fire": "^0.27.3",
     "loader.js": "^4.2.3",
     "postcss-cssnext": "^3.0.0"
