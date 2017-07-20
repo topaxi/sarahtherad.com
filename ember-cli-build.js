@@ -5,6 +5,13 @@ var cssnext = require('postcss-cssnext');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    'esw-cache-first': {
+      version: '1',
+      patterns: [
+        'https://fonts.googleapis.com/css(?:.+)',
+        'https://fonts.gstatic.com/s/slabo27px/(?:.+)',
+      ],
+    },
     imagemin: {
       plugins: [
         require('imagemin-jpegtran')({ progressive: true }),
