@@ -12,6 +12,12 @@ module.exports = function(defaults) {
         'https://fonts.gstatic.com/s/slabo27px/(?:.+)',
       ],
     },
+    'esw-cache-fallback': {
+      version: '1',
+      patterns: [
+        'https://api.mixcloud.com/derdienstagmorgen/(?:.*)',
+      ],
+    },
     imagemin: {
       plugins: [
         require('imagemin-jpegtran')({ progressive: true }),
