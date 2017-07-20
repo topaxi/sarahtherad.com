@@ -2,6 +2,7 @@
 /* global require, module */
 var EmberApp = require('ember-cli/lib/broccoli/ember-app');
 var cssnext = require('postcss-cssnext');
+var targets = require('./config/targets');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
@@ -40,11 +41,7 @@ module.exports = function(defaults) {
           {
             module: cssnext,
             options: {
-              browsers: [
-                '> 1% in CH',
-                'last 2 versions',
-                'Firefox ESR'
-              ],
+              browsers: targets.browsers,
               features: {
                 customProperties: false
               }
