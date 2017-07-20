@@ -33,6 +33,7 @@ module.exports = function(environment) {
     // ENV.APP.LOG_TRANSITIONS = true;
     // ENV.APP.LOG_TRANSITIONS_INTERNAL = true;
     // ENV.APP.LOG_VIEW_LOOKUPS = true;
+    ENV.apiHost = 'http://localhost:8080'
   }
 
   if (environment === 'test') {
@@ -44,10 +45,11 @@ module.exports = function(environment) {
     ENV.APP.LOG_VIEW_LOOKUPS = false;
 
     ENV.APP.rootElement = '#ember-testing';
+    ENV.apiHost = ''
   }
 
   if (environment === 'production') {
-
+    ENV.apiHost = 'https://sarahtherad.com'
   }
 
   return ENV;
