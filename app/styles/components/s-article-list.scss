@@ -19,6 +19,9 @@ s-article-list {
   text-decoration: inherit;
   color: inherit;
 }
+.list-item > a:hover {
+  font-weight: normal;
+}
 
 .list-item > a > img {
   align-self: center;
