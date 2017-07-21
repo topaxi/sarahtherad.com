@@ -3,8 +3,8 @@ import { module, test } from 'qunit';
 
 module('Unit | Utility | query');
 
-// Replace this with your real tests.
 test('it works', function(assert) {
-  let result = query();
-  assert.ok(result);
+  assert.equal(query({}), '');
+  assert.equal(query({ foo: 'bar' }), '?foo=bar');
+  assert.equal(query({ foo: 'bar', baz: 'qux' }), '?foo=bar&baz=qux');
 });

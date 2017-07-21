@@ -9,7 +9,6 @@ export default Component.extend({
   actions: {
     play(cast) {
       this.set('mixcloud.cast', cast)
-      console.log(this.get('mixcloud.cast'))
     }
   }
 })
