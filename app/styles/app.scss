@@ -152,8 +152,19 @@ article.radio-show {
 }
 
 .radio-show-article {
-  display: flex;
   font-size: 1.2rem;
+  .radio-show-header-desktop {
+    display: none;
+  }
+  @media screen and (min-width: 960px) {
+    display: flex;
+    .radio-show-header-mobile {
+      display: none;
+    }
+    .radio-show-header-desktop {
+      display: block;
+    }
+  }
   > figure {
     flex: 3;
     margin-right: 2rem;
