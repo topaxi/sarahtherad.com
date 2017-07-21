@@ -23,6 +23,11 @@ module.exports = function(/* environment, appConfig */) {
         src: 'pictures/logo512.png',
         sizes: '512x512',
         type: 'image/png',
+      },
+      {
+        src: 'pictures/logo1024.png',
+        sizes: '1024x1024',
+        type: 'image/png',
       }
     ],
     apple: {
