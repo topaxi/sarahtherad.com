@@ -4,11 +4,19 @@ import query from '../utils/query'
 
 const LIMIT = 20;
 
-export default Ember.Route.extend({
+const { Route, inject } = Ember
+
+export default Route.extend({
+  radBackground: inject.service(),
+
   queryParams: {
     page: {
       refreshModel: true
     }
+  },
+
+  beforeModel() {
+    this.get('radBackground').clear()
   },
 
   model({ page }) {

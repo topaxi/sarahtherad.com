@@ -11,4 +11,9 @@ export default function() {
       },
     ),
   )
+
+  this.transition(
+    this.hasClass('background-container'),
+    this.use('crossFade', { duration }),
+  )
 }

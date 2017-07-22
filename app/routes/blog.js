@@ -1,6 +1,14 @@
 import Ember from 'ember';
 
-export default Ember.Route.extend({
+const { Route, inject } = Ember
+
+export default Route.extend({
+  radBackground: inject.service(),
+
+  beforeModel() {
+    this.get('radBackground').reload()
+  },
+
   model() {
     return [
       {

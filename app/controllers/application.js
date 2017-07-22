@@ -1,7 +1,19 @@
 import Ember from 'ember'
 
-const { Controller, inject } = Ember
+const {
+  Controller,
+  String: { htmlSafe },
+  inject,
+  computed
+} = Ember
 
 export default Controller.extend({
   rootclass: inject.service(),
+  radBackground: inject.service(),
+
+  backgroundStyle: computed('radBackground.background', function() {
+    let url = this.get('radBackground.background')
+
+    return url !== null ? htmlSafe(`background-image: url(${url})`) : null
+  }),
 })

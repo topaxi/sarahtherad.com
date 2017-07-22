@@ -2,10 +2,13 @@ import fetch from 'fetch'
 import RSVP from 'rsvp'
 import Ember from 'ember'
 
-const { Route } = Ember
+const { Route, inject } = Ember
 const { Promise } = RSVP
 
 export default Route.extend({
+  rad: inject.service(),
+  radBackground: inject.service(),
+
   model() {
     return Promise.all([
       Promise.race([
@@ -46,7 +49,8 @@ but your doors did hold. then, now, always. they were built to endure all of the
 but baby I dont care what you hide behind your doors. I've seen it all. the monsters, the demons, the abyss within. there's nothing I couldn't take. I've known you for a day, I've known you for a 100 years, what does it even matter.
 I can show you what it's like. what it's all about. I can take you high. I can set you free. I'm the one.`,
         }
-      ]
+      ],
+      this.get('radBackground').reload(),
     ])
       .then(([ cast, posts ]) => cast ? [ cast, ...posts ] : posts)
   }

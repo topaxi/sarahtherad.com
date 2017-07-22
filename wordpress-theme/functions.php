@@ -91,5 +91,5 @@ function get_random_background() {
     'posts_per_page' => 1
   ]);
 
-  return array('url' => get_the_post_thumbnail_url($post->ID));
+  return array('data' => get_the_post_thumbnail_url($post->ID));
 }
