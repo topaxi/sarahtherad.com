@@ -5,7 +5,7 @@ const { Route, inject } = Ember
 export default Route.extend({
   radBackground: inject.service(),
 
-  beforeModel() {
+  afterModel() {
     return this.get('radBackground').clear()
   },
 })

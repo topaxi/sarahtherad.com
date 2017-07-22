@@ -15,15 +15,15 @@ export default Route.extend({
     }
   },
 
-  beforeModel() {
-    this.get('radBackground').clear()
-  },
-
   model({ page }) {
     let params = query({ offset: page * LIMIT, limit: LIMIT })
     let url = `https://api.mixcloud.com/derdienstagmorgen/cloudcasts/${params}`
 
     return fetch(url)
       .then(res => res.json())
-  }
+  },
+
+  afterModel() {
+    this.get('radBackground').clear()
+  },
 })

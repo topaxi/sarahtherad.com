@@ -21,7 +21,7 @@ register_post_type('home_background', [
   'show_in_menu' => true,
   'has_archive' => false,
   'capability_type' => 'post',
-  'supports' => [ 'title', 'thumbnail' ]
+  'supports' => [ 'title', 'thumbnail', 'custom-fields' ]
 ]);
 
 add_action('rest_api_init', function() {
@@ -136,7 +136,14 @@ function get_random_background() {
     'posts_per_page' => 1
   ]);
 
-  return array('data' => get_the_post_thumbnail_url($post->ID));
+  list($color) = get_post_custom_values('color', $post->ID);
+
+  return [
+    'data' => [
+      'url' => get_the_post_thumbnail_url($post->ID),
+      'color' => $color ?: '#fff',
+    ],
+  ];
 }
 
 function get_rad_post($slug) {

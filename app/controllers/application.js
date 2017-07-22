@@ -16,4 +16,8 @@ export default Controller.extend({
 
     return url !== null ? htmlSafe(`background-image: url(${url})`) : null
   }),
+
+  headerStyle: computed('radBackground.color', function() {
+    return htmlSafe(`color: ${this.get('radBackground.color')}`)
+  }),
 })

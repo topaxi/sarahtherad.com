@@ -8,17 +8,26 @@ const { Service, inject } = Ember
 export default Service.extend({
   rad: inject.service(),
 
-  background: null,
+  init() {
+    this.clear()
+  },
 
   clear() {
     this.set('background', null)
+    this.set('color', '#000')
   },
 
   reload() {
     this.get('rad').background()
       .then(res => res.data)
-      .then(url => Promise.race([ fetchImage(url), wait(200, url) ]))
-      .then(url => this.set('background', url))
+      .then(data =>
+        Promise.race([ fetchImage(data.url), wait(200) ])
+          .then(() => data)
+      )
+      .then(data => {
+        this.set('background', data.url)
+        this.set('color', data.color)
+      })
   },
 })
 

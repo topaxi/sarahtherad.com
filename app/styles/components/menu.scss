@@ -46,11 +46,8 @@ main.menu-open {
   animation-delay: 150ms;
 }
 .menu a {
-  color: #000;
+  color: currentColor;
   text-decoration: none;
-}
-.home .menu a {
-  color: #fff;
 }
 .menu a:hover {
   font-weight: bold;

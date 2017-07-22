@@ -23,6 +23,9 @@ Author: sarahtherad.com + topaxi.codes
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  > header {
+    transition: color 200ms;
+  }
 }
 
 .background-container {
@@ -41,19 +44,6 @@ Author: sarahtherad.com + topaxi.codes
 .background {
   background-size: cover;
   background-attachment: fixed;
-  opacity: 0;
-  transition: opacity 200ms;
-}
-
-.home, .graphics, .blog {
-  &:not(.blog_post) {
-    .hamburglar, .logo, .menu a {
-      color: #fff;
-    }
-    .background {
-      opacity: 1;
-    }
-  }
 }
 
 main {
