@@ -19,3 +19,12 @@ services:
     image: mariadb
     environment:
       - MYSQL_ROOT_PASSWORD=password
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    depends_on:
+      - db
+    ports:
+      - 8081:80
+    environment:
+      - MYSQL_ROOT_PASSWORD=password
