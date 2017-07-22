@@ -1,7 +1,11 @@
-import Ember from 'ember';
+import Ember from 'ember'
 
-export default Ember.Route.extend({
+const { Route, inject } = Ember
+
+export default Route.extend({
+  rad: inject.service(),
+
   model({ slug }) {
-    return this.modelFor('graphics').find(graphic => graphic.slug === slug);
+    return this.get('rad').graphic(slug)
   },
-});
+})

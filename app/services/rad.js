@@ -30,6 +30,10 @@ export default Ember.Service.extend({
     return this.fetchJSON('rad/posts')
   },
 
+  graphic(slug) {
+    return this.fetchJSON(`rad/graphics/${slug}`)
+  },
+
   graphics() {
     return this.fetchJSON('rad/graphics')
   },

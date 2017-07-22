@@ -35,6 +35,12 @@ add_action('rest_api_init', function() {
       return serialize_post(get_rad_post($req['slug']));
     },
   ]);
+  register_rest_route('rad', '/graphics/(?P<slug>[a-zA-Z\d-]+)', [
+    'methods' => 'GET',
+    'callback' => function($req) {
+      return serialize_graphic(get_rad_post($req['slug']));
+    },
+  ]);
   register_rest_route('rad', '/posts', [
     'methods' => 'GET',
     'callback' => function() {
