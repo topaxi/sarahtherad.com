@@ -17,6 +17,7 @@ module.exports = function(defaults) {
       version: '1',
       patterns: [
         'https://api.mixcloud.com/derdienstagmorgen/(?:.*)',
+        'https://thumbnailer.mixcloud.com/(?:.*)',
       ],
     },
     imagemin: {
