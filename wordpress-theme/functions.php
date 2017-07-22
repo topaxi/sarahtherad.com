@@ -1,5 +1,12 @@
 <?php
 
+function custom_upload_mimes($existing_mimes = []) {
+  $existing_mimes['svg'] = 'image/svg+xml';
+
+  return $existing_mimes;
+}
+add_filter( 'upload_mimes', 'custom_upload_mimes' );
+
 add_theme_support('post-thumbnails', [
   'post',
   'home_background'
@@ -66,8 +73,10 @@ function serialize_graphic($post) {
   while ($attachments->get()) {
     $graphics_post['pictures'][] = array(
       'src' => $attachments->src('original'),
-      'width' => $attachments->width('original'),
-      'height' => $attachments->width('original'),
+      'width' => $attachments->width('original') ?: null,
+      'height' => $attachments->width('original') ?: null,
+      'title' => $attachments->field('title') ?: null,
+      'caption' => $attachments->field('caption') ?: null,
       'mime' => "{$attachments->type()}/{$attachments->subtype()}",
     );
   }
