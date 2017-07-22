@@ -29,7 +29,7 @@ add_action('rest_api_init', function() {
     'methods' => 'GET',
     'callback' => 'get_random_background'
   ]);
-  register_rest_route('rad', '/posts/(?P<slug>[a-Z\d-]+)', [
+  register_rest_route('rad', '/posts/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
       return serialize_post(get_rad_post($req['slug']));
