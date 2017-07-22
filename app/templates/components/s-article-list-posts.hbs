@@ -1,4 +1,9 @@
 {{#link-to 'blog.post' model.slug}}
-  <h2>{{model.title}}</h2>
+  <header>
+    <time datetime={{date-format-iso model.date}}>
+      {{~date-format model.date~}}
+    </time>
+    <h2>{{model.title}}</h2>
+  </header>
   {{{model.excerpt}}}
 {{/link-to}}

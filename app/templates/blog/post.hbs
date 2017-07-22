@@ -1,3 +1,10 @@
 {{title model.title}}
-<h1>{{model.title}}</h1>
-{{{model.content}}}
+<article class="blog-post">
+  <header>
+    <time datetime={{date-format-iso model.date}}>
+      {{~date-format model.date~}}
+    </time>
+    <h1>{{model.title}}</h1>
+  </header>
+  {{{model.content}}}
+</article>

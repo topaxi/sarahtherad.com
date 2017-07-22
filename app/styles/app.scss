@@ -76,6 +76,14 @@ main {
   }
 }
 
+header {
+  > {
+    h1, h2, h3, h4, h5, h6 {
+      margin-top: 0;
+    }
+  }
+}
+
 .graphics-overlay,
 .graphics-post {
   position: fixed;
@@ -138,6 +146,11 @@ article.radio-show {
     overflow: visible;
     visibility: visible !important;
   }
+}
+
+.blog-post {
+  background: #fff;
+  padding: 1.5rem;
 }
 
 .root.radio-show {
