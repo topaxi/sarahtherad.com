@@ -28,6 +28,9 @@ s-mixcloud {
   > .info > .stats-row {
     display: flex;
     white-space: nowrap;
+    @media screen and (max-width: 560px) {
+      flex-wrap: wrap;
+    }
   }
   > .info > .stats-row > :not(:last-child) {
     margin-right: 2rem;
