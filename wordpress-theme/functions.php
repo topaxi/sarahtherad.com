@@ -41,6 +41,7 @@ function serialize_post($post) {
   setup_postdata($post);
   $ret = array(
     'id' => $post->ID,
+    'type' => 'posts',
     'slug' => $post->post_name,
     'date' => $post->post_date,
     'title' => $post->post_title,
@@ -53,19 +54,25 @@ function serialize_post($post) {
 
 function serialize_graphic($post) {
   setup_postdata($post);
-  $thumbnail_id = get_post_thumbnail_id($post->ID);
-  list($url, $width, $height) = wp_get_attachment_image_src($thumbnail_id, 'original');
-  $ret = array(
+  $attachments = new Attachments('attachments', $post->ID);
+  $graphics_post = array(
     'id' => $post->ID,
+    'type' => 'graphics',
     'slug' => $post->post_name,
     'date' => $post->post_date,
     'title' => $post->post_title,
-    'url' => $url,
-    'width' => $width,
-    'height' => $height
+    'pictures' => array(),
   );
+  while ($attachments->get()) {
+    $graphics_post['pictures'][] = array(
+      'src' => $attachments->src('original'),
+      'width' => $attachments->width('original'),
+      'height' => $attachments->width('original'),
+      'mime' => "{$attachments->type()}/{$attachments->subtype()}",
+    );
+  }
   wp_reset_postdata();
-  return $ret;
+  return $graphics_post;
 }
 
 function get_random_posts($category_name, $per_page = 3) {
