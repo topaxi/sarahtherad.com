@@ -22,6 +22,18 @@ export default Ember.Service.extend({
     return this.fetchJSON('rad/home')
   },
 
+  post(slug) {
+    return this.fetchJSON(`rad/posts/${slug}`)
+  },
+
+  posts() {
+    return this.fetchJSON('rad/posts')
+  },
+
+  graphics() {
+    return this.fetchJSON('rad/graphics')
+  },
+
   background() {
     return this.fetchJSON('rad/background')
   },

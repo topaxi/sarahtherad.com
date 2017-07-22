@@ -29,6 +29,28 @@ add_action('rest_api_init', function() {
     'methods' => 'GET',
     'callback' => 'get_random_background'
   ]);
+  register_rest_route('rad', '/posts/(?P<slug>[a-Z\d-]+)', [
+    'methods' => 'GET',
+    'callback' => function($req) {
+      return serialize_post(get_rad_post($req['slug']));
+    },
+  ]);
+  register_rest_route('rad', '/posts', [
+    'methods' => 'GET',
+    'callback' => function() {
+      return [
+        'data' => array_map('serialize_post', get_rad_posts('blog'))
+      ];
+    }
+  ]);
+  register_rest_route('rad', '/graphics', [
+    'methods' => 'GET',
+    'callback' => function() {
+      return [
+        'data' => array_map('serialize_graphic', get_rad_posts('graphics'))
+      ];
+    }
+  ]);
   register_rest_route('rad', '/home', [
     'methods' => 'GET',
     'callback' => function() {
@@ -84,9 +106,17 @@ function serialize_graphic($post) {
   return $graphics_post;
 }
 
+function get_rad_posts($category_name, $per_page = 20) {
+  return get_posts([
+    'post_type' => 'post',
+    'category_name' => $category_name,
+    'posts_per_page' => $per_page
+  ]);
+}
+
 function get_random_posts($category_name, $per_page = 3) {
   return get_posts([
-    'post_type' => [ 'post' ],
+    'post_type' => 'post',
     'category_name' => $category_name,
     'orderby' => 'rand',
     'posts_per_page' => $per_page
@@ -95,10 +125,21 @@ function get_random_posts($category_name, $per_page = 3) {
 
 function get_random_background() {
   list($post) = get_posts([
-    'post_type' => [ 'home_background' ],
+    'post_type' => 'home_background',
     'orderby' => 'rand',
     'posts_per_page' => 1
   ]);
 
   return array('data' => get_the_post_thumbnail_url($post->ID));
+}
+
+function get_rad_post($slug) {
+  list($post) = get_posts([
+    'name' => $slug,
+    'post_type' => 'post',
+    'post_status' => 'publish',
+    'posts_per_page' => 1
+  ]);
+
+  return $post;
 }

@@ -6,8 +6,13 @@ const { computed } = Ember
 export default ArticleListItemComponent.extend({
   classNames: [ 'list-item--graphics' ],
   classNameBindings: [ 'isWide:list-item--wide' ],
+  model: null,
 
-  isWide: computed('model.{width,height}', function() {
-    return this.get('model.width') > this.get('model.height')
+  picture: computed('model.pictures.[]', function() {
+    return this.get('model.pictures')[0];
+  }),
+
+  isWide: computed('picture.{width,height}', function() {
+    return this.get('picture.width') > this.get('picture.height')
   }),
 })
