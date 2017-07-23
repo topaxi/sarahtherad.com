@@ -102,7 +102,7 @@ function serialize_graphic($post) {
     $graphics_post['pictures'][] = array(
       'src' => $attachments->src('original'),
       'width' => $attachments->width('original') ?: null,
-      'height' => $attachments->width('original') ?: null,
+      'height' => $attachments->height('original') ?: null,
       'title' => $attachments->field('title') ?: null,
       'caption' => $attachments->field('caption') ?: null,
       'mime' => "{$attachments->type()}/{$attachments->subtype()}",
