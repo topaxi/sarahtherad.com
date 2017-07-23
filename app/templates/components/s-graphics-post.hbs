@@ -6,4 +6,10 @@
   {{#liquid-bind currentPicture class='graphics-post-picture' as |picture|}}
     <img src={{picture.src}} width={{picture.width}} height={{picture.height}} alt={{picture.title}}>
   {{/liquid-bind}}
+  {{#if currentPictureIndex}}
+    <button class="previous-picture" {{action 'previous'}}>‹</button>
+  {{/if}}
+  {{#if hasNext}}
+    <button class="next-picture" {{action 'next'}}>›</button>
+  {{/if}}
 </article>

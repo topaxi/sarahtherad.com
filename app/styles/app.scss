@@ -8,6 +8,7 @@ Author: sarahtherad.com + topaxi.codes
 @import 'liquid-fire';
 @import 'components/s-burger';
 @import 'components/s-article-list';
+@import 'components/s-graphics-post';
 @import 'components/s-mixcloud';
 @import 'components/s-mixcloud-player';
 @import 'components/menu';
@@ -96,40 +97,6 @@ header {
 
 .graphics-overlay {
   background: rgba(0,0,0,.5);
-}
-
-.graphics-post {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-
-  > article {
-    max-width: 95vw;
-    max-height: 95vh;
-    min-width: 300px;
-    background-color: #fff;
-    padding: 0.5rem 2rem 2rem;
-    pointer-events: auto;
-  }
-
-  .liquid-container, .liquid-child, img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-  }
-}
-
-.graphics-post-title {
-  display: flex;
-  justify-content: space-between;
-
-  > a {
-    font-size: 3em;
-    text-decoration: none;
-    color: #000;
-  }
 }
 
 article.radio-show {
