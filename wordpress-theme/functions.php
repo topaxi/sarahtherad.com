@@ -81,7 +81,7 @@ function serialize_post($post) {
     'date' => $post->post_date,
     'title' => $post->post_title,
     'excerpt' => apply_filters('the_excerpt', get_the_excerpt($post)),
-    'content' => apply_filters('the_content', get_the_content($post)),
+    'content' => apply_filters('the_content', $post->post_content),
   );
   wp_reset_postdata();
   return $ret;
