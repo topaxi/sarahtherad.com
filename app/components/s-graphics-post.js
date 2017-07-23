@@ -7,18 +7,13 @@ export default Component.extend({
   classNameBindings: [ 'isSVG:graphics-post--svg' ],
   model: null,
 
-  init() {
-    this._super(...arguments)
-    this.preload()
-  },
-
   isSVG: computed('currentPicture.src', function() {
     return /\.svg$/.test(this.get('currentPicture.src'))
   }),
 
   currentPictureIndex: 0,
 
-  currentPicture: computed('model.pictures', 'currentPictureIndex', function() {
+  currentPicture: computed('model.pictures.[]', 'currentPictureIndex', function() {
     return this.get('model.pictures')[this.get('currentPictureIndex')]
   }),
 
@@ -26,12 +21,9 @@ export default Component.extend({
     return this.get('currentPictureIndex') < this.get('model.pictures.length') - 1
   }),
 
-  preload() {
-    this.get('model.pictures').forEach(picture => {
-      let img = new Image
-      img.src = picture.src
-    })
-  },
+  hasMultiple: computed('model.pictures.[]', function() {
+    return this.get('model.pictures.length') > 1
+  }),
 
   actions: {
     previous() {

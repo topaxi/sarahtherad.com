@@ -15,9 +15,13 @@
     padding: 0.5rem 2rem 2rem;
     pointer-events: auto;
   }
-  .liquid-container, .liquid-child {
+  .swiper-container {
     width: 100%;
     height: 100%;
+    display: flex;
+  }
+  .swiper-wrapper {
+    height: auto;
   }
   img {
     display: block;
@@ -51,6 +55,7 @@
 .graphics-post-title {
   display: flex;
   justify-content: space-between;
+  flex-shrink: 0;
 
   > a {
     font-size: 3em;

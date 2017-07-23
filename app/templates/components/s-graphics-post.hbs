@@ -3,13 +3,21 @@
     <h1>{{model.title}}</h1>
     {{#link-to 'graphics'}}&times;{{/link-to}}
   </div>
-  {{#liquid-bind currentPicture class='graphics-post-picture' as |picture|}}
-    <img src={{picture.src}} width={{picture.width}} height={{picture.height}} alt={{picture.title}}>
-  {{/liquid-bind}}
-  {{#if currentPictureIndex}}
-    <button class="previous-picture" {{action 'previous'}}>‹</button>
-  {{/if}}
-  {{#if hasNext}}
-    <button class="next-picture" {{action 'next'}}>›</button>
+  {{#if hasMultiple}}
+    {{#swiper-container pagination=hasMultiple currentSlide=currentPictureIndex}}
+      {{#each model.pictures as |picture|}}
+        {{#swiper-slide}}
+          <img src={{picture.src}} alt={{picture.title}}>
+        {{/swiper-slide}}
+      {{/each}}
+    {{/swiper-container}}
+    {{#if currentPictureIndex}}
+      <button class="previous-picture" {{action 'previous'}}>‹</button>
+    {{/if}}
+    {{#if hasNext}}
+      <button class="next-picture" {{action 'next'}}>›</button>
+    {{/if}}
+  {{else}}
+    <img src={{currentPicture.src}} alt={{currentPicture.title}}>
   {{/if}}
 </article>

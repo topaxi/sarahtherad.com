@@ -31,6 +31,9 @@ module.exports = function(defaults) {
     jquery: {
       slim: true
     },
+    sassOptions: {
+      includePaths: [ 'node_modules/swiper/dist/css' ],
+    },
     postcssOptions: {
       compile: {
         enabled: false
