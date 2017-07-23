@@ -6,12 +6,11 @@ moduleForComponent('date-format-iso', 'helper:date-format-iso', {
   integration: true
 });
 
-// Replace this with your real tests.
 test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+  this.set('inputValue', '2017-07-01 12:23:45');
 
   this.render(hbs`{{date-format-iso inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), '2017-07-01T10:23:45.000Z');
 });
 

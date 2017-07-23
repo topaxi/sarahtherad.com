@@ -1,8 +1,20 @@
-import { moduleFor, test } from 'ember-qunit';
+import RSVP from 'rsvp'
+import Ember from 'ember'
+import { moduleFor, test } from 'ember-qunit'
+
+const { Promise } = RSVP
+const { Service } = Ember
+
+const RadService = Service.extend({
+  background() {
+    return Promise.resolve({ url: '', color: '#000' })
+  }
+})
 
 moduleFor('service:rad-background', 'Unit | Service | rad background', {
-  // Specify the other units that are required for this test.
-  // needs: ['service:foo']
+  beforeEach() {
+    this.register('service:rad', RadService)
+  }
 });
 
 // Replace this with your real tests.

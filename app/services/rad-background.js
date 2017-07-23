@@ -18,7 +18,7 @@ export default Service.extend({
   },
 
   reload() {
-    this.get('rad').background()
+    return this.get('rad').background()
       .then(res => res.data)
       .then(data =>
         Promise.race([ fetchImage(data.url), wait(200) ])
@@ -27,6 +27,8 @@ export default Service.extend({
       .then(data => {
         this.set('background', data.url)
         this.set('color', data.color)
+
+        return data
       })
   },
 })
