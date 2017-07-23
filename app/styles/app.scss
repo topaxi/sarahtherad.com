@@ -108,14 +108,16 @@ header {
   > article {
     max-width: 95vw;
     max-height: 95vh;
+    min-width: 300px;
     background-color: #fff;
-    padding: 2rem 4rem 4rem;
+    padding: 0.5rem 2rem 2rem;
     pointer-events: auto;
   }
 
   .liquid-container, .liquid-child, img {
     max-width: 100%;
     max-height: 100%;
+    display: block;
   }
 }
 
