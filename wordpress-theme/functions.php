@@ -98,6 +98,7 @@ function serialize_graphic($post) {
     'slug' => $post->post_name,
     'date' => $post->post_date,
     'title' => $post->post_title,
+    'content' => apply_filters('the_content', $post->post_content),
     'pictures' => array(),
   );
   while ($attachments->get()) {

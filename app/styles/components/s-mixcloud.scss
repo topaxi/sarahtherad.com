@@ -1,11 +1,14 @@
 s-mixcloud {
-  display: flex;
-  justify-content: flex-start;
+  @media screen and (min-width: 420px) {
+    display: flex;
+    justify-content: flex-start;
+  }
 
   > .info {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex: 1;
     margin-left: 1rem;
   }
   > .info > .title-row {
@@ -13,12 +16,12 @@ s-mixcloud {
   }
   > .info > .title-row > .play {
     margin-right: 1rem;
-    width: 36px;
-    height: 36px;
+    width: 42px;
+    height: 42px;
     cursor: pointer;
     padding: 0;
     appearance: none;
-    border: none;
+    border: 1px solid #000;
     background: none;
   }
   > .info > .title-row > .play > svg {
@@ -27,7 +30,9 @@ s-mixcloud {
   }
   > .info > .stats-row {
     display: flex;
+    justify-content: flex-end;
     white-space: nowrap;
+    font-size: 0.8em;
     @media screen and (max-width: 560px) {
       flex-wrap: wrap;
     }
@@ -40,17 +45,21 @@ s-mixcloud {
     height: 1.2em;
     vertical-align: middle;
   }
-  > .info > .stats-row > .tags {
+  > .info > .tags {
     display: flex;
     flex-wrap: wrap;
     list-style: none;
     padding: 0;
     margin: 0;
+    margin-left: calc(42px + 1rem);
+    @media screen and (max-width: 639px) {
+      display: none;
+    }
   }
-  > .info > .stats-row > .tags > li::before {
+  > .info > .tags > li::before {
     content: '#';
   }
-  > .info > .stats-row > .tags > li:not(:last-child)::after {
+  > .info > .tags > li:not(:last-child)::after {
     content: ',\00A0';
   }
 }

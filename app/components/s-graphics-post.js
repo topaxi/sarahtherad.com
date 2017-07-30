@@ -6,6 +6,7 @@ export default Component.extend({
   classNames: [ 'graphics-post' ],
   classNameBindings: [ 'isSVG:graphics-post--svg' ],
   model: null,
+  showContent: false,
 
   isSVG: computed('currentPicture.src', function() {
     return /\.svg$/.test(this.get('currentPicture.src'))
@@ -26,6 +27,9 @@ export default Component.extend({
   }),
 
   actions: {
+    'show-content'() {
+      this.toggleProperty('showContent')
+    },
     previous() {
       this.set('currentPictureIndex', this.get('currentPictureIndex') - 1)
     },

@@ -8,6 +8,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    overflow: hidden;
     max-width: 95vw;
     max-height: 95vh;
     min-width: 300px;
@@ -64,3 +65,38 @@
   }
 }
 
+.graphics-post-show-content {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  z-index: 1;
+  appearance: none;
+  background: rgba(0,0,0,.8);
+  color: #fff;
+  border: none;
+  padding: 0.5rem;
+  &::before {
+    display: inline-block;
+    content: '›';
+    transition: transform 200ms;
+  }
+}
+
+.graphics-post-content {
+  position: absolute;
+  bottom: 0;
+  right: 2rem;
+  transform: translateY(100%);
+  transition: transform 200ms;
+  z-index: 0;
+  background: rgba(0,0,0,.8);
+  padding: 1rem;
+  width: 280px;
+  color: #fff;
+  &--visible {
+    transform: translateY(0);
+  }
+  &--visible + .graphics-post-show-content::before {
+    transform: rotate(-90deg);
+  }
+}
