@@ -6,6 +6,7 @@ const { Route, inject } = Ember
 const { Promise } = RSVP
 
 export default Route.extend({
+  headData: inject.service(),
   rad: inject.service(),
   radBackground: inject.service(),
 
@@ -25,5 +26,21 @@ export default Route.extend({
       .then(([ cast, radHome ]) =>
         cast ? [ cast, ...radHome.data ] : radHome.data
       )
+  },
+
+  afterModel() {
+    let description = ''
+    let publisher = 'sarahtherad.com'
+    let url = `https://${publisher}/`
+
+    this.set('headData.jsonld', {
+      '@context': 'http://schema.org',
+      '@type': 'Website',
+      publisher,
+      url,
+      description,
+    })
+    this.set('headData.url', url)
+    this.set('headData.description', description)
   }
 })

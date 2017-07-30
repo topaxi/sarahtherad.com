@@ -74,13 +74,15 @@ add_action('rest_api_init', function() {
 
 function serialize_post($post) {
   setup_postdata($post);
+  $excerpt = get_the_excerpt($post);
   $ret = array(
     'id' => $post->ID,
     'type' => 'posts',
     'slug' => $post->post_name,
     'date' => $post->post_date,
     'title' => $post->post_title,
-    'excerpt' => apply_filters('the_excerpt', get_the_excerpt($post)),
+    'description' => $excerpt,
+    'excerpt' => apply_filters('the_excerpt', $excerpt),
     'content' => apply_filters('the_content', $post->post_content),
   );
   wp_reset_postdata();

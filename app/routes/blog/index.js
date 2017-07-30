@@ -1,4 +1,4 @@
-import Ember from 'ember'
+import Ember from 'ember';
 
 const { Route, inject } = Ember
 
@@ -12,19 +12,19 @@ export default Route.extend({
   },
 
   model() {
-    return this.get('rad').graphics()
+    return this.get('rad').posts()
   },
 
   afterModel() {
     let publisher = 'sarahtherad.com'
-    let url = `https://${publisher}/graphics/`
+    let url = `https://${publisher}/blog/`
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
       '@type': 'Series',
       publisher,
       url,
-      name: 'Graphics'
+      name: 'Articles'
     })
     this.set('headData.url', url)
   }
