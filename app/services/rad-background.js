@@ -7,6 +7,7 @@ const { Service, inject } = Ember
 
 export default Service.extend({
   rad: inject.service(),
+  fastboot: inject.service(),
 
   init() {
     this.clear()
@@ -20,10 +21,14 @@ export default Service.extend({
   reload() {
     return this.get('rad').background()
       .then(res => res.data)
-      .then(data =>
-        Promise.race([ fetchImage(data.url), wait(200) ])
-          .then(() => data)
-      )
+      .then(data => {
+        if (!this.get('fastboot.isFastBoot')) {
+          return Promise.race([ fetchImage(data.url), wait(200) ])
+            .then(() => data)
+        }
+
+        return data
+      })
       .then(data => {
         this.set('background', data.url)
         this.set('color', data.color)
