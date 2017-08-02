@@ -8,6 +8,7 @@ const { Service, inject } = Ember
 export default Service.extend({
   rad: inject.service(),
   fastboot: inject.service(),
+  initial: true,
 
   init() {
     this.clear()
@@ -19,13 +20,27 @@ export default Service.extend({
   },
 
   reload() {
+    let isFastBoot = this.get('fastboot.isFastBoot')
+    if (!isFastBoot && this.initial) {
+      this.initial = false
+      let data = this.get('fastboot.shoebox').retrieve('initial-background')
+      if (data) {
+        this.set('background', data.url)
+        this.set('color', data.color)
+
+        return Promise.resolve(data)
+      }
+    }
+
     return this.get('rad').background()
       .then(res => res.data)
       .then(data => {
-        if (!this.get('fastboot.isFastBoot')) {
+        if (!isFastBoot) {
           return Promise.race([ fetchImage(data.url), wait(200) ])
             .then(() => data)
         }
+
+        this.get('fastboot.shoebox').put('initial-background', data)
 
         return data
       })
