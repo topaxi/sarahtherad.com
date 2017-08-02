@@ -22,7 +22,6 @@ module.exports = function(deployTarget) {
     ENV['scp'] = {
       username: 'sarah',
       host: 'sarahtherad.com',
-      directory: 'tmp/sarahtherad.com/.',
       path: '/home/sarah/wordpress-test/wp-content/themes/sarahtherad.com',
       beforeUpload() {
         fs.mkdirSync('tmp/sarahtherad.com')
@@ -30,6 +29,7 @@ module.exports = function(deployTarget) {
         copySync('wordpress-theme/style.css', 'tmp/sarahtherad.com/style.css')
         copySync('wordpress-theme/index.php', 'tmp/sarahtherad.com/index.php')
         copySync('wordpress-theme/functions.php', 'tmp/sarahtherad.com/functions.php')
+        fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
       }
     }
   }
