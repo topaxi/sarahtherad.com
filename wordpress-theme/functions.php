@@ -115,6 +115,9 @@ function serialize_graphic($post, $with_content = false) {
       'caption' => $attachments->field('caption') ?: null,
       'mime' => "{$attachments->type()}/{$attachments->subtype()}",
     );
+    if (!$with_content) {
+      break;
+    }
   }
   wp_reset_postdata();
   return $graphics_post;
