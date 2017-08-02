@@ -32,13 +32,13 @@ add_action('rest_api_init', function() {
   register_rest_route('rad', '/posts/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_post(get_rad_post($req['slug']));
+      return serialize_post(get_rad_post($req['slug']), true);
     },
   ]);
   register_rest_route('rad', '/graphics/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_graphic(get_rad_post($req['slug']));
+      return serialize_graphic(get_rad_post($req['slug']), true);
     },
   ]);
   register_rest_route('rad', '/posts', [
@@ -72,10 +72,10 @@ add_action('rest_api_init', function() {
   ]);
 });
 
-function serialize_post($post) {
+function serialize_post($post, $with_content = false) {
   setup_postdata($post);
   $excerpt = get_the_excerpt($post);
-  $ret = array(
+  $ret = [
     'id' => $post->ID,
     'type' => 'posts',
     'slug' => $post->post_name,
@@ -83,24 +83,29 @@ function serialize_post($post) {
     'title' => $post->post_title,
     'description' => $excerpt,
     'excerpt' => apply_filters('the_excerpt', $excerpt),
-    'content' => apply_filters('the_content', $post->post_content),
-  );
+  ];
+  if ($with_content) {
+    $ret['content'] = apply_filters('the_content', $post->post_content);
+  }
   wp_reset_postdata();
   return $ret;
 }
 
-function serialize_graphic($post) {
+function serialize_graphic($post, $with_content = false) {
   setup_postdata($post);
   $attachments = new Attachments('attachments', $post->ID);
-  $graphics_post = array(
+  $graphics_post = [
     'id' => $post->ID,
     'type' => 'graphics',
     'slug' => $post->post_name,
     'date' => $post->post_date,
     'title' => $post->post_title,
-    'content' => apply_filters('the_content', $post->post_content),
-    'pictures' => array(),
-  );
+    'pictures' => [],
+  ];
+  if ($with_content) {
+    $graphics_post['content'] =
+      apply_filters('the_content', $post->post_content);
+  }
   while ($attachments->get()) {
     $graphics_post['pictures'][] = array(
       'src' => $attachments->src('original'),
