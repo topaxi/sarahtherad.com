@@ -8,7 +8,7 @@ module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
     'esw-index': {
       version: '1',
-      excludeScope: [/\/wp-content/,/\/wp-admin/],
+      excludeScope: [/\.php$/,/\bwp-\w+\//],
     },
     'esw-cache-first': {
       version: '1',
