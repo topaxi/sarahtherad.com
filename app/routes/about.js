@@ -1,11 +1,9 @@
 import Ember from 'ember'
 
-const { Route, inject } = Ember
+const { Route } = Ember
 
 export default Route.extend({
-  radBackground: inject.service(),
-
   afterModel() {
-    return this.get('radBackground').clear()
+    return this.radBackground.clear()
   },
 })

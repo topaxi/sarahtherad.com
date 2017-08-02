@@ -1,18 +1,16 @@
 import Ember from 'ember'
+import shoebox from '../utils/shoebox'
 
-const { Route, inject } = Ember
+const { Route } = Ember
 
 export default Route.extend({
-  headData: inject.service(),
-  rad: inject.service(),
-  radBackground: inject.service(),
-
   beforeModel() {
-    this.get('radBackground').reload()
+    this.radBackground.reload()
   },
 
+  @shoebox
   model() {
-    return this.get('rad').graphics()
+    return this.rad.graphics()
   },
 
   afterModel() {

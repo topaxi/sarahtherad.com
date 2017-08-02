@@ -6,6 +6,9 @@ var targets = require('./config/targets');
 
 module.exports = function(defaults) {
   var app = new EmberApp(defaults, {
+    babel: {
+      plugins: [ 'babel-plugin-transform-decorators-legacy' ],
+    },
     'esw-index': {
       version: '1',
       excludeScope: [/\.php$/,/\bwp-\w+\//],

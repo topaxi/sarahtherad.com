@@ -1,20 +1,20 @@
 import fetch from 'fetch'
 import Ember from 'ember'
 import query from '../utils/query'
+import shoebox from '../utils/shoebox'
 
 const LIMIT = 20;
 
-const { Route, inject } = Ember
+const { Route } = Ember
 
 export default Route.extend({
-  radBackground: inject.service(),
-
   queryParams: {
     page: {
       refreshModel: true
     }
   },
 
+  @shoebox
   model({ page }) {
     let params = query({ offset: page * LIMIT, limit: LIMIT })
     let url = `https://api.mixcloud.com/derdienstagmorgen/cloudcasts/${params}`
@@ -24,6 +24,6 @@ export default Route.extend({
   },
 
   afterModel() {
-    this.get('radBackground').clear()
+    this.radBackground.clear()
   },
 })

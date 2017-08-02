@@ -1,11 +1,11 @@
 import Ember from 'ember'
+import shoebox from '../../utils/shoebox'
 
-const { Route, inject } = Ember
+const { Route } = Ember
 
 export default Route.extend({
-  rad: inject.service(),
-
+  @shoebox
   model({ slug }) {
-    return this.get('rad').graphic(slug)
+    return this.rad.graphic(slug)
   },
 })

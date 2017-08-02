@@ -1,18 +1,16 @@
 import Ember from 'ember'
+import shoebox from '../../utils/shoebox'
 
-const { Route, inject } = Ember
+const { Route } = Ember
 
 export default Route.extend({
-  headData: inject.service(),
-  rad: inject.service(),
-  radBackground: inject.service(),
-
+  @shoebox
   model({ slug }) {
-    return this.get('rad').post(slug)
+    return this.rad.post(slug)
   },
 
   afterModel(model) {
-    this.get('radBackground').clear()
+    this.radBackground.clear()
     let publisher = 'sarahtherad.com'
     let url = `https://${publisher}/blog/${model.slug}`
 

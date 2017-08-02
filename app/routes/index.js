@@ -1,15 +1,13 @@
 import fetch from 'fetch'
 import RSVP from 'rsvp'
 import Ember from 'ember'
+import shoebox from '../utils/shoebox'
 
-const { Route, inject } = Ember
+const { Route } = Ember
 const { Promise } = RSVP
 
 export default Route.extend({
-  headData: inject.service(),
-  rad: inject.service(),
-  radBackground: inject.service(),
-
+  @shoebox
   model() {
     return Promise.all([
       Promise.race([
@@ -20,8 +18,8 @@ export default Route.extend({
           .catch(_err => null),
         new Promise(resolve => setTimeout(resolve, 500)),
       ]),
-      this.get('rad').home(),
-      this.get('radBackground').reload(),
+      this.rad.home(),
+      this.radBackground.reload(),
     ])
       .then(([ cast, radHome ]) =>
         cast ? [ cast, ...radHome.data ] : radHome.data
