@@ -39,7 +39,7 @@ module.exports = function(deployTarget) {
         fs.mkdirSync('tmp/sarahtherad.com')
         fs.mkdirSync('tmp/sarahtherad.com/server')
         serverFiles.forEach(file =>
-          copySync(`server/${file}`, `tmp/sarahtherad.com/server/${file}`)
+          copySync(`fastboot-server/${file}`, `tmp/sarahtherad.com/server/${file}`)
         )
         fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
         wordpressFiles.forEach(file =>
