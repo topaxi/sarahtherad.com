@@ -1,6 +1,18 @@
 /* eslint node: true */
 const fs = require('fs')
 
+const serverFiles = [
+  'app.js',
+  'package.json',
+  'yarn.lock',
+]
+
+const wordpressFiles = [
+  'style.css',
+  'index.php',
+  'functions.php',
+]
+
 module.exports = function(deployTarget) {
   var ENV = {
     build: {}
@@ -25,10 +37,14 @@ module.exports = function(deployTarget) {
       path: '/home/sarah/wordpress-test/wp-content/themes/sarahtherad.com',
       beforeUpload() {
         fs.mkdirSync('tmp/sarahtherad.com')
+        fs.mkdirSync('tmp/sarahtherad.com/server')
+        serverFiles.forEach(file =>
+          copySync(`server/${file}`, `tmp/sarahtherad.com/server/${file}`)
+        )
         fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
-        copySync('wordpress-theme/style.css', 'tmp/sarahtherad.com/style.css')
-        copySync('wordpress-theme/index.php', 'tmp/sarahtherad.com/index.php')
-        copySync('wordpress-theme/functions.php', 'tmp/sarahtherad.com/functions.php')
+        wordpressFiles.forEach(file =>
+          copySync(`wordpress-theme/${file}`, `tmp/sarahtherad.com/${file}`)
+        )
         fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
       }
     }

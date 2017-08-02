@@ -1,0 +1,14 @@
+{
+  "name": "sarahtherad.com",
+  "version": "1.0.0",
+  "description": "FastBoot for sarahtherad.com",
+  "main": "app.js",
+  "repository": "https://github.com/topaxi/sarahtherad.com.git",
+  "author": "Damian Senn <damian.senn@topaxi.codes>",
+  "license": "MIT",
+  "dependencies": {
+    "fastboot-app-server": "^1.0.1",
+    "fastboot-watch-notifier": "^3.0.0",
+    "node-fetch": "^1.7.1"
+  }
+}
