@@ -85,7 +85,12 @@ function serialize_post($post, $with_content = false) {
     'excerpt' => apply_filters('the_excerpt', $excerpt),
   ];
   if ($with_content) {
+    list($color) = get_post_custom_values('color', $post->ID);
     $ret['content'] = apply_filters('the_content', $post->post_content);
+    $ret['background'] = [
+      'url' => get_the_post_thumbnail_url($post->ID),
+      'color' => $color ?: '#fff',
+    ];
   }
   wp_reset_postdata();
   return $ret;

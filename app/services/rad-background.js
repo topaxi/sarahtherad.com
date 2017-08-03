@@ -19,14 +19,18 @@ export default Service.extend({
     this.set('color', '#000')
   },
 
+  setBackground(background, color) {
+    this.set('background', background)
+    this.set('color', color)
+  },
+
   reload() {
     let isFastBoot = this.get('fastboot.isFastBoot')
     if (!isFastBoot && this.initial) {
       this.initial = false
       let data = this.get('fastboot.shoebox').retrieve('initial-background')
       if (data) {
-        this.set('background', data.url)
-        this.set('color', data.color)
+        this.setBackground(data.url, data.color)
 
         return Promise.resolve(data)
       }
@@ -45,8 +49,7 @@ export default Service.extend({
         return data
       })
       .then(data => {
-        this.set('background', data.url)
-        this.set('color', data.color)
+        this.setBackground(data.url, data.color)
 
         return data
       })

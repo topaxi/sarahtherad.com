@@ -10,7 +10,6 @@ export default Route.extend({
   },
 
   afterModel(model) {
-    this.radBackground.clear()
     let publisher = 'sarahtherad.com'
     let url = `https://${publisher}/blog/${model.slug}`
 
@@ -34,5 +33,9 @@ export default Route.extend({
     })
     this.set('headData.url', url)
     this.set('headData.description', model.description)
+    this.radBackground.setBackground(
+      model.background.url,
+      model.background.color,
+    )
   },
 })
