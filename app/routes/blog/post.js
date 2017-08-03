@@ -27,7 +27,7 @@ export default Route.extend({
       'headline': model.title,
       url,
       datePublished: model.date,
-      //dateModified: '2016-06-17T07:12:13.622Z',
+      dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
       description: model.description,
     })

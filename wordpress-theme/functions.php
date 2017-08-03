@@ -80,6 +80,7 @@ function serialize_post($post, $with_content = false) {
     'type' => 'posts',
     'slug' => $post->post_name,
     'date' => $post->post_date,
+    'modified' => $post->post_modified,
     'title' => $post->post_title,
     'description' => $excerpt,
     'excerpt' => apply_filters('the_excerpt', $excerpt),
@@ -104,6 +105,7 @@ function serialize_graphic($post, $with_content = false) {
     'type' => 'graphics',
     'slug' => $post->post_name,
     'date' => $post->post_date,
+    'modified' => $post->post_modified,
     'title' => $post->post_title,
     'pictures' => [],
   ];
