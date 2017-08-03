@@ -20,10 +20,12 @@
   {{else}}
     <img src={{currentPicture.src}} alt={{currentPicture.title}}>
   {{/if}}
-  <section class="graphics-post-content {{if showContent 'graphics-post-content--visible'}}">
-    {{{model.content}}}
-  </section>
-  <button class="graphics-post-show-content" {{action 'show-content'}}>
-    Information
-  </button>
+  {{#if model.content}}
+    <section class="graphics-post-content {{if showContent 'graphics-post-content--visible'}}">
+      {{{model.content}}}
+    </section>
+    <button class="graphics-post-show-content" {{action 'show-content'}}>
+      Information
+    </button>
+  {{/if}}
 </article>
