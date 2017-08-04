@@ -38,6 +38,10 @@ s-article-list {
   justify-content: flex-end;
 }
 
+.list-item--radio-show {
+  font-size: 16px;
+}
+
 .list-item--auto {
   grid-column: auto;
   grid-row: auto;
