@@ -80,8 +80,8 @@ function serialize_post($post, $with_content = false) {
     'id' => $post->ID,
     'type' => 'posts',
     'slug' => $post->post_name,
-    'date' => $post->post_date,
-    'modified' => $post->post_modified,
+    'date' => format_date($post->post_date),
+    'modified' => format_date($post->post_modified),
     'title' => $post->post_title,
     'description' => $excerpt,
     'excerpt' => apply_filters('the_excerpt', $excerpt),
@@ -106,8 +106,8 @@ function serialize_graphic($post, $with_content = false) {
     'id' => $post->ID,
     'type' => 'graphics',
     'slug' => $post->post_name,
-    'date' => $post->post_date,
-    'modified' => $post->post_modified,
+    'date' => format_date($post->post_date),
+    'modified' => format_date($post->post_modified),
     'title' => $post->post_title,
     'pictures' => [],
   ];
@@ -176,4 +176,8 @@ function get_rad_post($slug) {
   ]);
 
   return $post;
+}
+
+function format_date($date) {
+  return str_replace(' ', 'T', $date);
 }
