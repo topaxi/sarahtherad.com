@@ -75,6 +75,7 @@ add_action('rest_api_init', function() {
 function serialize_post($post, $with_content = false) {
   setup_postdata($post);
   $excerpt = get_the_excerpt($post);
+  list($lang) = get_post_custom_values('language', $post->ID);
   $ret = [
     'id' => $post->ID,
     'type' => 'posts',
@@ -84,6 +85,7 @@ function serialize_post($post, $with_content = false) {
     'title' => $post->post_title,
     'description' => $excerpt,
     'excerpt' => apply_filters('the_excerpt', $excerpt),
+    'lang' => $lang ?: null,
   ];
   if ($with_content) {
     list($color) = get_post_custom_values('color', $post->ID);

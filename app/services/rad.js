@@ -4,7 +4,7 @@ import query from '../utils/query'
 import ENV from '../config/environment'
 
 export default Ember.Service.extend({
-  _url: ENV.apiHost,
+  _url: ENV.apiHost || '',
 
   url(path, q = {}) {
     return `${this._url}/wp-json/${path}${query(q)}`
