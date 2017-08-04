@@ -23,8 +23,10 @@ module.exports = function(defaults) {
     'esw-cache-fallback': {
       version: '1',
       patterns: [
-        'https://api.mixcloud.com/derdienstagmorgen/(?:.*)',
-        'https://thumbnailer.mixcloud.com/(?:.*)',
+        '/wp-json/.+',
+        '/wp-content/.+',
+        'https://api.mixcloud.com/derdienstagmorgen/.+',
+        'https://thumbnailer.mixcloud.com/.+',
       ],
     },
     imagemin: {
