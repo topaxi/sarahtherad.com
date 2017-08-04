@@ -52,13 +52,16 @@ main {
   margin-top: 10rem;
   padding: 1rem;
   flex: 1;
-  display: flex;
+  display: block;
   > .liquid-container {
     transform: none;
     flex: 1;
   }
   > .liquid-container > .liquid-child {
     min-height: 100%;
+  }
+  @supports (display: grid) {
+    display: flex;
   }
 }
 

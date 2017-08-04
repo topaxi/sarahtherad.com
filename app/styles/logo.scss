@@ -32,18 +32,20 @@
 }
 
 /* extra space for logo */
-s-article-list::before {
-  content: '';
-  pointer-events: none;
-  min-width: calc(300px - 1rem);
-  min-height: calc(300px - 1rem - 2rem);
-  grid-column: -6 / -1;
-  grid-row: 1 / 6;
-}
-
-@media screen and (min-width: 1024px) {
+@supports (display: grid) {
   s-article-list::before {
-    width: calc(300px - 4rem);
-    height: calc(300px - 4rem);
+    content: '';
+    pointer-events: none;
+    min-width: calc(300px - 1rem);
+    min-height: calc(300px - 1rem - 2rem);
+    grid-column: -6 / -1;
+    grid-row: 1 / 6;
+  }
+
+  @media screen and (min-width: 1024px) {
+    s-article-list::before {
+      width: calc(300px - 4rem);
+      height: calc(300px - 4rem);
+    }
   }
 }

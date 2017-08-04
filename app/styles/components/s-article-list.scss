@@ -13,6 +13,7 @@ s-article-list {
   display: flex;
   flex-direction: column;
   margin-bottom: 1rem;
+  max-width: 640px;
 }
 
 .list-item--half-height {
@@ -66,10 +67,22 @@ s-article-list {
 }
 @media screen and (min-width: 768px) {
   s-article-list {
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
   }
+
   .list-item {
-    margin-bottom: 0;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+  }
+  @supports (display: grid) {
+    s-article-list {
+      display: grid;
+    }
+    .list-item {
+      margin-right: 0;
+      margin-bottom: 0;
+    }
   }
 }
 @media screen and (min-height: 480px) {
