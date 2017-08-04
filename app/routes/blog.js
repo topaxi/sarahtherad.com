@@ -1,4 +1,16 @@
 import Ember from 'ember'
 
-export default Ember.Route.extend({
+const { Route, inject } = Ember
+
+export default Route.extend({
+  menuTitle: inject.service(),
+
+  activate() {
+    this.set('menuTitle.title', 'Blog')
+    this.set('menuTitle.route', 'blog.index')
+  },
+
+  deactivate() {
+    this.get('menuTitle').reset()
+  },
 })

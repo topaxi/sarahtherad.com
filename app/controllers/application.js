@@ -10,6 +10,7 @@ const {
 export default Controller.extend({
   rootclass: inject.service(),
   radBackground: inject.service(),
+  menuTitle: inject.service(),
 
   backgroundStyle: computed('radBackground.background', function() {
     let url = this.get('radBackground.background')

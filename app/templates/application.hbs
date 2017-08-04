@@ -24,6 +24,9 @@
         </ul>
       </nav>
     </div>
+    {{#if menuTitle.title}}
+      <h1 class="menu-title">{{link-to menuTitle.title menuTitle.route}}</h1>
+    {{/if}}
   </header>
   <main class={{if open 'menu-open'}}>{{liquid-outlet}}</main>
 </div>

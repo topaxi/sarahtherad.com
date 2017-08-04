@@ -86,6 +86,12 @@ header {
   }
 }
 
+.menu-title {
+  position: absolute;
+  top: 24px;
+  left: 100px;
+}
+
 .graphics-overlay,
 .graphics-post {
   position: fixed;

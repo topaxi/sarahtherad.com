@@ -1,9 +1,11 @@
 import Ember from 'ember'
 import shoebox from '../utils/shoebox'
 
-const { Route } = Ember
+const { Route, inject } = Ember
 
 export default Route.extend({
+  menuTitle: inject.service(),
+
   beforeModel() {
     this.radBackground.reload()
   },
@@ -25,5 +27,14 @@ export default Route.extend({
       name: 'Graphics'
     })
     this.set('headData.url', url)
-  }
+  },
+
+  activate() {
+    this.set('menuTitle.title', 'Graphics')
+    this.set('menuTitle.route', 'graphics.index')
+  },
+
+  deactivate() {
+    this.get('menuTitle').reset()
+  },
 })
