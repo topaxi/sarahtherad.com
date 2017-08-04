@@ -6,17 +6,18 @@ export default function shoeboxModelDecorator(target, key, descriptor) {
   descriptor.value = function shoeboxModel() {
     if (!initial) return original.apply(this, arguments)
 
+    let shoeboxName = `${this.routeName}__${key}`
     let shoebox = this.get('fastboot.shoebox')
     if (this.get('fastboot.isFastBoot')) {
       return RSVP.resolve(original.apply(this, arguments))
         .then(data => {
-          shoebox.put(`${this.routeName}#${key}`, data)
+          shoebox.put(shoeboxName, data)
           return data
         })
     }
 
     initial = false
-    let data = shoebox.retrieve(`${this.routeName}#${key}`)
+    let data = shoebox.retrieve(shoeboxName)
 
     if (!data) return original.apply(this, arguments)
 
