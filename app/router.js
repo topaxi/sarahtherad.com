@@ -1,12 +1,25 @@
 import Ember from 'ember';
 import config from './config/environment';
 
-const { Router: EmberRouter, Route, inject } = Ember
+const { Router: EmberRouter, Route, inject, run } = Ember
 
 const Router = EmberRouter.extend({
   location: config.locationType,
-  rootURL: config.rootURL
-});
+  rootURL: config.rootURL,
+
+  didTransition() {
+    this._super(...arguments)
+
+    if (typeof ga === 'function') {
+      run.schedule('afterRender', () => {
+        ga('send', 'pageview', {
+          'page': this.get('url'),
+          'title': this.get('url')
+        })
+      })
+    }
+  }
+})
 
 Route.reopen({
   rootclass: inject.service(),
