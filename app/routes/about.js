@@ -10,7 +10,7 @@ export default Route.extend({
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
       '@type': 'Person',
-      'sameAs': 'https://twitter.com/sarah_therad'
+      'sameAs': 'https://twitter.com/sarah_therad',
       publisher,
       url,
     })
