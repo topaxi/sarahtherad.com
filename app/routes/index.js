@@ -7,6 +7,10 @@ const { Route } = Ember
 const { Promise } = RSVP
 
 export default Route.extend({
+  beforeModel() {
+    this.radBackground.reload()
+  },
+
   @shoebox
   model() {
     return Promise.all([
@@ -19,7 +23,6 @@ export default Route.extend({
         new Promise(resolve => setTimeout(resolve, 500)),
       ]),
       this.rad.home(),
-      this.radBackground.reload(),
     ])
       .then(([ cast, radHome ]) =>
         cast ? [ cast, ...radHome.data ] : radHome.data
