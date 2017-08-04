@@ -90,6 +90,10 @@ header {
   position: absolute;
   top: 24px;
   left: 100px;
+
+  @media screen and (max-width: 480px) {
+    display: none;
+  }
 }
 
 .graphics-overlay,
