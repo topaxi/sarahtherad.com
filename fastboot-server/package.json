@@ -9,6 +9,6 @@
   "dependencies": {
     "fastboot-app-server": "^1.0.1",
     "fastboot-watch-notifier": "^3.0.0",
-    "node-fetch": "^1.7.1"
+    "node-fetch": "^1.7.2"
   }
 }
