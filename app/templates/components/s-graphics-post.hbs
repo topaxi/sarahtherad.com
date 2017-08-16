@@ -1,7 +1,7 @@
 <article lang={{model.lang}}>
   <div class="graphics-post-title">
     <h1>{{model.title}}</h1>
-    {{#link-to 'graphics'}}&times;{{/link-to}}
+    {{#link-to 'graphics'}}{{s-close}}{{/link-to}}
   </div>
   {{#if hasMultiple}}
     {{#swiper-container pagination=hasMultiple currentSlide=currentPictureIndex}}
@@ -12,10 +12,12 @@
       {{/each}}
     {{/swiper-container}}
     {{#if currentPictureIndex}}
-      <button class="previous-picture" {{action 'previous'}}>‹</button>
+      <button class="previous-picture" {{action 'previous'}}>
+        {{~s-chevron rotate=true~}}
+      </button>
     {{/if}}
     {{#if hasNext}}
-      <button class="next-picture" {{action 'next'}}>›</button>
+      <button class="next-picture" {{action 'next'}}>{{s-chevron}}</button>
     {{/if}}
   {{else}}
     <img src={{currentPicture.src}} alt={{currentPicture.title}}>

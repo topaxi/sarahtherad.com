@@ -32,19 +32,26 @@
   .next-picture,
   .previous-picture {
     appearance: none;
+    cursor: pointer;
     border: 0;
     background: none;
     position: absolute;
-    font-size: 4rem;
-    line-height: 4rem;
-    height: 4rem;
-    top: calc(50% - 2rem - 2px);
+    top: calc(50% - 1rem - 2px);
+    z-index: 1;
   }
   .previous-picture {
-    left: 0;
+    left: 1rem;
   }
   .next-picture {
-    right: 0;
+    right: 1rem;
+  }
+  .chevron {
+    width: 2rem;
+    height: 2rem;
+  }
+  .close {
+    width: 1.5rem;
+    height: 1.5rem;
   }
 }
 .graphics-post--svg {
