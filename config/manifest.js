@@ -15,17 +15,17 @@ module.exports = function(/* environment, appConfig */) {
     theme_color: '#000',
     icons: [
       {
-        src: 'pictures/logo192.png',
+        src: 'app-logos/logo192.png',
         sizes: '192x192',
         type: 'image/png',
       },
       {
-        src: 'pictures/logo512.png',
+        src: 'app-logos/logo512.png',
         sizes: '512x512',
         type: 'image/png',
       },
       {
-        src: 'pictures/logo1024.png',
+        src: 'app-logos/logo1024.png',
         sizes: '1024x1024',
         type: 'image/png',
       }
