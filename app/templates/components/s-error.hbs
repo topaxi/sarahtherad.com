@@ -8,7 +8,7 @@
   {{else}}
     <h1>Error</h1>
 
-    {{model.message}}
+    {{if model.message model.message 'Unknown error'}}
 
     <a href="/">Back to sarahtherad.com</a>
   {{/if}}
