@@ -47,6 +47,7 @@ Router.map(function() {
     this.route('post', { path: ':slug' });
   });
   this.route('about');
+  this.route('not-found', { path: '/*path' });
 });
 
 export default Router;

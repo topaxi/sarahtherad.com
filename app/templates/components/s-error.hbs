@@ -1,0 +1,15 @@
+<div class="page-content">
+  {{#if networkError}}
+    <h1>Network Error</h1>
+
+    <p>You are currently {{if onLine 'online' 'offline'}}</p>
+
+    <a href="">Reload the page</a>
+  {{else}}
+    <h1>Error</h1>
+
+    {{model.message}}
+
+    <a href="/">Back to sarahtherad.com</a>
+  {{/if}}
+</div>
