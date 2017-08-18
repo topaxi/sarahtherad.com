@@ -7,7 +7,11 @@
     {{#swiper-container pagination=hasMultiple currentSlide=currentPictureIndex}}
       {{#each model.pictures as |picture|}}
         {{#swiper-slide}}
-          <img src={{picture.src}} alt={{picture.title}}>
+          {{#if (is-pdf picture.src)}}
+            <iframe src={{picture.src}}></iframe>
+          {{else}}
+            <img src={{picture.src}} alt={{picture.title}}>
+          {{/if}}
         {{/swiper-slide}}
       {{/each}}
     {{/swiper-container}}
