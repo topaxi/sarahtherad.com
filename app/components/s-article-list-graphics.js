@@ -2,9 +2,10 @@ import fetch from 'fetch'
 import Ember from 'ember'
 import ArticleListItemComponent from './s-article-list-item'
 
-const { computed } = Ember
+const { computed, inject } = Ember
 
 export default ArticleListItemComponent.extend({
+  fastboot: inject.service(),
   classNames: [ 'list-item--graphics' ],
   classNameBindings: [ 'isWide:list-item--wide' ],
   model: null,
@@ -22,14 +23,16 @@ export default ArticleListItemComponent.extend({
       return this.get('picture.width') > this.get('picture.height')
     }
 
-    fetch(this.get('picture.src'))
-      .then(res => res.text())
-      .then(svg => {
-        let m = /viewBox=".*?\s+.*?\s+(.*?)\s+(.*?)"/.exec(svg)
+    if (!this.get('fastboot.isFastBoot')) {
+      fetch(this.get('picture.src'))
+        .then(res => res.text())
+        .then(svg => {
+          let m = /viewBox=".*?\s+.*?\s+(.*?)\s+(.*?)"/.exec(svg)
 
-        if (m) {
-          this.set('isWide', parseFloat(m[1]) > parseFloat(m[2]))
-        }
-      })
+          if (m) {
+            this.set('isWide', parseFloat(m[1]) > parseFloat(m[2]))
+          }
+        })
+    }
   }),
 })
