@@ -26,6 +26,14 @@ export default Component.extend({
     return this.get('model.pictures.length') > 1
   }),
 
+  didInsertElement() {
+    document.documentElement.classList.add('no-scroll')
+  },
+
+  willDestroyElement() {
+    document.documentElement.classList.remove('no-scroll')
+  },
+
   actions: {
     'show-content'() {
       this.toggleProperty('showContent')
