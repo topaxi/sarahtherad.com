@@ -8,7 +8,7 @@
       {{#each model.pictures as |picture|}}
         {{#swiper-slide}}
           {{#if (is-pdf picture.src)}}
-            <iframe src={{picture.src}}></iframe>
+            {{pdf-viewer src=picture.src}}
           {{else}}
             <img src={{picture.src}} alt={{picture.title}}>
           {{/if}}
