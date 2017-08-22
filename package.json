@@ -48,6 +48,7 @@
     "ember-pad": "^1.2.2",
     "ember-page-title": "^3.2.2",
     "ember-resolver": "^4.4.0",
+    "ember-router-service-polyfill": "^1.0.1",
     "ember-service-worker": "^0.6.8",
     "ember-service-worker-asset-cache": "^0.6.1",
     "ember-service-worker-cache-fallback": "^0.6.1",
