@@ -20,6 +20,7 @@
 {{#with model.picture as |picture|}}
   <meta property="og:image" content={{picture}}>
   <meta name="twitter:image" content={{picture}}>
+  <link rel="image_src" href={{picture}}>
 {{/with}}
 
 {{#with model.prev as |prev|}}
