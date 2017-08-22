@@ -30,9 +30,10 @@ export default Route.extend({
       datePublished: model.date,
       dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
-      description: model.description,
+      description: model.content,
     })
     this.set('headData.url', url)
+    this.set('headData.picture', model.pictures[0].src)
     this.set('headData.description', model.content)
   },
 })

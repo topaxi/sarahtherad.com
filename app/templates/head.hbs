@@ -17,6 +17,11 @@
   <meta name="twitter:url" content={{url}}>
 {{/with}}
 
+{{#with model.picture as |picture|}}
+  <meta property="og:image" content={{picture}}>
+  <meta name="twitter:image" content={{picture}}>
+{{/with}}
+
 {{#with model.prev as |prev|}}
   <link rel="prev" href={{prev}}>
 {{/with}}
