@@ -17,14 +17,14 @@ export default Route.extend({
       '@context': 'http://schema.org',
       '@type': 'VisualArtwork',
       publisher,
-      'author': {
+      author: {
         '@type': 'Person',
         name: 'Sarahtherad',
         image: '',
         url: `https://${publisher}/`,
         sameAs: 'https://twitter.com/sarah_therad'
       },
-      'headline': model.title,
+      headline: model.title,
       url,
       image: model.pictures[0].src,
       datePublished: model.date,
