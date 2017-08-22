@@ -34,6 +34,7 @@ export default Route.extend({
     })
     this.set('headData.url', url)
     this.set('headData.picture', model.pictures[0].src)
+    this.set('headData.pictureDescription', model.title)
     this.set('headData.description', model.content)
   },
 })

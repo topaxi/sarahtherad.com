@@ -23,6 +23,11 @@
   <link rel="image_src" href={{picture}}>
 {{/with}}
 
+{{#with model.pictureDescription as |pictureDescription|}}
+  <meta property="og:image:alt" content={{pictureDescription}}>
+  <meta name="twitter:image:alt" content={{pictureDescription}}>
+{{/with}}
+
 {{#with model.prev as |prev|}}
   <link rel="prev" href={{prev}}>
 {{/with}}
