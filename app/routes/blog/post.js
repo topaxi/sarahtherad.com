@@ -32,6 +32,7 @@ export default Route.extend({
       description: model.description,
     })
     this.set('headData.url', url)
+    this.set('headData.picture', model.background.url)
     this.set('headData.description', model.description)
     this.radBackground.setBackground(
       model.background.url,
