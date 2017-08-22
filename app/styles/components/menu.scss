@@ -52,6 +52,9 @@ main.menu-open {
 .menu a:hover {
   font-weight: bold;
 }
+.menu a.active {
+  text-decoration: underline;
+}
 
 @keyframes drop-fade {
   from {
