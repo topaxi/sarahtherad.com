@@ -6,12 +6,16 @@ moduleForComponent('is-pdf', 'helper:is-pdf', {
   integration: true
 });
 
-// Replace this with your real tests.
-test('it renders', function(assert) {
-  this.set('inputValue', '1234');
+test('it works', function(assert) {
+  this.set('inputValue', '1234pdf');
 
   this.render(hbs`{{is-pdf inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
-});
+  assert.equal(this.$().text().trim(), 'false');
 
+  this.set('inputValue', '1234.pdf');
+
+  this.render(hbs`{{is-pdf inputValue}}`);
+
+  assert.equal(this.$().text().trim(), 'true');
+});

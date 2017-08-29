@@ -15,7 +15,11 @@ const RadService = Service.extend({
 })
 
 moduleFor('route:graphics', 'Unit | Route | graphics', {
-  needs: ['service:rootclass', 'service:rad-background'],
+  needs: [
+    'service:rootclass',
+    'service:rad-background',
+    'service:menuTitle',
+  ],
 
   beforeEach() {
     this.register('service:rad', RadService)

@@ -6,20 +6,9 @@ moduleForComponent('s-error', 'Integration | Component | s error', {
 });
 
 test('it renders', function(assert) {
-
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
   this.render(hbs`{{s-error}}`);
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#s-error}}
-      template block text
-    {{/s-error}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(this.$().text().includes('Unknown error'))
+  assert.ok(this.$('a').text().trim(), 'Back to saratherad.com')
+  assert.ok(this.$('a').prop('href'), '/')
 });

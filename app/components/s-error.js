@@ -1,6 +1,6 @@
 import Ember from 'ember'
 
-const { Component, computed, inject } = Ember
+const { Component, computed } = Ember
 
 export default Component.extend({
   init() {
@@ -15,7 +15,7 @@ export default Component.extend({
 
   onLine: computed(() => navigator.onLine).volatile(),
 
-  updateOnlineStatus(event) {
+  updateOnlineStatus(_event) {
     this.set('onLine', navigator.onLine)
   },
 

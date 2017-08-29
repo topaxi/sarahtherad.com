@@ -6,20 +6,7 @@ moduleForComponent('s-close', 'Integration | Component | s close', {
 });
 
 test('it renders', function(assert) {
+  this.render(hbs`{{s-close}}`)
 
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{s-close}}`);
-
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#s-close}}
-      template block text
-    {{/s-close}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+  assert.equal(this.$('svg').length, 1)
+})

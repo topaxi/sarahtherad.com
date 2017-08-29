@@ -10,9 +10,9 @@ const Router = EmberRouter.extend({
   didTransition() {
     this._super(...arguments)
 
-    if (typeof ga === 'function') {
+    if (typeof window.ga === 'function') {
       run.schedule('afterRender', () => {
-        ga('send', 'pageview', {
+        window.ga('send', 'pageview', {
           'page': this.get('url'),
           'title': this.get('url')
         })

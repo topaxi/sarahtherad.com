@@ -12,6 +12,12 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{json-stringify inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '1234');
+  assert.equal(this.$().text().trim(), '"1234"');
+
+  this.set('inputValue', { foo: 'bar' });
+
+  this.render(hbs`{{json-stringify inputValue}}`);
+
+  assert.equal(this.$().text().trim(), '{"foo":"bar"}');
 });
 
