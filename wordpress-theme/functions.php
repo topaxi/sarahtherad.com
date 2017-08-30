@@ -109,6 +109,7 @@ function serialize_graphic($post, $with_content = false) {
     'date' => format_date($post->post_date),
     'modified' => format_date($post->post_modified),
     'title' => $post->post_title,
+    'thumbnail' => get_the_post_thumbnail_url($post->ID),
     'pictures' => [],
   ];
   if ($with_content) {

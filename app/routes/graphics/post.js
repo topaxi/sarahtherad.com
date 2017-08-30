@@ -27,13 +27,14 @@ export default Route.extend({
       headline: model.title,
       url,
       image: model.pictures[0].src,
+      thumbnailUrl: model.thumbnail,
       datePublished: model.date,
       dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
       description: model.content,
     })
     this.set('headData.url', url)
-    this.set('headData.picture', model.pictures[0].src)
+    this.set('headData.picture', model.thumbnail)
     this.set('headData.pictureDescription', model.title)
     this.set('headData.description', model.content)
   },
