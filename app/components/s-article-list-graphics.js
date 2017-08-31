@@ -17,7 +17,7 @@ export default ArticleListItemComponent.extend({
     return this.get('picture.width') && this.get('picture.height')
   }),
 
-  isWide: computed('hasSize', 'picture.{width,height}', 'picture.src', function() {
+  isWide: computed('hasSize', 'picture.{width,height,src}', function() {
     if (this.get('hasSize')) {
       return this.get('picture.width') > this.get('picture.height')
     }
