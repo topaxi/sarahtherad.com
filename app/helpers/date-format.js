@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 import { padStart } from 'ember-pad/utils/pad'
 
 export function dateFormat([ dateLike ]) {
@@ -9,4 +9,4 @@ export function dateFormat([ dateLike ]) {
     date.getFullYear()
 }
 
-export default Ember.Helper.helper(dateFormat);
+export default helper(dateFormat);

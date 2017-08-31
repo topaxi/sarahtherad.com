@@ -1,9 +1,8 @@
+import Service from '@ember/service';
 import RSVP from 'rsvp'
-import Ember from 'ember'
 import { moduleFor, test } from 'ember-qunit';
 
 const { Promise } = RSVP
-const { Service } = Ember
 
 const RadService = Service.extend({
   post(_slug) {

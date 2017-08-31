@@ -1,7 +1,7 @@
-import Ember from 'ember'
+import { helper } from '@ember/component/helper';
 
 export function jsonStringify([ obj ]) {
   return JSON.stringify(obj)
 }
 
-export default Ember.Helper.helper(jsonStringify)
+export default helper(jsonStringify)

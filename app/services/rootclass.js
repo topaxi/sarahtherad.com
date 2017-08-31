@@ -1,6 +1,5 @@
-import Ember from 'ember'
-
-const { Service, computed } = Ember
+import Service from '@ember/service';
+import { computed } from '@ember/object';
 
 export default Service.extend({
   _classNames: computed(function() {

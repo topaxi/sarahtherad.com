@@ -1,9 +1,9 @@
+import Service from '@ember/service';
 import fetch from 'fetch'
-import Ember from 'ember'
 import query from '../utils/query'
 import ENV from '../config/environment'
 
-export default Ember.Service.extend({
+export default Service.extend({
   _url: ENV.apiHost || '',
 
   url(path, q = {}) {

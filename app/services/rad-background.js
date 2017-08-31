@@ -1,13 +1,12 @@
+import Service, { inject as service } from '@ember/service';
 import RSVP from 'rsvp'
-import Ember from 'ember'
 import wait from '../utils/wait'
 
 const { Promise } = RSVP
-const { Service, inject } = Ember
 
 export default Service.extend({
-  rad: inject.service(),
-  fastboot: inject.service(),
+  rad: service(),
+  fastboot: service(),
   initial: true,
 
   init() {

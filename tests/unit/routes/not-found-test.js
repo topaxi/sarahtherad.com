@@ -1,7 +1,5 @@
-import Ember from 'ember'
+import Service from '@ember/service';
 import { moduleFor, test } from 'ember-qunit'
-
-const { Service } = Ember
 
 const FastbootService = Service.extend({
   isFastBoot: false,

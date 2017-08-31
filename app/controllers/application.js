@@ -1,19 +1,15 @@
-import Ember from 'ember'
-
-const {
-  Controller,
-  String: { htmlSafe },
-  inject,
-  computed
-} = Ember
+import { inject as service } from '@ember/service';
+import Controller from '@ember/controller';
+import { htmlSafe } from '@ember/string';
+import { computed } from '@ember/object';
 
 const ESC_KEYCODE = 27
 
 export default Controller.extend({
-  rootclass: inject.service(),
-  radBackground: inject.service(),
-  menuTitle: inject.service(),
-  fastboot: inject.service(),
+  rootclass: service(),
+  radBackground: service(),
+  menuTitle: service(),
+  fastboot: service(),
 
   init() {
     this._super(...arguments)

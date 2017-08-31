@@ -1,10 +1,9 @@
-import Ember from 'ember'
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 import shoebox from '../utils/shoebox'
 
-const { Route, inject } = Ember
-
 export default Route.extend({
-  menuTitle: inject.service(),
+  menuTitle: service(),
 
   beforeModel() {
     this.radBackground.reload()

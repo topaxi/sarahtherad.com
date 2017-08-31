@@ -1,11 +1,10 @@
+import { inject as service } from '@ember/service';
+import { computed } from '@ember/object';
 import fetch from 'fetch'
-import Ember from 'ember'
 import ArticleListItemComponent from './s-article-list-item'
 
-const { computed, inject } = Ember
-
 export default ArticleListItemComponent.extend({
-  fastboot: inject.service(),
+  fastboot: service(),
   classNames: [ 'list-item--graphics' ],
   classNameBindings: [ 'isWide:list-item--wide' ],
   model: null,

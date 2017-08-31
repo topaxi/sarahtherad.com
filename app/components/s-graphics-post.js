@@ -1,11 +1,11 @@
-import Ember from 'ember'
-
-const { Component, computed, inject } = Ember
+import { inject as service } from '@ember/service';
+import Component from '@ember/component';
+import { computed } from '@ember/object';
 
 const ESC_KEYCODE = 27
 
 export default Component.extend({
-  router: inject.service(),
+  router: service(),
   classNames: [ 'graphics-post' ],
   classNameBindings: [ 'isSVG:graphics-post--svg' ],
   model: null,

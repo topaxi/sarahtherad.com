@@ -1,9 +1,8 @@
+import Route from '@ember/routing/route';
 import fetch from 'fetch'
 import RSVP from 'rsvp'
-import Ember from 'ember'
 import shoebox from '../utils/shoebox'
 
-const { Route } = Ember
 const { Promise } = RSVP
 
 export default Route.extend({

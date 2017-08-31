@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 import { padStart } from 'ember-pad/utils/pad'
 
 export function durationFormat([ duration ]) {
@@ -11,4 +11,4 @@ export function durationFormat([ duration ]) {
     padStart(seconds, 2)
 }
 
-export default Ember.Helper.helper(durationFormat);
+export default helper(durationFormat);

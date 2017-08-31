@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper } from '@ember/component/helper';
 
 export function dateFormatIso([ dateLike ]) {
   let date = dateLike instanceof Date ? dateLike : new Date(dateLike)
@@ -6,4 +6,4 @@ export function dateFormatIso([ dateLike ]) {
   return date.toISOString()
 }
 
-export default Ember.Helper.helper(dateFormatIso);
+export default helper(dateFormatIso);

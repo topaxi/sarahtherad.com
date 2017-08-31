@@ -1,7 +1,8 @@
-import Ember from 'ember';
+import { inject as service } from '@ember/service';
+import EmberRouter from '@ember/routing/router';
+import Route from '@ember/routing/route';
+import { run } from '@ember/runloop';
 import config from './config/environment';
-
-const { Router: EmberRouter, Route, inject, run } = Ember
 
 const Router = EmberRouter.extend({
   location: config.locationType,
@@ -22,7 +23,7 @@ const Router = EmberRouter.extend({
 })
 
 Route.reopen({
-  rootclass: inject.service(),
+  rootclass: service(),
 
   activate() {
     if (this.routeName !== 'application') {

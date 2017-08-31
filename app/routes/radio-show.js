@@ -1,11 +1,9 @@
+import Route from '@ember/routing/route';
 import fetch from 'fetch'
-import Ember from 'ember'
 import query from '../utils/query'
 import shoebox from '../utils/shoebox'
 
 const LIMIT = 20;
-
-const { Route } = Ember
 
 export default Route.extend({
   queryParams: {

@@ -1,11 +1,10 @@
-import Ember from 'ember'
-
-const { Route, inject } = Ember
+import { inject as service } from '@ember/service';
+import Route from '@ember/routing/route';
 
 const NOT_FOUND = 404
 
 export default Route.extend({
-  fastboot: inject.service(),
+  fastboot: service(),
 
   model() {
     if (this.get('fastboot.isFastBoot')) {
