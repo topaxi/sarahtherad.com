@@ -23,5 +23,5 @@ test('it works', function(assert) {
   this.render(hbs`{{pdf-viewer src="about:blank"}}`)
 
   assert.equal(this.$('iframe').length, 1)
-  assert.equal(this.$('iframe').attr('src'), 'about:blank')
+  assert.equal(this.$('iframe').attr('src'), 'https://docs.google.com/viewer?url=about%3Ablank&embedded=true')
 })

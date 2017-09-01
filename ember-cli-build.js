@@ -1,11 +1,12 @@
-/*jshint node:true*/
-/* global require, module */
-var EmberApp = require('ember-cli/lib/broccoli/ember-app');
-var cssnext = require('postcss-cssnext');
-var targets = require('./config/targets');
+/* eslint-env node */
+'use strict';
+
+const EmberApp = require('ember-cli/lib/broccoli/ember-app');
+const cssnext = require('postcss-cssnext');
+const targets = require('./config/targets');
 
 module.exports = function(defaults) {
-  var app = new EmberApp(defaults, {
+  let app = new EmberApp(defaults, {
     babel: {
       plugins: [ 'babel-plugin-transform-decorators-legacy' ],
     },
