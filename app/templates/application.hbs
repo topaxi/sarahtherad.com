@@ -1,6 +1,8 @@
 {{title 'sarahtherad.com' prepend=true}}
 
 <div class={{rootclass.classNames}}>
+  {{service-worker-update-notify}}
+
   {{#liquid-bind backgroundStyle class='background-container' as |style|}}
     <div class="background" style={{style}}></div>
   {{/liquid-bind}}

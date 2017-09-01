@@ -23,11 +23,20 @@ Author: sarahtherad.com + topaxi.codes
   overflow-y: scroll;
 }
 
+.service-worker-update-notify {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  padding: 1rem;
+  z-index: 1;
+}
+
 .root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   > header {
+    position: relative;
     transition: color 200ms;
   }
 }
