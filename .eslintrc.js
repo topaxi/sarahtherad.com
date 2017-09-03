@@ -18,8 +18,7 @@ module.exports = {
   rules: {
     'no-unused-vars': [
       'error', {
-        varsIgnorePattern: '^_',
-        argsIgnorePattern: '^_'
+        argsIgnorePattern: '^_',
       }
     ],
     'ember/alias-model-in-controller': 0,
