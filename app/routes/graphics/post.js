@@ -10,6 +10,8 @@ export default Route.extend({
   afterModel(model) {
     let publisher = 'sarahtherad.com'
     let url = `https://${publisher}/blog/${model.slug}`
+    let picture = model.pictures[0].src
+    let thumbnail = model.thumbnail || picture
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
@@ -24,15 +26,15 @@ export default Route.extend({
       },
       headline: model.title,
       url,
-      image: model.pictures[0].src,
-      thumbnailUrl: model.thumbnail,
+      image: picture,
+      thumbnailUrl: thumbnail,
       datePublished: model.date,
       dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
       description: model.content,
     })
     this.set('headData.url', url)
-    this.set('headData.picture', model.thumbnail)
+    this.set('headData.picture', thumbnail)
     this.set('headData.pictureDescription', model.title)
     this.set('headData.description', model.content)
   },
