@@ -34,7 +34,7 @@ module.exports = function(deployTarget) {
     ENV['scp'] = {
       username: 'sarah',
       host: 'sarahtherad.com',
-      path: '/home/sarah/wordpress-test/wp-content/themes/sarahtherad.com',
+      path: '/home/sarah/sarahtherad.com/wp-content/themes/sarahtherad.com',
       beforeUpload() {
         fs.mkdirSync('tmp/sarahtherad.com')
         fs.mkdirSync('tmp/sarahtherad.com/server')

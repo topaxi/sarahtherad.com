@@ -46,7 +46,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    ENV.apiHost = 'https://wordpress-test.sarahtherad.com'
+    ENV.apiHost = 'https://sarahtherad.com'
   }
 
   return ENV;
