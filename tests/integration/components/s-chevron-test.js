@@ -8,5 +8,5 @@ moduleForComponent('s-chevron', 'Integration | Component | s chevron', {
 test('it renders', function(assert) {
   this.render(hbs`{{s-chevron}}`)
 
-  assert.equal(this.$('svg').length, 1)
+  assert.equal(this.element.querySelectorAll('svg').length, 1)
 })

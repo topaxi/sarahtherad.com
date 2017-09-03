@@ -11,5 +11,5 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{duration-format inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '0:20:34');
+  assert.equal(this.element.textContent.trim(), '0:20:34');
 });

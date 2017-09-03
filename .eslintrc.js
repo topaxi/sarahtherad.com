@@ -29,5 +29,6 @@ module.exports = {
     'ember/require-super-in-init': 2,
     'ember/order-in-components': 0,
     'ember/order-in-controllers': 0,
+    'ember/no-jquery': 2,
   }
 };

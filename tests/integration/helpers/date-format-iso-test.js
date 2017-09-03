@@ -11,6 +11,6 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{date-format-iso inputValue}}`);
 
-  assert.equal(this.$().text().trim(), '2017-07-01T10:23:45.000Z');
+  assert.equal(this.element.textContent.trim(), '2017-07-01T10:23:45.000Z');
 });
 

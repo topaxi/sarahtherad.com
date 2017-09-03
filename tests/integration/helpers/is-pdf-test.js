@@ -11,11 +11,11 @@ test('it works', function(assert) {
 
   this.render(hbs`{{is-pdf inputValue}}`);
 
-  assert.equal(this.$().text().trim(), 'false');
+  assert.equal(this.element.textContent.trim(), 'false');
 
   this.set('inputValue', '1234.pdf');
 
   this.render(hbs`{{is-pdf inputValue}}`);
 
-  assert.equal(this.$().text().trim(), 'true');
+  assert.equal(this.element.textContent.trim(), 'true');
 });

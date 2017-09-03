@@ -8,7 +8,7 @@ moduleForComponent('pdf-viewer', 'Integration | Component | pdf viewer', {
 test('it renders', function(assert) {
   this.render(hbs`{{pdf-viewer}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.element.textContent.trim(), '');
 
   this.render(hbs`
     {{#pdf-viewer}}
@@ -16,12 +16,15 @@ test('it renders', function(assert) {
     {{/pdf-viewer}}
   `);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.element.textContent.trim(), '');
 });
 
 test('it works', function(assert) {
   this.render(hbs`{{pdf-viewer src="about:blank"}}`)
 
-  assert.equal(this.$('iframe').length, 1)
-  assert.equal(this.$('iframe').attr('src'), 'https://docs.google.com/viewer?url=about%3Ablank&embedded=true')
+  assert.equal(this.element.querySelectorAll('iframe').length, 1)
+  assert.equal(
+    this.element.querySelector$('iframe').src,
+    'https://docs.google.com/viewer?url=about%3Ablank&embedded=true'
+  )
 })

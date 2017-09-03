@@ -8,7 +8,10 @@ moduleForComponent('s-error', 'Integration | Component | s error', {
 test('it renders', function(assert) {
   this.render(hbs`{{s-error}}`);
 
-  assert.ok(this.$().text().includes('Unknown error'))
-  assert.ok(this.$('a').text().trim(), 'Back to saratherad.com')
-  assert.ok(this.$('a').prop('href'), '/')
+  assert.ok(this.element.textContent.includes('Unknown error'))
+  assert.equal(
+    this.element.querySelector('a').textContent.trim(),
+    'Back to saratherad.com'
+  )
+  assert.equal(this.element.querySelector('a').href, '/')
 });

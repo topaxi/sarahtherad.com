@@ -8,5 +8,5 @@ moduleForComponent('s-close', 'Integration | Component | s close', {
 test('it renders', function(assert) {
   this.render(hbs`{{s-close}}`)
 
-  assert.equal(this.$('svg').length, 1)
+  assert.equal(this.element.querySelectorAll('svg').length, 1)
 })
