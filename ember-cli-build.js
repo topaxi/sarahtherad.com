@@ -11,7 +11,7 @@ module.exports = function(defaults) {
       plugins: [ 'babel-plugin-transform-decorators-legacy' ],
     },
     'esw-index': {
-      version: '1',
+      version: '2',
       excludeScope: [/\.php/,/\bwp-\w+\//, /manifest.webmanifest$/],
     },
     'esw-cache-first': {
