@@ -112,11 +112,11 @@
 
 .graphics-post-content {
   position: absolute;
-  bottom: 0;
+  bottom: -1px;
   right: 2rem;
   transform: translateY(100%);
   transition: transform 200ms;
-  z-index: 0;
+  z-index: 1;
   background: rgba(0,0,0,.8);
   padding: 1rem;
   width: 280px;
