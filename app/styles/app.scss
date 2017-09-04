@@ -23,6 +23,20 @@ Author: sarahtherad.com + topaxi.codes
   overflow-y: scroll;
 }
 
+.about {
+  dt, dd {
+    display: inline;
+  }
+
+  dt::after {
+    content: ':';
+  }
+
+  dd {
+    margin: 0;
+  }
+}
+
 .service-worker-update-notify {
   position: sticky;
   top: 0;

@@ -16,6 +16,25 @@
   transition: transform 200ms;
   transform-origin: top right;
 }
+.instagram {
+  width: 4rem;
+  height: 4rem;
+  display: block;
+  position: absolute;
+  top: 215px;
+  right: 1rem;
+  z-index: 1;
+
+  @media screen and (max-width: 719px) {
+    display: none;
+  }
+}
+.instagram > svg > path {
+  fill: currentColor;
+}
+.radio-show .instagram {
+  display: none;
+}
 @media screen and (min-width: 640px) {
   .logo .rect {
     display: none;
@@ -28,6 +47,9 @@
 @media screen and (min-width: 800px) {
   .home .logo > svg {
     transform: scale(2.5);
+  }
+  .home .instagram {
+    top: 300px;
   }
 }
 

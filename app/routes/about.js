@@ -8,7 +8,14 @@ export default Route.extend({
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
       '@type': 'Person',
-      'sameAs': 'https://twitter.com/sarah_therad',
+      givenName: 'Sarah',
+      familyName: 'Christener',
+      email: 'info@sarahtherad.com',
+      nationality: 'Switzerland',
+      sameAs: [
+        'https://twitter.com/sarah_therad/',
+        'https://www.instagram.com/sarah_therad/',
+      ],
       publisher,
       url,
     })
