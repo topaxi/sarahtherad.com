@@ -11,7 +11,11 @@
           {{#if (is-pdf picture.src)}}
             {{pdf-viewer src=picture.src}}
           {{else}}
-            <img src={{picture.src}} alt={{picture.title}}>
+            <img
+                src={{picture.src}}
+                alt={{picture.title}}
+                width={{picture.width}}
+                height={{picture.height}}>
           {{/if}}
         {{/swiper-slide}}
       {{/each}}

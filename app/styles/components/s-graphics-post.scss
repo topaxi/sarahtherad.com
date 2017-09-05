@@ -38,6 +38,8 @@
   }
   img {
     display: block;
+    width: auto;
+    height: auto;
     max-width: 100%;
     max-height: calc(100% - 3.5rem - 0.83em);
   }
