@@ -14,13 +14,6 @@ module.exports = function(defaults) {
       version: '2',
       excludeScope: [/\.php/,/\bwp-\w+\//, /manifest.webmanifest$/],
     },
-    'esw-cache-first': {
-      version: '1',
-      patterns: [
-        'https://fonts.googleapis.com/css(?:.+)',
-        'https://fonts.gstatic.com/s/slabo27px/(?:.+)',
-      ],
-    },
     'esw-cache-fallback': {
       version: '1',
       patterns: [
