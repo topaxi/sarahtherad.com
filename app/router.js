@@ -14,8 +14,8 @@ const Router = EmberRouter.extend({
     if (typeof window.ga === 'function') {
       run.schedule('afterRender', () => {
         window.ga('send', 'pageview', {
-          'page': this.get('url'),
-          'title': this.get('url')
+          page: this.get('url'),
+          title: this.get('url')
         })
       })
     }

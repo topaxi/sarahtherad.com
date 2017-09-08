@@ -31,9 +31,9 @@ export default Component.extend({
         return val
       }
 
-      return `https://docs.google.com/viewer` +
+      return 'https://docs.google.com/viewer' +
         `?url=${encodeURIComponent(val)}` +
-        `&embedded=true`
+        '&embedded=true'
     },
   }),
 })

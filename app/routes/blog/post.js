@@ -15,14 +15,14 @@ export default Route.extend({
       '@context': 'http://schema.org',
       '@type': 'Article',
       publisher,
-      'author': {
+      author: {
         '@type': 'Person',
         name: 'Sarahtherad',
         image: '',
         url: `https://${publisher}/`,
         sameAs: 'https://twitter.com/sarah_therad'
       },
-      'headline': model.title,
+      headline: model.title,
       url,
       datePublished: model.date,
       dateModified: model.modified,

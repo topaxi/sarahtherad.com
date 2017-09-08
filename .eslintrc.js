@@ -16,6 +16,14 @@ module.exports = {
     browser: true
   },
   rules: {
+    'quotes': [
+      'error',
+      'single',
+    ],
+    'quote-props': [
+      'error',
+      'as-needed',
+    ],
     'no-unused-vars': [
       'error', {
         argsIgnorePattern: '^_',
