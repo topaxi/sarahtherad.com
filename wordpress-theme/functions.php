@@ -116,7 +116,7 @@ function serialize_graphic($post, $with_content = false) {
     $graphics_post['content'] =
       apply_filters('the_content', $post->post_content);
   }
-  $thumb = $with_content ? 'original' : 'large';
+  $thumb = $with_content ? 'original' : 'medium_large';
   while ($attachments->get()) {
     $graphics_post['pictures'][] = array(
       'src' => $with_content ? $attachments->url() : $attachments->src($thumb),
