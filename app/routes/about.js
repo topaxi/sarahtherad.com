@@ -3,20 +3,38 @@ import Route from '@ember/routing/route';
 export default Route.extend({
   afterModel() {
     let url = 'https://sarahtherad.com/about'
+    let email = 'info@sarahtherad.com'
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
-      '@type': 'Person',
-      name: 'Sarah Christener',
-      givenName: 'Sarah',
-      familyName: 'Christener',
-      email: 'info@sarahtherad.com',
-      nationality: 'Switzerland',
-      sameAs: [
-        'https://twitter.com/sarah_therad/',
-        'https://www.instagram.com/sarah_therad/',
+      '@graph': [
+        {
+          '@type': 'Organization',
+          email,
+          legalName: 'Christener Graphics & Communications',
+          location: {
+            '@type': 'PostalAddress',
+            addressCountry: 'Switzerland',
+            postalCode: 3600,
+            addressLocality: 'Thun',
+            addressRegion: 'Thun',
+            streetAddress: 'Seefeldstrasse 18',
+          },
+        },
+        {
+          '@type': 'Person',
+          name: 'Sarah Christener',
+          givenName: 'Sarah',
+          familyName: 'Christener',
+          email,
+          nationality: 'Switzerland',
+          sameAs: [
+            'https://twitter.com/sarah_therad/',
+            'https://www.instagram.com/sarah_therad/',
+          ],
+          url,
+        },
       ],
-      url,
     })
     this.set('headData.url', url)
 
