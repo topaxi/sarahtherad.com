@@ -1,6 +1,11 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
+export default function hasPdfjs() {
+  return (/Firefox/.test(window.userAgent) || window.chrome) &&
+    !/Android/.test(window.userAgent) && !/iPad|iPhone/.test(window.userAgent)
+}
+
 moduleForComponent('pdf-viewer', 'Integration | Component | pdf viewer', {
   integration: true
 });
@@ -22,6 +27,10 @@ test('it renders', function(assert) {
 test('it works', function(assert) {
   this.render(hbs`{{pdf-viewer src="about:blank"}}`)
 
+  let url = hasPdfjs() ?
+    'about:blank' :
+    'https://docs.google.com/viewer?url=about%3Ablank&embedded=true'
+
   assert.equal(this.$('iframe').length, 1)
-  assert.equal(this.$('iframe').attr('src'), 'https://docs.google.com/viewer?url=about%3Ablank&embedded=true')
+  assert.equal(this.$('iframe').attr('src'), url)
 })
