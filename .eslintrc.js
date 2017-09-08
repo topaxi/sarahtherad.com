@@ -1,6 +1,7 @@
 module.exports = {
   globals: {
     server: true,
+    percySnapshot: true,
   },
   root: true,
   parser: 'babel-eslint',

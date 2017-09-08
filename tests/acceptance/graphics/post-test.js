@@ -8,6 +8,8 @@ test('ESC returns to /graphics', async function(assert) {
 
   assert.equal(currentURL(), '/graphics/post')
 
+  percySnapshot(assert)
+
   await keyEvent(window.document.documentElement, 'keypress', 27)
 
   assert.equal(currentURL(), '/graphics')

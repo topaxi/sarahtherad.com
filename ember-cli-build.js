@@ -72,7 +72,10 @@ module.exports = function(defaults) {
         require('imagemin-svgo')(),
       ],
     },
-    vendorFiles: { 'jquery.js': null, 'app-shims.js': null },
+    vendorFiles: {
+      'jquery.js': process.env.EMBER_ENV === 'test' ? undefined : null,
+      'app-shims.js': null,
+    },
     jquery: {
       slim: true,
     },
