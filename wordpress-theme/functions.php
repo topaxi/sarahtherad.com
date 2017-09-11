@@ -73,6 +73,8 @@ add_action('rest_api_init', function() {
 });
 
 function serialize_post($post, $with_content = false) {
+  $with_content = $with_content || $_GET['sitemap'];
+
   setup_postdata($post);
   $excerpt = get_the_excerpt($post);
   list($lang) = get_post_custom_values('language', $post->ID);
@@ -100,6 +102,8 @@ function serialize_post($post, $with_content = false) {
 }
 
 function serialize_graphic($post, $with_content = false) {
+  $with_content = $with_content || $_GET['sitemap'];
+
   setup_postdata($post);
   $attachments = new Attachments('attachments', $post->ID);
   $graphics_post = [

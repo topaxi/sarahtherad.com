@@ -7,8 +7,13 @@
   "author": "Damian Senn <damian.senn@topaxi.codes>",
   "license": "MIT",
   "dependencies": {
+    "async-middleware": "^1.2.1",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-register": "^6.26.0",
     "fastboot-app-server": "^1.0.1",
     "fastboot-watch-notifier": "^3.0.0",
-    "node-fetch": "^1.7.2"
+    "lodash.flatmap": "^4.5.0",
+    "node-fetch": "^1.7.2",
+    "xml-writer": "^1.7.0"
   }
 }
