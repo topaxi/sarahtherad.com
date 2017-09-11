@@ -4,6 +4,7 @@ const fs = require('fs')
 const serverFiles = [
   'app.js',
   'package.json',
+  'sitemap/index.jsx',
   'yarn.lock',
 ]
 
@@ -38,6 +39,7 @@ module.exports = function(deployTarget) {
       beforeUpload() {
         fs.mkdirSync('tmp/sarahtherad.com')
         fs.mkdirSync('tmp/sarahtherad.com/server')
+        fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
         serverFiles.forEach(file =>
           copySync(`fastboot-server/${file}`, `tmp/sarahtherad.com/server/${file}`)
         )

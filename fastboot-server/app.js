@@ -9,7 +9,7 @@ require('babel-register')({
   ],
 })
 
-const distPath = '../dist'
+const distPath = '../frontend'
 const host = '0.0.0.0'
 const port = 8042 || process.env.PORT
 
