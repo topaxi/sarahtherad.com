@@ -11,6 +11,7 @@ const { Router } = express
 const index = module.exports = new Router()
 
 index.get('/sitemap.xml', (req, res) => {
+  res.set('Content-Type', 'application/xml; charset=utf-8')
   res.send(String(
     <sitemapindex xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
       <sitemap>
@@ -27,6 +28,7 @@ index.get('/sitemap.xml', (req, res) => {
 })
 
 index.get('/sitemap/index.xml', (req, res) => {
+  res.set('Content-Type', 'application/xml; charset=utf-8')
   res.send(String(
     <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
       <url>
@@ -51,6 +53,7 @@ index.get('/sitemap/index.xml', (req, res) => {
 index.get('/sitemap/graphics.xml', wrap(async (req, res) => {
   let graphics = await fetch(`${API_BASE}/graphics?sitemap=1`).then(r => r.json())
 
+  res.set('Content-Type', 'application/xml; charset=utf-8')
   res.send(String(
     <urlset
         xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
@@ -90,6 +93,7 @@ index.get('/sitemap/graphics.xml', wrap(async (req, res) => {
 index.get('/sitemap/blog.xml', wrap(async (req, res) => {
   let graphics = await fetch(`${API_BASE}/posts?sitemap=1`).then(r => r.json())
 
+  res.set('Content-Type', 'application/xml; charset=utf-8')
   res.send(String(
     <urlset
         xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
