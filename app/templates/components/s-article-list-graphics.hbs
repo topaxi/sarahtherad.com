@@ -1,8 +1,8 @@
-{{#link-to 'graphics.post' model.slug class='list-item-content'}}
+<a href={{href-to 'graphics.post' model.slug}} class="list-item-content">
   <h2>{{model.title}}</h2>
   <img
       src={{picture.src}}
       alt={{picture.title}}
       width={{picture.width}}
       height={{picture.height}}>
-{{/link-to}}
+</a>

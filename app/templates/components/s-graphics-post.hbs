@@ -2,7 +2,7 @@
 <article lang={{model.lang}}>
   <div class="graphics-post-title">
     <h1>{{model.title}}</h1>
-    {{#link-to 'graphics'}}{{s-close}}{{/link-to}}
+    <a href={{href-to 'graphics'}}>{{s-close}}</a>
   </div>
   {{#if hasMultiple}}
     {{#swiper-container pagination=hasMultiple currentSlide=currentPictureIndex}}

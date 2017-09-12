@@ -1,5 +1,5 @@
 {{! template-lint-disable triple-curlies }}
-{{#link-to 'blog.post' model.slug class='list-item-content'}}
+<a href={{href-to 'blog.post' model.slug}} class="list-item-content">
   <header>
     <time datetime={{date-format-iso model.date}}>
       {{~date-format model.date~}}
@@ -7,4 +7,4 @@
     <h2>{{model.title}}</h2>
   </header>
   {{{model.excerpt}}}
-{{/link-to}}
+</a>
