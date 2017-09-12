@@ -12,7 +12,13 @@ module.exports = function(defaults) {
     },
     'esw-index': {
       version: '2',
-      excludeScope: [/\.php/,/\bwp-\w+\//, /manifest.webmanifest$/, /\.xml/],
+      excludeScope: [
+        /\.php/, // any php files
+        /\bwp-\w+\//, // any wordpress content
+        /manifest.webmanifest$/,
+        /robots.txt$/,
+        /\.xml/, // any xml files (sitemaps)
+      ],
     },
     'esw-cache-fallback': {
       version: '1',
