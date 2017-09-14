@@ -17,6 +17,9 @@ module.exports = function(defaults) {
         /\bwp-\w+\//, // any wordpress content
         /manifest.webmanifest$/,
         /robots.txt$/,
+        /favicon.ico$/,
+        /favicon-.*$/,
+        /app-logos\//,
         /\.xml/, // any xml files (sitemaps)
       ],
     },
