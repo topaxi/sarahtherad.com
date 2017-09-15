@@ -5,6 +5,10 @@ export default Route.extend({
   afterModel() {
     let url = 'https://sarahtherad.com/about'
     let email = 'info@sarahtherad.com'
+    let socialMedia = [
+      'https://twitter.com/sarah_therad/',
+      'https://www.instagram.com/sarah_therad/',
+    ]
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
@@ -13,6 +17,9 @@ export default Route.extend({
           '@type': 'Organization',
           email,
           legalName: 'Christener Graphics & Communications',
+          logo: 'https://sarahtherad.com/app-logos/logo512.png',
+          sameAs: socialMedia,
+          url,
           location: {
             '@type': 'PostalAddress',
             addressCountry: 'Switzerland',
@@ -29,10 +36,7 @@ export default Route.extend({
           familyName: 'Christener',
           email,
           nationality: 'Switzerland',
-          sameAs: [
-            'https://twitter.com/sarah_therad/',
-            'https://www.instagram.com/sarah_therad/',
-          ],
+          sameAs: socialMedia,
           url,
         },
       ],
