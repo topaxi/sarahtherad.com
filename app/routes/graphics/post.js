@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
+import stripHtml from '../../utils/strip-html'
 
 export default Route.extend({
   @shoebox
@@ -12,6 +13,7 @@ export default Route.extend({
     let url = `https://${publisher}/blog/${model.slug}`
     let picture = model.pictures[0].src
     let thumbnail = model.thumbnail || picture
+    let description = stripHtml(model.content)
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
@@ -31,11 +33,11 @@ export default Route.extend({
       datePublished: model.date,
       dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
-      description: model.content,
+      description,
     })
     this.set('headData.url', url)
     this.set('headData.picture', thumbnail)
     this.set('headData.pictureDescription', model.title)
-    this.set('headData.description', model.content)
+    this.set('headData.description', description)
   },
 })
