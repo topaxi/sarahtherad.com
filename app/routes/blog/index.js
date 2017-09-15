@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
+import scrollTo from '../../utils/scroll-to'
 
 export default Route.extend({
   beforeModel() {
@@ -23,5 +24,9 @@ export default Route.extend({
       name: 'Articles'
     })
     this.set('headData.url', url)
-  }
+  },
+
+  activate() {
+    scrollTo('top', this)
+  },
 })

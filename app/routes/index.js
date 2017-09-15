@@ -2,6 +2,7 @@ import Route from '@ember/routing/route';
 import fetch from 'fetch'
 import RSVP from 'rsvp'
 import shoebox from '../utils/shoebox'
+import scrollTo from '../utils/scroll-to'
 
 const { Promise } = RSVP
 
@@ -42,5 +43,9 @@ export default Route.extend({
     })
     this.set('headData.url', url)
     this.set('headData.description', description)
-  }
+  },
+
+  activate() {
+    scrollTo('top', this)
+  },
 })

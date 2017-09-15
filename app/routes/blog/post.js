@@ -1,5 +1,6 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
+import scrollTo from '../../utils/scroll-to'
 
 export default Route.extend({
   @shoebox
@@ -36,5 +37,9 @@ export default Route.extend({
       model.background.url,
       model.background.color,
     )
+  },
+
+  activate() {
+    scrollTo('top', this)
   },
 })

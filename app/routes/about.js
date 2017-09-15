@@ -1,4 +1,5 @@
 import Route from '@ember/routing/route';
+import scrollTo from '../utils/scroll-to'
 
 export default Route.extend({
   afterModel() {
@@ -39,5 +40,9 @@ export default Route.extend({
     this.set('headData.url', url)
 
     return this.radBackground.clear()
+  },
+
+  activate() {
+    scrollTo('top', this)
   },
 })
