@@ -27,6 +27,13 @@ export default Controller.extend({
         window[addRemoveEventListener]('keypress', this.escClose)
       }
 
+      if (value) {
+        this.get('rootclass').add('menu-open')
+      }
+      else {
+        this.get('rootclass').remove('menu-open')
+      }
+
       return value
     }
   }),

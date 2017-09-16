@@ -1,10 +1,22 @@
+.menu-open {
+  .logo > svg {
+    transform: scale(0.8);
+  }
+  .logo .rect {
+    display: block;
+  }
+  .instagram {
+    opacity: 0;
+  }
+}
+
 .logo {
   position: absolute;
   top: 0;
   right: 0;
   display: flex;
   justify-content: flex-end;
-  transition: color 200ms;
+  transition: color 200ms, opacity 200ms;
   z-index: 1;
 }
 .logo-path {
@@ -24,6 +36,7 @@
   top: 15rem;
   right: 1rem;
   z-index: 1;
+  transition: color 200ms, opacity 200ms;
 
   @media screen and (max-width: 719px) {
     display: none;

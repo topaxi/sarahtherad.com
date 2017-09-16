@@ -20,7 +20,7 @@
     </a>
 
     {{s-burger open=open}}
-    <div class="menu {{if open 'open'}}">
+    <div class="menu">
       <nav>
         <ul>
           <li>{{link-to 'Graphics' 'graphics'}}</li>
@@ -34,6 +34,6 @@
       <h1 class="menu-title"><a href={{href-to menuTitle.route}}>{{menuTitle.title}}</a></h1>
     {{/if}}
   </header>
-  <main class={{if open 'menu-open'}}>{{liquid-outlet}}</main>
+  <main role="main">{{liquid-outlet}}</main>
 </div>
 {{s-mixcloud-player}}

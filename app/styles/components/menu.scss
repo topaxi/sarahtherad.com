@@ -19,12 +19,12 @@
 .hamburglar.is-open + .menu {
   display: block;
 }
-.menu-open > body {
-  overflow: hidden;
-}
 
 main { transition: transform 100ms }
-main.menu-open {
+.menu-open {
+  overflow-x: hidden;
+}
+.menu-open > main {
   transform: translateX(25rem);
 }
 .menu ul {
