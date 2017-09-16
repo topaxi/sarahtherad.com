@@ -17,11 +17,11 @@
   transform-origin: top right;
 }
 .instagram {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   display: block;
   position: absolute;
-  top: 215px;
+  top: 15rem;
   right: 1rem;
   z-index: 1;
 
@@ -49,7 +49,7 @@
     transform: scale(2.5);
   }
   .home .instagram {
-    top: 300px;
+    top: 20rem;
   }
 }
 
