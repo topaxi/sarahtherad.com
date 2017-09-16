@@ -47,6 +47,8 @@ export default Route.extend({
   },
 
   activate() {
+    this._super(...arguments)
+
     scrollTo('top', this)
   },
 })

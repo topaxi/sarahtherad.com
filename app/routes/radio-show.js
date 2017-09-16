@@ -27,6 +27,8 @@ export default Route.extend({
   },
 
   activate() {
+    this._super(...arguments)
+
     if (!this.get('fastboot.isFastBoot')) {
       document.documentElement.scrollTop = 0
     }
