@@ -13,6 +13,13 @@ export default Route.extend({
     }
   },
 
+  beforeModel() {
+    this.radBackground.reload({
+      url: '/assets/pictures/radio-show-background.jpeg',
+      color: '#fff',
+    })
+  },
+
   @shoebox
   model({ page }) {
     let params = query({ offset: page * LIMIT, limit: LIMIT })
@@ -20,10 +27,6 @@ export default Route.extend({
 
     return fetch(url)
       .then(res => res.json())
-  },
-
-  afterModel() {
-    this.radBackground.clear()
   },
 
   activate() {

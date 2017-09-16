@@ -23,7 +23,11 @@ export default Service.extend({
     this.set('color', color)
   },
 
-  reload() {
+  preload(url) {
+    return Promise.race([ fetchImage(url), wait(150) ])
+  },
+
+  reload(background) {
     let isFastBoot = this.get('fastboot.isFastBoot')
     if (!isFastBoot && this.initial) {
       this.initial = false
@@ -35,12 +39,15 @@ export default Service.extend({
       }
     }
 
-    return this.get('rad').background()
+    return (
+      background ?
+      Promise.resolve({ data: background }) :
+      this.get('rad').background()
+    )
       .then(res => res.data)
       .then(data => {
         if (!isFastBoot) {
-          return Promise.race([ fetchImage(data.url), wait(200) ])
-            .then(() => data)
+          return this.preload(data.url).then(() => data)
         }
 
         this.get('fastboot.shoebox').put('initial-background', data)

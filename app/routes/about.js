@@ -2,6 +2,13 @@ import Route from '@ember/routing/route';
 import scrollTo from '../utils/scroll-to'
 
 export default Route.extend({
+  model() {
+    return this.radBackground.reload({
+      url: '/assets/pictures/about-background.jpeg',
+      color: '#fff',
+    })
+  },
+
   afterModel() {
     let url = 'https://sarahtherad.com/about'
     let email = 'info@sarahtherad.com'
@@ -42,8 +49,6 @@ export default Route.extend({
       ],
     })
     this.set('headData.url', url)
-
-    return this.radBackground.clear()
   },
 
   activate() {
