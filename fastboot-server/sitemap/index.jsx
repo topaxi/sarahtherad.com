@@ -64,6 +64,12 @@ index.get('/sitemap/graphics.xml', wrap(async (req, res) => {
             <loc>https://sarahtherad.com/graphics/{post.slug}</loc>
             <changefreq>monthly</changefreq>
             {
+              post.thumbnail &&
+                <image_image>
+                  <image_loc>{post.thumbnail.src}</image_loc>
+                </image_image>
+            }
+            {
               post.pictures
                 .filter(picture => picture.mime !== 'application/pdf')
                 .map(picture =>
