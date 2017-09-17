@@ -10,6 +10,9 @@ module.exports = function(defaults) {
     babel: {
       plugins: [ 'babel-plugin-transform-decorators-legacy' ],
     },
+    fingerprint: {
+      extensions: [ 'js', 'css', 'png', 'jpg', 'svg', 'gif' ],
+    },
     'ember-service-worker': {
       registrationStrategy: 'inline',
     },
