@@ -93,7 +93,7 @@ function serialize_post($post, $with_content = false) {
     list($color) = get_post_custom_values('color', $post->ID);
     $ret['content'] = apply_filters('the_content', $post->post_content);
     $ret['background'] = [
-      'url' => get_the_post_thumbnail_url($post->ID),
+      'url' => get_the_post_thumbnail_url($post->ID) ?: null,
       'color' => $color ?: '#fff',
     ];
   }
@@ -113,7 +113,7 @@ function serialize_graphic($post, $with_content = false) {
     'date' => format_date($post->post_date),
     'modified' => format_date($post->post_modified),
     'title' => $post->post_title,
-    'thumbnail' => get_the_post_thumbnail_url($post->ID),
+    'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: null,
     'pictures' => [],
   ];
   if ($with_content) {
