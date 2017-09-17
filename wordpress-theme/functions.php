@@ -113,7 +113,7 @@ function serialize_graphic($post, $with_content = false) {
     'date' => format_date($post->post_date),
     'modified' => format_date($post->post_modified),
     'title' => $post->post_title,
-    'thumbnail' => get_the_post_thumbnail_url($post->ID) ?: null,
+    'thumbnail' => rad_thumb($post),
     'pictures' => [],
   ];
   if ($with_content) {
@@ -136,6 +136,27 @@ function serialize_graphic($post, $with_content = false) {
   }
   wp_reset_postdata();
   return $graphics_post;
+}
+
+function rad_thumb($post, $size = 'medium_large') {
+  $thumbnail_id = get_post_thumbnail_id($post);
+
+  if (!$thumbnail_id) {
+    return null;
+  }
+
+  $size = apply_filters('post_thumbnail_size', $size);
+
+  $image = image_downsize($thumbnail_id, $size);
+
+  list($src, $width, $height) =
+    apply_filters( 'wp_get_attachment_image_src', $image, $attachment_id, $size, false);
+
+  return [
+    'src' => $src,
+    'width' => $width,
+    'height' => $height,
+  ];
 }
 
 function get_rad_posts($category_name, $per_page = 20) {

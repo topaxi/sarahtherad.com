@@ -9,8 +9,8 @@ export default ArticleListItemComponent.extend({
   classNameBindings: [ 'isWide:list-item--wide' ],
   model: null,
 
-  picture: computed('model.pictures.[]', function() {
-    return this.get('model.pictures')[0]
+  picture: computed('model.{thumbnail,pictures.[]}', function() {
+    return this.get('model.thumbnail') || this.get('model.pictures')[0]
   }),
 
   hasSize: computed('picture.{width,height}', function() {

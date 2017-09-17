@@ -11,32 +11,40 @@ export default Route.extend({
   afterModel(model) {
     let publisher = 'sarahtherad.com'
     let url = `https://${publisher}/blog/${model.slug}`
-    let picture = model.pictures[0].src
-    let thumbnail = model.thumbnail || picture
+    let picture = model.pictures[0]
+    let thumbnail = model.thumbail || picture
     let description = stripHtml(model.content)
+    let author = {
+      '@type': 'Person',
+      name: 'Sarahtherad',
+      image: '',
+      url: `https://${publisher}/`,
+      sameAs: [
+        'https://twitter.com/sarah_therad/',
+        'https://www.instagram.com/sarah_therad/',
+      ]
+    }
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
       '@type': 'VisualArtwork',
       publisher,
-      author: {
-        '@type': 'Person',
-        name: 'Sarahtherad',
-        image: '',
-        url: `https://${publisher}/`,
-        sameAs: 'https://twitter.com/sarah_therad'
-      },
+      author,
+      artist: author,
       headline: model.title,
       url,
-      image: picture,
-      thumbnailUrl: thumbnail,
+      image: picture.src,
+      width: picture.width,
+      height: picture.height,
+      fileFormat: picture.mime,
+      thumbnailUrl: thumbnail.src,
       datePublished: model.date,
       dateModified: model.modified,
       //keywords: 'ES2016, ES2017',
       description,
     })
     this.set('headData.url', url)
-    this.set('headData.picture', thumbnail)
+    this.set('headData.picture', thumbnail.src)
     this.set('headData.pictureDescription', model.title)
     this.set('headData.description', description)
   },
