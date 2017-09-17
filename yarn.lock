@@ -3278,8 +3278,8 @@ ember-service-worker-cache-fallback@^0.6.1:
     broccoli-plugin "^1.3.0"
 
 ember-service-worker-index@^0.6.2:
-  version "0.6.2"
-  resolved "https://registry.yarnpkg.com/ember-service-worker-index/-/ember-service-worker-index-0.6.2.tgz#9b2d4a344c56ae74f50863a7213e00b8cb9db657"
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/ember-service-worker-index/-/ember-service-worker-index-0.6.3.tgz#c01ea350b13e54ea8555b33403f94549954fbc1b"
   dependencies:
     broccoli-merge-trees "^1.2.1"
     broccoli-plugin "^1.3.0"
@@ -3292,14 +3292,14 @@ ember-service-worker-update-notify@^1.0.1:
     ember-cli-htmlbars "^2.0.1"
 
 ember-service-worker@^0.6.8:
-  version "0.6.8"
-  resolved "https://registry.yarnpkg.com/ember-service-worker/-/ember-service-worker-0.6.8.tgz#2a8de37c46e54b3ef2467a54577c25699113c9a8"
+  version "0.6.9"
+  resolved "https://registry.yarnpkg.com/ember-service-worker/-/ember-service-worker-0.6.9.tgz#e8a03994ec183334a593633f44a234c5890a457d"
   dependencies:
     broccoli-babel-transpiler "^5.5.0"
+    broccoli-caching-writer "^3.0.3"
     broccoli-file-creator "^1.1.1"
     broccoli-funnel "^1.0.3"
     broccoli-merge-trees "1.1.1"
-    broccoli-plugin "^1.3.0"
     broccoli-rollup "0.0.4"
     broccoli-uglify-sourcemap "^1.5.1"
     clone "^1.0.2"
