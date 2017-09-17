@@ -3203,8 +3203,8 @@ ember-href-to@^1.13.0:
     ember-cli-babel "^5.1.6"
 
 ember-img-lazy@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/ember-img-lazy/-/ember-img-lazy-1.0.0.tgz#9fad76e381f30c370a9e5bbcb03486bbf192e5de"
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/ember-img-lazy/-/ember-img-lazy-1.0.1.tgz#509d471baeba2497d8633af8c4486f452a8ce73e"
   dependencies:
     ember-cli-babel "^6.3.0"
     ember-config-service "^0.1.6"
