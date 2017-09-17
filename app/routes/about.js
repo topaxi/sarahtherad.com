@@ -11,7 +11,7 @@ export default Route.extend({
 
   afterModel() {
     let url = 'https://sarahtherad.com/about'
-    let email = 'info@sarahtherad.com'
+    let email = 'graphics@sarahtherad.com'
     let socialMedia = [
       'https://twitter.com/sarah_therad/',
       'https://www.instagram.com/sarah_therad/',
