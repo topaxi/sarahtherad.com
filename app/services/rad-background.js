@@ -66,6 +66,12 @@ function fetchImage(url) {
   return new Promise((resolve, _reject) => {
     let img = new Image
     img.src = url
-    img.onload = () => resolve(url)
+
+    if (img.complete || img.readyState === 4) {
+      resolve(url)
+    }
+    else {
+      img.onload = () => resolve(url)
+    }
   })
 }
