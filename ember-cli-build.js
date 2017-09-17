@@ -10,6 +10,9 @@ module.exports = function(defaults) {
     babel: {
       plugins: [ 'babel-plugin-transform-decorators-legacy' ],
     },
+    'ember-service-worker': {
+      registrationStrategy: 'inline',
+    },
     'esw-index': {
       version: '2',
       excludeScope: [
