@@ -28,8 +28,14 @@
     {{#if hasNext}}
       <button class="next-picture" {{action 'next'}}>{{s-chevron}}</button>
     {{/if}}
+  {{else if (is-pdf currentPicture.src)}}
+    {{pdf-viewer src=currentPicture.src}}
   {{else}}
-    <img src={{currentPicture.src}} alt={{currentPicture.title}}>
+    <img
+        src={{currentPicture.src}}
+        alt={{currentPicture.title}}
+        width={{currentPicture.width}}
+        height={{currentPicture.height}}>
   {{/if}}
   {{#if model.content}}
     <section class="graphics-post-content {{if showContent 'graphics-post-content--visible'}}">
