@@ -131,7 +131,7 @@ class Node {
   }
 
   toXML(xml) {
-    // JSX does not support colons in attribute names..
+    // JSX does not support colons in tag names..
     let tagName = this.tagName.includes('_') ?
       this.tagName.replace('_', ':') :
       this.tagName
