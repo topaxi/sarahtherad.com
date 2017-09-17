@@ -3137,6 +3137,13 @@ ember-cli@^2.15.1:
     walk-sync "^0.3.0"
     yam "0.0.22"
 
+ember-config-service@^0.1.6:
+  version "0.1.6"
+  resolved "https://registry.yarnpkg.com/ember-config-service/-/ember-config-service-0.1.6.tgz#64d09bd42b09f33477531eb0d48ca7278109b069"
+  dependencies:
+    ember-cli-babel "^6.0.0"
+    ember-getowner-polyfill "1.2.2"
+
 ember-export-application-global@^2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ember-export-application-global/-/ember-export-application-global-2.0.0.tgz#8d6d7619ac8a1a3f8c43003549eb21ebed685bd2"
@@ -3167,6 +3174,14 @@ ember-get-config@0.2.1:
     broccoli-file-creator "^1.1.1"
     ember-cli-babel "^5.1.6"
 
+ember-getowner-polyfill@1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-1.2.2.tgz#cdab739e89cc8f25af0f78735422df1a61193e92"
+  dependencies:
+    ember-cli-babel "^5.1.6"
+    ember-cli-version-checker "^1.2.0"
+    ember-factory-for-polyfill "^1.1.0"
+
 ember-getowner-polyfill@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-getowner-polyfill/-/ember-getowner-polyfill-2.0.1.tgz#9bfe2b4d527ed174e76fef2c8f30937d77cb66fb"
@@ -3186,6 +3201,13 @@ ember-href-to@^1.13.0:
   resolved "https://registry.yarnpkg.com/ember-href-to/-/ember-href-to-1.13.0.tgz#308ab4803d9d08e30a92af888cc67412a800468d"
   dependencies:
     ember-cli-babel "^5.1.6"
+
+ember-img-lazy@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/ember-img-lazy/-/ember-img-lazy-1.0.0.tgz#9fad76e381f30c370a9e5bbcb03486bbf192e5de"
+  dependencies:
+    ember-cli-babel "^6.3.0"
+    ember-config-service "^0.1.6"
 
 ember-inflector@^2.0.0:
   version "2.0.1"

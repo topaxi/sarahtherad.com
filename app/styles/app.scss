@@ -226,3 +226,7 @@ article {
   display: flex;
   justify-content: center;
 }
+
+.img-lazy--loading {
+  background: url(/assets/pictures/loading.svg) center center no-repeat;
+}
