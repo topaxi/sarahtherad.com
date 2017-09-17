@@ -5,7 +5,7 @@
   .logo .rect {
     display: block;
   }
-  .instagram {
+  .header-icon {
     opacity: 0;
   }
 }
@@ -28,7 +28,7 @@
   transition: transform 200ms;
   transform-origin: top right;
 }
-.instagram {
+.header-icon {
   width: 3rem;
   height: 3rem;
   display: block;
@@ -36,16 +36,21 @@
   top: 15rem;
   right: 1rem;
   z-index: 1;
-  transition: color 200ms, opacity 200ms;
+  // TODO: transition transform instead of top
+  transition: color 200ms, opacity 200ms, top 200ms;
+
+  &.email {
+    top: 19rem;
+  }
 
   @media screen and (max-width: 719px) {
     display: none;
   }
 }
-.instagram > svg > path {
+.header-icon > svg > path {
   fill: currentColor;
 }
-.radio-show .instagram {
+.radio-show .header-icon {
   display: none;
 }
 @media screen and (min-width: 640px) {
@@ -61,8 +66,12 @@
   .home .logo > svg {
     transform: scale(2.5);
   }
-  .home .instagram {
+  .home .header-icon {
     top: 20rem;
+
+    &.email {
+      top: 24rem;
+    }
   }
 }
 
