@@ -3,12 +3,12 @@
   "version": "0.0.0",
   "description": "Small description for sarahtherad goes here",
   "license": "MIT",
-  "author": "",
+  "author": "Damian Senn <damian.senn@topaxi.codes>",
   "directories": {
     "doc": "doc",
     "test": "tests"
   },
-  "repository": "",
+  "repository": "https://github.com/topaxi/sarahtherad.com.git",
   "scripts": {
     "build": "ember build",
     "start": "ember server",
