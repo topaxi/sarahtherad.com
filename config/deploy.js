@@ -41,11 +41,11 @@ module.exports = function(deployTarget) {
         fs.mkdirSync('tmp/sarahtherad.com/server')
         fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
         serverFiles.forEach(file =>
-          copySync(`fastboot-server/${file}`, `tmp/sarahtherad.com/server/${file}`)
+          fs.copyFileSync(`fastboot-server/${file}`, `tmp/sarahtherad.com/server/${file}`)
         )
         fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
         wordpressFiles.forEach(file =>
-          copySync(`wordpress-theme/${file}`, `tmp/sarahtherad.com/${file}`)
+          fs.copyFileSync(`wordpress-theme/${file}`, `tmp/sarahtherad.com/${file}`)
         )
         fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
       }
@@ -57,19 +57,3 @@ module.exports = function(deployTarget) {
   // ENV object synchronously.
   return ENV;
 };
-
-function copySync(srcFile, destFile) {
-  const BUF_LENGTH = 64 * 1024;
-  const buff = new Buffer(BUF_LENGTH);
-  const fdr = fs.openSync(srcFile, 'r');
-  const fdw = fs.openSync(destFile, 'w');
-  let bytesRead = 1;
-  let pos = 0;
-  while (bytesRead > 0) {
-    bytesRead = fs.readSync(fdr, buff, 0, BUF_LENGTH, pos);
-    fs.writeSync(fdw, buff, 0, bytesRead);
-    pos += bytesRead;
-  }
-  fs.closeSync(fdr);
-  return fs.closeSync(fdw);
-}
