@@ -14,7 +14,6 @@ services:
     volumes:
       - ./wordpress/content-htaccess:/var/www/html/wp-content/.htaccess
       - ./wordpress-theme/:/var/www/html/wp-content/themes/sarahtherad/
-      - ./dist/assets/sarahtherad.css:/var/www/html/wp-content/themes/sarahtherad/style.css
 
   db:
     image: mariadb
