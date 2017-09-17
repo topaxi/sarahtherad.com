@@ -29,6 +29,12 @@ module.exports = function(defaults) {
         /\.xml/, // any xml files (sitemaps)
       ],
     },
+    'asset-cache': {
+      exclude: [
+        // Nginx does this for us
+        '**/*.webp',
+      ],
+    },
     'esw-cache-fallback': {
       version: '1',
       patterns: [
