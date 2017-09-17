@@ -43,9 +43,16 @@
     max-width: 100%;
     max-height: calc(100% - 3.5rem - 0.83em);
   }
-  img[src$=".svg"], iframe {
+  img[src$=".svg"] {
     width: 100%;
     height: calc(100% - 3.5rem - 0.83em);
+  }
+  iframe {
+    // No idea how else I could make these "auto-expand"
+    width: 999999px;
+    height: 999999px;
+    max-width: 100%;
+    max-height: calc(100% - 3.5rem - 0.83em);
   }
   .next-picture,
   .previous-picture {
