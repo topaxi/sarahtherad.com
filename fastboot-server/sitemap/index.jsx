@@ -37,13 +37,23 @@ index.get('/sitemap/index.xml', (req, res) => {
         <changefreq>hourly</changefreq>
       </url>
       <url>
-        <loc>https://sarahtherad.com/radio-show</loc>
+        <loc>https://sarahtherad.com/graphics</loc>
         <priority>1.0</priority>
         <changefreq>weekly</changefreq>
       </url>
       <url>
+        <loc>https://sarahtherad.com/blog</loc>
+        <priority>0.9</priority>
+        <changefreq>weekly</changefreq>
+      </url>
+      <url>
+        <loc>https://sarahtherad.com/radio-show</loc>
+        <priority>0.8</priority>
+        <changefreq>weekly</changefreq>
+      </url>
+      <url>
         <loc>https://sarahtherad.com/about</loc>
-        <priority>1.0</priority>
+        <priority>0.5</priority>
         <changefreq>weekly</changefreq>
       </url>
     </urlset>
