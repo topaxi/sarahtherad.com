@@ -31,7 +31,7 @@ export default Route.extend({
 
   afterModel() {
     let description =
-      'This is Sarah, founder of Christener Graphics & Communications.' +
+      'This is Sarah, founder of Christener Graphics & Communications. ' +
       'You\'ll find a collection of my graphic artworks, recordings from ' +
       'my radio show, as well as some other shiny stuff about my life on ' +
       'this little website of mine.'
