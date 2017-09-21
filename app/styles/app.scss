@@ -113,11 +113,9 @@ main {
   }
 }
 
-header {
-  > {
-    h1, h2, h3, h4, h5, h6 {
-      margin-top: 0;
-    }
+header > time + {
+  h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
   }
 }
 
