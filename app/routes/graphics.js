@@ -1,6 +1,7 @@
 import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import shoebox from '../utils/shoebox'
+import scrollTo from '../utils/scroll-to'
 
 export default Route.extend({
   menuTitle: service(),
@@ -31,6 +32,8 @@ export default Route.extend({
   activate() {
     this.set('menuTitle.title', 'Graphics')
     this.set('menuTitle.route', 'graphics.index')
+
+    scrollTo('top', this)
   },
 
   deactivate() {
