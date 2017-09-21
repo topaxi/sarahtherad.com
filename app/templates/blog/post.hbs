@@ -1,5 +1,5 @@
 {{! template-lint-disable triple-curlies }}
-{{title model.title}}
+{{~title model.title~}}
 <article class="page-content" lang={{model.lang}}>
   <header>
     <time datetime={{date-format-iso model.date}}>
@@ -7,5 +7,5 @@
     </time>
     <h1>{{model.title}}</h1>
   </header>
-  {{{model.content}}}
+  {{~{model.content}~}}
 </article>

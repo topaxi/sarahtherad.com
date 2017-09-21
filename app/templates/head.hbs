@@ -6,35 +6,35 @@
 
 <meta property="og:site_name" content="sarahtherad.com">
 <meta property="og:type" content="website">
-{{#with model.description as |description|}}
+{{~#with model.description as |description|~}}
   <meta name="description" content={{description}}>
   <meta property="og:description" content={{description}}>
   <meta name="twitter:description" content={{description}}>
-{{/with}}
+{{~/with~}}
 <meta name="twitter:card" content="summary">
-{{#with model.url as |url|}}
+{{~#with model.url as |url|~}}
   <meta property="og:url" content={{url}}>
   <meta name="twitter:url" content={{url}}>
-{{/with}}
+{{~/with~}}
 
-{{#with model.picture as |picture|}}
+{{~#with model.picture as |picture|~}}
   <meta property="og:image" content={{picture}}>
   <meta name="twitter:image" content={{picture}}>
   <link rel="image_src" href={{picture}}>
-{{/with}}
+{{~/with~}}
 
-{{#with model.pictureDescription as |pictureDescription|}}
+{{~#with model.pictureDescription as |pictureDescription|~}}
   <meta property="og:image:alt" content={{pictureDescription}}>
   <meta name="twitter:image:alt" content={{pictureDescription}}>
-{{/with}}
+{{~/with~}}
 
-{{#with model.prev as |prev|}}
+{{~#with model.prev as |prev|~}}
   <link rel="prev" href={{prev}}>
-{{/with}}
-{{#with model.next as |next|}}
+{{~/with~}}
+{{~#with model.next as |next|~}}
   <link rel="next" href={{next}}>
-{{/with}}
+{{~/with~}}
 
-{{#with model.jsonld as |jsonld|}}
+{{~#with model.jsonld as |jsonld|~}}
   <script type="application/ld+json">{{json-stringify jsonld}}</script>
-{{/with}}
+{{~/with~}}

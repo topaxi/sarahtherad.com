@@ -1,4 +1,5 @@
-{{title 'Radio Show'}}
+{{~title 'Radio Show'~}}
+
 <article class="radio-show-article">
   <header class="radio-show-header-mobile">
     <h2>Radio Show on RaBe</h2>
@@ -53,13 +54,16 @@
   </div>
 </article>
 <aside>
-  {{#each model.data as |cast|}}
-    {{s-mixcloud cast=cast}}
-  {{/each}}
-  {{#unless isFirstPage}}
-    {{link-to 'back' 'radio-show' (query-params page=previousPage)}}
-  {{/unless}}
-  {{#if hasMore}}
-    {{link-to 'more…' 'radio-show' (query-params page=nextPage)}}
-  {{/if}}
+  {{~#each model.data as |cast|~}}
+    {{~s-mixcloud cast=cast~}}
+  {{~/each~}}
+
+  <div class="radio-show-pagination">
+    {{~#unless isFirstPage~}}
+      {{~link-to 'back' 'radio-show' (query-params page=previousPage)~}}
+    {{/unless}}
+    {{~#if hasMore~}}
+      {{link-to 'more…' 'radio-show' (query-params page=nextPage)}}
+    {{~/if~}}
+  </div>
 </aside>

@@ -4,45 +4,47 @@
     <h1>{{model.title}}</h1>
     <a href={{href-to 'graphics'}}>{{s-close}}</a>
   </div>
-  {{#if hasMultiple}}
-    {{#swiper-container pagination=hasMultiple currentSlide=currentPictureIndex}}
-      {{#each model.pictures as |picture|}}
-        {{#swiper-slide}}
-          {{#if (is-pdf picture.src)}}
-            {{pdf-viewer src=picture.src}}
-          {{else}}
+  {{~#if hasMultiple~}}
+    {{~#swiper-container
+        pagination=hasMultiple
+        currentSlide=currentPictureIndex~}}
+      {{~#each model.pictures as |picture|~}}
+        {{~#swiper-slide~}}
+          {{~#if (is-pdf picture.src)~}}
+            {{~pdf-viewer src=picture.src~}}
+          {{~else~}}
             <img
                 src={{picture.src}}
                 alt={{picture.title}}
                 width={{picture.width}}
                 height={{picture.height}}>
-          {{/if}}
-        {{/swiper-slide}}
-      {{/each}}
-    {{/swiper-container}}
-    {{#if currentPictureIndex}}
+          {{~/if~}}
+        {{~/swiper-slide~}}
+      {{~/each~}}
+    {{~/swiper-container~}}
+    {{~#if currentPictureIndex~}}
       <button class="previous-picture" {{action 'previous'}}>
         {{~s-chevron rotate=true~}}
       </button>
-    {{/if}}
-    {{#if hasNext}}
+    {{~/if~}}
+    {{~#if hasNext~}}
       <button class="next-picture" {{action 'next'}}>{{s-chevron}}</button>
-    {{/if}}
-  {{else if (is-pdf currentPicture.src)}}
-    {{pdf-viewer src=currentPicture.src}}
-  {{else}}
+    {{~/if~}}
+  {{~else if (is-pdf currentPicture.src)~}}
+    {{~pdf-viewer src=currentPicture.src~}}
+  {{~else~}}
     <img
         src={{currentPicture.src}}
         alt={{currentPicture.title}}
         width={{currentPicture.width}}
         height={{currentPicture.height}}>
-  {{/if}}
-  {{#if model.content}}
+  {{~/if~}}
+  {{~#if model.content~}}
     <section class="graphics-post-content {{if showContent 'graphics-post-content--visible'}}">
-      {{{model.content}}}
+      {{~{model.content}~}}
     </section>
     <button class="graphics-post-show-content" {{action 'show-content'}}>
       Information
     </button>
-  {{/if}}
+  {{~/if~}}
 </article>

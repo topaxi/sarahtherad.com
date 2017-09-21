@@ -1,11 +1,11 @@
-{{title 'sarahtherad.com' prepend=true}}
+{{~title 'sarahtherad.com' prepend=true~}}
 
 <div class={{rootclass.classNames}}>
-  {{service-worker-update-notify}}
+  {{~service-worker-update-notify~}}
 
-  {{#liquid-bind backgroundStyle class='background-container' as |style|}}
+  {{~#liquid-bind backgroundStyle class='background-container' as |style|~}}
     <div class="background" style={{style}}></div>
-  {{/liquid-bind}}
+  {{~/liquid-bind~}}
   <header style={{headerStyle}}>
     <a href={{href-to 'index'}} class="logo">
       <svg viewBox="0 0 283.5 283.5">
@@ -23,7 +23,7 @@
       <svg viewBox="0 0 14 16" aria-label="Mail to graphics@sarahtherad.com"><path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path></svg>
     </a>
 
-    {{s-burger open=open}}
+    {{~s-burger open=open~}}
     <div class="menu">
       <nav>
         <ul>
@@ -34,10 +34,10 @@
         </ul>
       </nav>
     </div>
-    {{#if menuTitle.title}}
+    {{~#if menuTitle.title~}}
       <h1 class="menu-title"><a href={{href-to menuTitle.route}}>{{menuTitle.title}}</a></h1>
-    {{/if}}
+    {{~/if~}}
   </header>
   <main role="main">{{liquid-outlet}}</main>
 </div>
-{{s-mixcloud-player}}
+{{~s-mixcloud-player~}}
