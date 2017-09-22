@@ -11,7 +11,7 @@ module.exports = function(defaults) {
       plugins: [ 'babel-plugin-transform-decorators-legacy' ],
     },
     fingerprint: {
-      extensions: [ 'js', 'css', 'png', 'jpg', 'svg', 'gif' ],
+      extensions: [ 'ico', 'js', 'css', 'png', 'jpg', 'svg', 'gif' ],
     },
     'ember-service-worker': {
       registrationStrategy: 'inline',
