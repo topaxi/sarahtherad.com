@@ -26,9 +26,6 @@ Author: sarahtherad.com + topaxi.codes
 }
 
 .app-shell {
-  .background {
-    background-color: #545454;
-  }
   main {
     margin-top: 0;
   }
@@ -36,7 +33,7 @@ Author: sarahtherad.com + topaxi.codes
     display: flex;
     justify-content: center;
   }
-  s-mixcloud-player {
+  + s-mixcloud-player {
     display: none;
   }
 }
