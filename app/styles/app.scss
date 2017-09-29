@@ -25,6 +25,16 @@ Author: sarahtherad.com + topaxi.codes
   scroll-behavior: smooth;
 }
 
+.app-shell {
+  .background {
+    background-color: #545454;
+  }
+  main .liquid-child {
+    display: flex;
+    justify-content: center;
+  }
+}
+
 .about {
   dt, dd {
     display: inline;

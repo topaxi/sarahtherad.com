@@ -13,6 +13,14 @@ module.exports = function(defaults) {
     fingerprint: {
       extensions: [ 'ico', 'js', 'css', 'png', 'jpg', 'svg', 'gif' ],
     },
+    minifyHTML: {
+      minifierOptions: {
+        ignoreCustomComments: [ /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD|EMBER_APP_SHELL_PLACEHOLDER/ ],
+      },
+    },
+    'ember-app-shell': {
+      outputFile: 'app-shell.html',
+    },
     'ember-service-worker': {
       registrationStrategy: 'inline',
     },

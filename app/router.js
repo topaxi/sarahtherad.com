@@ -49,6 +49,7 @@ Router.map(function() {
   });
   this.route('about');
   this.route('not-found', { path: '/*path' });
+  this.route('app-shell');
 });
 
 export default Router;
