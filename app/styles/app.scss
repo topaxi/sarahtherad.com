@@ -29,9 +29,15 @@ Author: sarahtherad.com + topaxi.codes
   .background {
     background-color: #545454;
   }
+  main {
+    margin-top: 0;
+  }
   main .liquid-child {
     display: flex;
     justify-content: center;
+  }
+  s-mixcloud-player {
+    display: none;
   }
 }
 
