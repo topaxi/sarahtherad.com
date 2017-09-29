@@ -35,6 +35,7 @@ module.exports = function(defaults) {
         /favicon-.*$/,
         /app-logos\//,
         /jobs\//,
+        /app-shell.html$/,
         /\.xml/, // any xml files (sitemaps)
       ],
     },
