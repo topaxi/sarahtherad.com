@@ -60,10 +60,10 @@
 
   <div class="radio-show-pagination">
     {{~#unless isFirstPage~}}
-      {{~link-to 'back' 'radio-show' (query-params page=previousPage)~}}
+      {{~link-to '« newer' 'radio-show' (query-params page=previousPage) class='prev'~}}
     {{/unless}}
     {{~#if hasMore~}}
-      {{link-to 'more…' 'radio-show' (query-params page=nextPage)}}
+      {{~link-to 'older »' 'radio-show' (query-params page=nextPage) class='next'~}}
     {{~/if~}}
   </div>
 </aside>

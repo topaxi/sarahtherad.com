@@ -243,6 +243,14 @@ article {
     font-weight: normal;
   }
 }
+.radio-show-pagination {
+  display: flex;
+  background: #fff;
+  padding: 1.5rem;
+  .next {
+    margin-left: auto;
+  }
+}
 
 .swiper-slide {
   display: flex;
