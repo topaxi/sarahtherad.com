@@ -70,6 +70,7 @@ Author: sarahtherad.com + topaxi.codes
   > header {
     position: relative;
     transition: color 200ms;
+    padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-left);
   }
 }
 
@@ -97,6 +98,9 @@ Author: sarahtherad.com + topaxi.codes
 
 main {
   margin-top: 10rem;
+  margin-right: constant(safe-area-inset-right);
+  margin-left: constant(safe-area-inset-left);
+  margin-bottom: constant(safe-area-inset-bottom);
   padding: 1rem;
   flex: 1;
   display: block;
