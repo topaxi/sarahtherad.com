@@ -41,10 +41,27 @@ export default Route.extend({
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
-      '@type': 'Website',
-      publisher,
-      url,
-      description,
+      '@graph': [
+        {
+          '@type': 'Website',
+          publisher,
+          url,
+          description,
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': url,
+                name: publisher,
+              },
+            },
+          ],
+        },
+      ],
     })
     this.set('headData.url', url)
     this.set('headData.description', description)

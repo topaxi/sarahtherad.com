@@ -46,6 +46,27 @@ export default Route.extend({
           sameAs: socialMedia,
           url,
         },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://sarahtherad.com/',
+                name: 'sarahtherad.com',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': url,
+                name: 'About',
+              },
+            },
+          ],
+        },
       ],
     })
     this.set('headData.url', url)

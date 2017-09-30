@@ -29,6 +29,39 @@ export default Route.extend({
       .then(res => res.json())
   },
 
+  afterModel() {
+    let publisher = 'sarahtherad.com'
+    let url = `https://${publisher}/radio-show/`
+
+    this.set('headData.jsonld', {
+      '@context': 'http://schema.org',
+      '@graph': [
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://sarahtherad.com/',
+                name: publisher,
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': 'https://sarahtherad.com/radio-show',
+                name: 'Radio Show',
+              },
+            },
+          ],
+        },
+      ],
+    })
+    this.set('headData.url', url)
+  },
+
   activate() {
     this._super(...arguments)
 

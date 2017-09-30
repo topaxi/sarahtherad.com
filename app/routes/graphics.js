@@ -21,10 +21,35 @@ export default Route.extend({
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
-      '@type': 'Series',
-      publisher,
-      url,
-      name: 'Graphics'
+      '@graph': [
+        {
+          '@type': 'Series',
+          publisher,
+          url,
+          name: 'Graphics',
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://sarahtherad.com/',
+                name: publisher,
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': 'https://sarahtherad.com/graphics/',
+                name: 'Graphics',
+              },
+            },
+          ],
+        },
+      ],
     })
     this.set('headData.url', url)
   },

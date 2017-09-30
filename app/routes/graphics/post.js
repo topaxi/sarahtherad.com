@@ -27,21 +27,55 @@ export default Route.extend({
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
-      '@type': 'VisualArtwork',
-      publisher,
-      author,
-      artist: author,
-      headline: model.title,
-      url,
-      image: picture.src,
-      width: picture.width,
-      height: picture.height,
-      fileFormat: picture.mime,
-      thumbnailUrl: thumbnail.src,
-      datePublished: model.date,
-      dateModified: model.modified,
-      //keywords: 'ES2016, ES2017',
-      description,
+      '@graph': [
+        {
+          '@type': 'VisualArtwork',
+          publisher,
+          author,
+          artist: author,
+          headline: model.title,
+          url,
+          image: picture.src,
+          width: picture.width,
+          height: picture.height,
+          fileFormat: picture.mime,
+          thumbnailUrl: thumbnail.src,
+          datePublished: model.date,
+          dateModified: model.modified,
+          //keywords: 'ES2016, ES2017',
+          description,
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              item: {
+                '@id': 'https://sarahtherad.com/',
+                name: publisher,
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              item: {
+                '@id': 'https://sarahtherad.com/graphics/',
+                name: 'Graphics',
+              },
+            },
+            {
+              '@type': 'ListItem',
+              position: 3,
+              item: {
+                '@id': url,
+                name: model.title,
+                image: thumbnail.src,
+              },
+            },
+          ],
+        },
+      ],
     })
     this.set('headData.url', url)
     this.set('headData.picture', thumbnail.src)
