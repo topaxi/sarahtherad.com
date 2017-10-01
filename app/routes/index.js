@@ -4,6 +4,11 @@ import RSVP from 'rsvp'
 import shoebox from '../utils/shoebox'
 import scrollTo from '../utils/scroll-to'
 
+import {
+  organization,
+  sarah,
+} from '../utils/structured-data'
+
 const { Promise } = RSVP
 
 export default Route.extend({
@@ -48,6 +53,8 @@ export default Route.extend({
           url,
           description,
         },
+        organization,
+        sarah,
         {
           '@type': 'BreadcrumbList',
           itemListElement: [
