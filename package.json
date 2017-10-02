@@ -53,6 +53,7 @@
     "ember-load-initializers": "^1.0.0",
     "ember-pad": "^1.2.2",
     "ember-page-title": "^3.2.2",
+    "ember-prefetch": "^2.1.6",
     "ember-resolver": "^4.5.0",
     "ember-service-worker": "^0.6.8",
     "ember-service-worker-asset-cache": "^0.6.1",

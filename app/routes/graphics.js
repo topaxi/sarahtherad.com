@@ -12,7 +12,7 @@ export default Route.extend({
   },
 
   @shoebox
-  model() {
+  prefetch() {
     return this.rad.graphics()
   },
 

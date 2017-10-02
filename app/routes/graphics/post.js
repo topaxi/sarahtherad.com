@@ -5,7 +5,7 @@ import { breadcrumb, sarah } from '../../utils/structured-data'
 
 export default Route.extend({
   @shoebox
-  model({ slug }) {
+  prefetch({ slug }) {
     return this.rad.graphic(slug)
   },
 
