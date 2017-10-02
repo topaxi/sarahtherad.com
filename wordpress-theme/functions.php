@@ -32,13 +32,33 @@ add_action('rest_api_init', function() {
   register_rest_route('rad', '/posts/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_post(get_rad_post($req['slug'], 'blog'), true);
+      $post = get_rad_post($req['slug'], 'blog');
+
+      if (!$post) {
+        status_header(404);
+        return [
+          'error' => true,
+          'message' => 'Post not found',
+        ];
+      }
+
+      return serialize_post($post, true);
     },
   ]);
   register_rest_route('rad', '/graphics/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_graphic(get_rad_post($req['slug'], 'graphics'), true);
+      $post = get_rad_post($req['slug'], 'graphics');
+
+      if (!$post) {
+        status_header(404);
+        return [
+          'error' => true,
+          'message' => 'Graphic not found',
+        ];
+      }
+
+      return serialize_graphic($post, true);
     },
   ]);
   register_rest_route('rad', '/posts', [
@@ -162,6 +182,7 @@ function rad_thumb($post, $size = 'medium_large') {
 function get_rad_posts($category_name, $per_page = 20) {
   return get_posts([
     'post_type' => 'post',
+    'post_status' => 'publish',
     'category_name' => $category_name,
     'posts_per_page' => $per_page
   ]);
@@ -170,6 +191,7 @@ function get_rad_posts($category_name, $per_page = 20) {
 function get_random_posts($category_name, $per_page = 3) {
   return get_posts([
     'post_type' => 'post',
+    'post_status' => 'publish',
     'category_name' => $category_name,
     'orderby' => 'rand',
     'posts_per_page' => $per_page
@@ -179,6 +201,7 @@ function get_random_posts($category_name, $per_page = 3) {
 function get_random_background() {
   list($post) = get_posts([
     'post_type' => 'home_background',
+    'post_status' => 'publish',
     'orderby' => 'rand',
     'posts_per_page' => 1
   ]);
@@ -194,13 +217,20 @@ function get_random_background() {
 }
 
 function get_rad_post($slug, $category_name) {
+  $category = get_category_by_slug($category_name);
+
   list($post) = get_posts([
     'name' => $slug,
-    'category_name' => $category_name,
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => 1
   ]);
+
+  list($postCategory) = get_the_category($post);
+
+  if ($category->cat_ID !== $postCategory->cat_ID) {
+    return null;
+  }
 
   return $post;
 }
