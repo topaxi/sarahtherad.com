@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
 import stripHtml from '../../utils/strip-html'
+import { breadcrumb } from '../../utils/structured-data'
 
 export default Route.extend({
   @shoebox
@@ -45,36 +46,25 @@ export default Route.extend({
           //keywords: 'ES2016, ES2017',
           description,
         },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://sarahtherad.com/',
-                name: publisher,
-              },
+        breadcrumb([
+          {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+              '@id': 'https://sarahtherad.com/graphics/',
+              name: 'Graphics',
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              item: {
-                '@id': 'https://sarahtherad.com/graphics/',
-                name: 'Graphics',
-              },
+          },
+          {
+            '@type': 'ListItem',
+            position: 3,
+            item: {
+              '@id': url,
+              name: model.title,
+              image: thumbnail.src,
             },
-            {
-              '@type': 'ListItem',
-              position: 3,
-              item: {
-                '@id': url,
-                name: model.title,
-                image: thumbnail.src,
-              },
-            },
-          ],
-        },
+          },
+        ]),
       ],
     })
     this.set('headData.url', url)

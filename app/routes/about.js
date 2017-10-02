@@ -4,6 +4,7 @@ import scrollTo from '../utils/scroll-to'
 import {
   organization,
   sarah,
+  breadcrumb,
 } from '../utils/structured-data'
 
 export default Route.extend({
@@ -22,27 +23,16 @@ export default Route.extend({
       '@graph': [
         organization,
         sarah,
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://sarahtherad.com/',
-                name: 'sarahtherad.com',
-              },
+        breadcrumb([
+          {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+              '@id': url,
+              name: 'About',
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              item: {
-                '@id': url,
-                name: 'About',
-              },
-            },
-          ],
-        },
+          },
+        ]),
       ],
     })
     this.set('headData.url', url)

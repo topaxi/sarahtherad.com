@@ -7,6 +7,7 @@ import scrollTo from '../utils/scroll-to'
 import {
   organization,
   sarah,
+  breadcrumb,
 } from '../utils/structured-data'
 
 const { Promise } = RSVP
@@ -55,19 +56,7 @@ export default Route.extend({
         },
         organization,
         sarah,
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': url,
-                name: publisher,
-              },
-            },
-          ],
-        },
+        breadcrumb(),
       ],
     })
     this.set('headData.url', url)

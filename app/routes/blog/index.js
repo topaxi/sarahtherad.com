@@ -1,6 +1,7 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
 import scrollTo from '../../utils/scroll-to'
+import { breadcrumb } from '../../utils/structured-data'
 
 export default Route.extend({
   beforeModel() {
@@ -25,27 +26,16 @@ export default Route.extend({
           url,
           name: 'Articles',
         },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://sarahtherad.com/',
-                name: publisher,
-              },
+        breadcrumb([
+          {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+              '@id': url,
+              name: 'Blog',
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              item: {
-                '@id': 'https://sarahtherad.com/blog/',
-                name: 'Blog',
-              },
-            },
-          ],
-        },
+          },
+        ]),
       ],
     })
     this.set('headData.url', url)

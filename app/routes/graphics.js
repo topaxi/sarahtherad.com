@@ -2,6 +2,7 @@ import { inject as service } from '@ember/service';
 import Route from '@ember/routing/route';
 import shoebox from '../utils/shoebox'
 import scrollTo from '../utils/scroll-to'
+import { breadcrumb } from '../utils/structured-data'
 
 export default Route.extend({
   menuTitle: service(),
@@ -28,27 +29,16 @@ export default Route.extend({
           url,
           name: 'Graphics',
         },
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://sarahtherad.com/',
-                name: publisher,
-              },
+        breadcrumb([
+          {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+              '@id': 'https://sarahtherad.com/graphics/',
+              name: 'Graphics',
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              item: {
-                '@id': 'https://sarahtherad.com/graphics/',
-                name: 'Graphics',
-              },
-            },
-          ],
-        },
+          },
+        ]),
       ],
     })
     this.set('headData.url', url)

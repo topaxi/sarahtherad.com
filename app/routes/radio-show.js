@@ -3,6 +3,7 @@ import fetch from 'fetch'
 import query from '../utils/query'
 import shoebox from '../utils/shoebox'
 import scrollTo from '../utils/scroll-to'
+import { breadcrumb } from '../utils/structured-data'
 
 const LIMIT = 20;
 
@@ -36,27 +37,16 @@ export default Route.extend({
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
       '@graph': [
-        {
-          '@type': 'BreadcrumbList',
-          itemListElement: [
-            {
-              '@type': 'ListItem',
-              position: 1,
-              item: {
-                '@id': 'https://sarahtherad.com/',
-                name: publisher,
-              },
+        breadcrumb([
+          {
+            '@type': 'ListItem',
+            position: 2,
+            item: {
+              '@id': url,
+              name: 'Radio Show',
             },
-            {
-              '@type': 'ListItem',
-              position: 2,
-              item: {
-                '@id': 'https://sarahtherad.com/radio-show',
-                name: 'Radio Show',
-              },
-            },
-          ],
-        },
+          },
+        ]),
       ],
     })
     this.set('headData.url', url)
