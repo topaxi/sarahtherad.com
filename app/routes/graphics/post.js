@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
 import stripHtml from '../../utils/strip-html'
-import { breadcrumb } from '../../utils/structured-data'
+import { breadcrumb, sarah } from '../../utils/structured-data'
 
 export default Route.extend({
   @shoebox
@@ -15,16 +15,6 @@ export default Route.extend({
     let picture = model.pictures[0]
     let thumbnail = model.thumbail || picture
     let description = stripHtml(model.content)
-    let author = {
-      '@type': 'Person',
-      name: 'Sarahtherad',
-      image: '',
-      url: `https://${publisher}/`,
-      sameAs: [
-        'https://twitter.com/sarah_therad/',
-        'https://www.instagram.com/sarah_therad/',
-      ]
-    }
 
     this.set('headData.jsonld', {
       '@context': 'http://schema.org',
@@ -32,8 +22,8 @@ export default Route.extend({
         {
           '@type': 'VisualArtwork',
           publisher,
-          author,
-          artist: author,
+          author: sarah,
+          artist: sarah,
           headline: model.title,
           url,
           image: picture.src,
