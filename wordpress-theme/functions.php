@@ -32,13 +32,13 @@ add_action('rest_api_init', function() {
   register_rest_route('rad', '/posts/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_post(get_rad_post($req['slug']), true);
+      return serialize_post(get_rad_post($req['slug'], 'blog'), true);
     },
   ]);
   register_rest_route('rad', '/graphics/(?P<slug>[a-zA-Z\d-]+)', [
     'methods' => 'GET',
     'callback' => function($req) {
-      return serialize_graphic(get_rad_post($req['slug']), true);
+      return serialize_graphic(get_rad_post($req['slug'], 'graphics'), true);
     },
   ]);
   register_rest_route('rad', '/posts', [
@@ -193,9 +193,10 @@ function get_random_background() {
   ];
 }
 
-function get_rad_post($slug) {
+function get_rad_post($slug, $category_name) {
   list($post) = get_posts([
     'name' => $slug,
+    'category_name' => $category_name,
     'post_type' => 'post',
     'post_status' => 'publish',
     'posts_per_page' => 1
