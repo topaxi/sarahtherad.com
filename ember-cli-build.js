@@ -21,7 +21,7 @@ module.exports = function(defaults) {
     'ember-app-shell': {
       outputFile: 'app-shell.html',
       criticalCSSOptions: {
-        ignore: [ /font-face/ ],
+        ignore: [ /font-face/, /font-family/ ],
       },
     },
     'ember-service-worker': {
