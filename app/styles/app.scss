@@ -79,6 +79,7 @@ Author: sarahtherad.com + topaxi.codes
 }
 
 .background-container {
+  contain: strict;
   z-index: -1;
   position: fixed;
   left: 0;
