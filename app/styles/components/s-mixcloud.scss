@@ -7,6 +7,9 @@ s-mixcloud {
     justify-content: flex-start;
   }
 
+  img {
+    display: block;
+  }
   > .info {
     display: flex;
     flex-direction: column;
