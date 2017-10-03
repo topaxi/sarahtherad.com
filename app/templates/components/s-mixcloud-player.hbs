@@ -1,5 +1,5 @@
-<button {{action (mut cast null)}}>&times;</button>
 {{~#with cast.url as |url|~}}
+  <button {{action (mut cast null)}}>&times;</button>
   <iframe
       src="https://www.mixcloud.com/widget/iframe/?feed={{encode url}}&hide_cover=1&light=1&autoplay=1"></iframe>
 {{~/with~}}
