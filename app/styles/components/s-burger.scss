@@ -40,6 +40,9 @@ $animation: 0.6s;
   @supports (mask: url('')) or (-webkit-mask-box-image: url('')) {
     display: block;
   }
+  @supports (-ms-ime-align: auto) {
+    display: none;
+  }
 }
 
 .animate-path {
