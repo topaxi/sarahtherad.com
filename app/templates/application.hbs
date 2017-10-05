@@ -7,7 +7,7 @@
     <div class="background" style={{style}}></div>
   {{~/liquid-bind~}}
   <header style={{headerStyle}}>
-    <a href={{href-to 'index'}} class="logo">
+    <a href={{href-to 'index'}} class="logo" accesskey="2">
       <svg viewBox="0 0 283.5 283.5">
         <desc>sarahtherad.com</desc>
         <path d="M126 35h33v33h-33z" class="rect logo-path"/>
@@ -23,14 +23,22 @@
       <svg viewBox="0 0 14 16" aria-label="Mail to graphics@sarahtherad.com"><path fill-rule="evenodd" d="M0 4v8c0 .55.45 1 1 1h12c.55 0 1-.45 1-1V4c0-.55-.45-1-1-1H1c-.55 0-1 .45-1 1zm13 0L7 9 1 4h12zM1 5.5l4 3-4 3v-6zM2 12l3.5-3L7 10.5 8.5 9l3.5 3H2zm11-.5l-4-3 4-3v6z"></path></svg>
     </a>
 
-    {{~s-burger open=open~}}
-    <div class="menu">
-      <nav>
-        <ul>
-          <li>{{link-to 'Graphics' 'graphics'}}</li>
-          <li>{{link-to 'Radio Show' 'radio-show'}}</li>
-          <li>{{link-to 'Blog' 'blog'}}</li>
-          <li>{{link-to 'About' 'about'}}</li>
+    {{~s-burger open=open aria-haspopup='true' accesskey='1'~}}
+    <div class="menu" aria-label="Menu">
+      <nav role="navigation">
+        <ul role="menubar">
+          <li role="presentation">
+            {{link-to 'Graphics' 'graphics' role='menuitem'}}
+          </li>
+          <li role="presentation">
+            {{link-to 'Radio Show' 'radio-show' role='menuitem'}}
+          </li>
+          <li role="presentation">
+            {{link-to 'Blog' 'blog' role='menuitem'}}
+          </li>
+          <li role="presentation">
+            {{link-to 'About' 'about' role='menuitem'}}
+          </li>
         </ul>
       </nav>
     </div>
