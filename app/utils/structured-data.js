@@ -20,6 +20,13 @@ export const organization = {
     addressRegion: 'Thun',
     streetAddress: 'Seefeldstrasse 18',
   },
+  contactPoint: {
+    availableLanguage: {
+      '@type': 'Language',
+      name: [ 'German', 'English' ],
+    },
+    email,
+  },
 }
 
 export const sarah = {
