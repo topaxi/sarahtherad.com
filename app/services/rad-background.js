@@ -15,11 +15,13 @@ export default Service.extend({
 
   clear() {
     this.set('background', null)
+    this.set('backgroundColor', null)
     this.set('color', '#000')
   },
 
-  setBackground(background, color) {
+  setBackground(background, color, backgroundColor = null) {
     this.set('background', background)
+    this.set('backgroundColor', backgroundColor)
     this.set('color', color)
   },
 
@@ -33,7 +35,7 @@ export default Service.extend({
       this.initial = false
       let data = this.get('fastboot.shoebox').retrieve('initial-background')
       if (data) {
-        this.setBackground(data.url, data.color)
+        this.setBackground(data.url, data.color, data.backgroundColor)
 
         return Promise.resolve(data)
       }
@@ -55,7 +57,7 @@ export default Service.extend({
         return data
       })
       .then(data => {
-        this.setBackground(data.url, data.color)
+        this.setBackground(data.url, data.color, data.backgroundColor)
 
         return data
       })

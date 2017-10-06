@@ -44,10 +44,17 @@ export default Controller.extend({
     }
   },
 
-  backgroundStyle: computed('radBackground.background', function() {
+  backgroundStyle: computed('radBackground.{background,backgroundColor}', function() {
     let url = this.get('radBackground.background')
+    let backgroundColor = this.get('radBackground.backgroundColor')
 
-    return url !== null ? htmlSafe(`background-image: url(${url})`) : null
+    if (!/^#[\da-f]{6}$/.test(backgroundColor)) {
+      backgroundColor = 'transparent'
+    }
+
+    return url !== null ?
+      htmlSafe(`background: ${backgroundColor} url(${url})`) :
+      null
   }),
 
   headerStyle: computed('radBackground.color', function() {

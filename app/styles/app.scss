@@ -270,13 +270,15 @@ article {
 .img-lazy--loading {
   opacity: 1;
   width: 100% !important;
-  background: rgba(238, 238, 236, 0.8);
+  background-color: rgba(238, 238, 236, 0.8);
+  background-color: var(--graphics-background-color);
 }
 .img-lazy--loaded {
   animation: 200ms fade-in forwards;
+  background-color: transparent;
 }
 .img-lazy--error {
   opacity: 1;
   width: 100% !important;
-  background: rgba(238, 42, 23, 0.8);
+  background-color: rgba(238, 42, 23, 0.8);
 }

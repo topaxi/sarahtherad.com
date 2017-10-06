@@ -114,6 +114,7 @@ function serialize_post($post, $with_content = false) {
     $ret['content'] = apply_filters('the_content', $post->post_content);
     $ret['background'] = [
       'url' => get_the_post_thumbnail_url($post->ID) ?: null,
+      'backgroundColor' => get_post_thumbnail_background_color($post),
       'color' => $color ?: '#fff',
     ];
   }
@@ -170,12 +171,13 @@ function rad_thumb($post, $size = 'medium_large') {
   $image = image_downsize($thumbnail_id, $size);
 
   list($src, $width, $height) =
-    apply_filters( 'wp_get_attachment_image_src', $image, $attachment_id, $size, false);
+    apply_filters('wp_get_attachment_image_src', $image, $attachment_id, $size, false);
 
   return [
     'src' => $src,
     'width' => $width,
     'height' => $height,
+    'backgroundColor' => get_thumbnail_background_color($thumbnail_id),
   ];
 }
 
@@ -211,9 +213,18 @@ function get_random_background() {
   return [
     'data' => [
       'url' => get_the_post_thumbnail_url($post->ID),
+      'backgroundColor' => get_post_thumbnail_background_color($post),
       'color' => $color ?: '#fff',
     ],
   ];
+}
+
+function get_post_thumbnail_background_color($post) {
+  return get_thumbnail_background_color(get_post_thumbnail_id($post));
+}
+
+function get_thumbnail_background_color($thumbnailId) {
+  return get_color_data($thumbnailId, 'dominant_color_hex', true) ?: null;
 }
 
 function get_rad_post($slug, $category_name) {

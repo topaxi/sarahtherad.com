@@ -7,7 +7,18 @@ export default ArticleListItemComponent.extend({
   fastboot: service(),
   classNames: [ 'list-item--graphics' ],
   classNameBindings: [ 'isWide:list-item--wide' ],
+  attributeBindings: [ 'style' ],
   model: null,
+
+  style: computed('picture.backgroundColor', function() {
+    let color = this.get('picture.backgroundColor')
+
+    if (/^#[\da-f]{6}$/.test(color)) {
+      return `--graphics-background-color: ${color}`
+    }
+
+    return null
+  }),
 
   picture: computed('model.{thumbnail,pictures.[]}', function() {
     return this.get('model.thumbnail') || this.get('model.pictures')[0]

@@ -57,6 +57,7 @@ export default Route.extend({
     this.radBackground.setBackground(
       model.background.url,
       model.background.color,
+      model.background.backgroundColor,
     )
   },
 
