@@ -2,7 +2,7 @@ import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
 import scrollTo from '../../utils/scroll-to'
 import stripHtml from '../../utils/strip-html'
-import { breadcrumb, sarah } from '../../utils/structured-data'
+import { breadcrumb, sarah, organization } from '../../utils/structured-data'
 
 export default Route.extend({
   @shoebox
@@ -12,7 +12,8 @@ export default Route.extend({
 
   afterModel(model) {
     let publisher = 'sarahtherad.com'
-    let url = `https://${publisher}/blog/${model.slug}`
+    let baseUrl = `https://${publisher}/`
+    let url = `${baseUrl}blog/${model.slug}`
     let description = stripHtml(model.description)
 
     this.set('headData.jsonld', {
@@ -20,8 +21,8 @@ export default Route.extend({
       '@graph': [
         {
           '@type': 'Article',
-          publisher: sarah,
-          author: sarah,
+          publisher: organization.url,
+          author: sarah.url,
           image: model.background.url,
           headline: model.title,
           url,
@@ -29,13 +30,17 @@ export default Route.extend({
           dateModified: model.modified,
           //keywords: 'ES2016, ES2017',
           description,
+          mainEntifyOfPage: {
+            '@type': 'WebPage',
+            '@id': url,
+          },
         },
         breadcrumb([
           {
             '@type': 'ListItem',
             position: 2,
             item: {
-              '@id': 'https://sarahtherad.com/blog/',
+              '@id': `${baseUrl}blog/`,
               name: 'Blog',
             },
           },

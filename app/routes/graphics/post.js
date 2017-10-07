@@ -11,7 +11,8 @@ export default Route.extend({
 
   afterModel(model) {
     let publisher = 'sarahtherad.com'
-    let url = `https://${publisher}/blog/${model.slug}`
+    let baseUrl = `https://${publisher}/`
+    let url = `${baseUrl}graphics/${model.slug}`
     let picture = model.pictures[0]
     let thumbnail = model.thumbail || picture
     let description = stripHtml(model.content)
@@ -22,8 +23,8 @@ export default Route.extend({
         {
           '@type': 'VisualArtwork',
           publisher,
-          author: sarah,
-          artist: sarah,
+          author: sarah.url,
+          artist: sarah.url,
           headline: model.title,
           url,
           image: picture.src,
@@ -35,13 +36,17 @@ export default Route.extend({
           dateModified: model.modified,
           //keywords: 'ES2016, ES2017',
           description,
+          mainEntifyOfPage: {
+            '@type': 'WebPage',
+            '@id': url,
+          },
         },
         breadcrumb([
           {
             '@type': 'ListItem',
             position: 2,
             item: {
-              '@id': 'https://sarahtherad.com/graphics/',
+              '@id': `${baseUrl}graphics/`,
               name: 'Graphics',
             },
           },
