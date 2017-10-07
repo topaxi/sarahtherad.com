@@ -1,7 +1,7 @@
 import Route from '@ember/routing/route';
 import shoebox from '../../utils/shoebox'
 import stripHtml from '../../utils/strip-html'
-import { breadcrumb, sarah } from '../../utils/structured-data'
+import { breadcrumb, sarah, organization } from '../../utils/structured-data'
 
 export default Route.extend({
   @shoebox
@@ -22,9 +22,18 @@ export default Route.extend({
       '@graph': [
         {
           '@type': 'VisualArtwork',
-          publisher,
-          author: sarah.url,
-          artist: sarah.url,
+          publisher: {
+            '@type': 'Organization',
+            '@id': organization.url,
+          },
+          author: {
+            '@type': 'Person',
+            '@id': sarah.url,
+          },
+          artist: {
+            '@type': 'Person',
+            '@id': sarah.url,
+          },
           headline: model.title,
           url,
           image: picture.src,

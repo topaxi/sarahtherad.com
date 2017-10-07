@@ -21,8 +21,14 @@ export default Route.extend({
       '@graph': [
         {
           '@type': 'Article',
-          publisher: organization.url,
-          author: sarah.url,
+          publisher: {
+            '@type': 'Organization',
+            '@id': organization.url,
+          },
+          author: {
+            '@type': 'Person',
+            '@id': sarah.url,
+          },
           image: model.background.url,
           headline: model.title,
           url,
