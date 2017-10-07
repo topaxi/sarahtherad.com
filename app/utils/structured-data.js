@@ -25,6 +25,7 @@ export const organization = {
       '@type': 'Language',
       name: [ 'German', 'English' ],
     },
+    contactType: 'email',
     email,
   },
 }
