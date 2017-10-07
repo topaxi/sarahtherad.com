@@ -53,7 +53,7 @@ export default Route.extend({
           publisher,
           url,
           description,
-          creator: [ organization.url, sarah.url ],
+          creator: [ organization, sarah ],
         },
         breadcrumb(),
       ],

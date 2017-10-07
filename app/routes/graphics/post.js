@@ -22,18 +22,9 @@ export default Route.extend({
       '@graph': [
         {
           '@type': 'VisualArtwork',
-          publisher: {
-            '@type': 'Organization',
-            '@id': organization.url,
-          },
-          author: {
-            '@type': 'Person',
-            '@id': sarah.url,
-          },
-          artist: {
-            '@type': 'Person',
-            '@id': sarah.url,
-          },
+          publisher: organization,
+          author: sarah,
+          artist: sarah,
           headline: model.title,
           url,
           image: picture.src,
