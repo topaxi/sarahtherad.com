@@ -1,5 +1,6 @@
 import { inject as service } from '@ember/service';
 import { computed } from '@ember/object';
+import { htmlSafe } from '@ember/string';
 import fetch from 'fetch'
 import ArticleListItemComponent from './s-article-list-item'
 
@@ -14,7 +15,7 @@ export default ArticleListItemComponent.extend({
     let color = this.get('picture.backgroundColor')
 
     if (/^#[\da-f]{6}$/.test(color)) {
-      return `--graphics-background-color: ${color}`
+      return htmlSafe(`--graphics-background-color: ${color}`)
     }
 
     return null
