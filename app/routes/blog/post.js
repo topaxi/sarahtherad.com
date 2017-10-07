@@ -30,7 +30,7 @@ export default Route.extend({
           dateModified: model.modified,
           //keywords: 'ES2016, ES2017',
           description,
-          mainEntifyOfPage: {
+          mainEntityOfPage: {
             '@type': 'WebPage',
             '@id': url,
           },
