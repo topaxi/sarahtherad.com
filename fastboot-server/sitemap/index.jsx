@@ -11,8 +11,7 @@ const { Router } = express
 const index = module.exports = new Router()
 
 index.get('/sitemap.xml', (req, res) => {
-  res.set('Content-Type', 'application/xml; charset=utf-8')
-  res.send(String(
+  sendSitemap(res,
     <sitemapindex xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
       <sitemap>
         <loc>https://sarahtherad.com/sitemap/index.xml</loc>
@@ -24,12 +23,11 @@ index.get('/sitemap.xml', (req, res) => {
         <loc>https://sarahtherad.com/sitemap/graphics.xml</loc>
       </sitemap>
     </sitemapindex>
-  ))
+  )
 })
 
 index.get('/sitemap/index.xml', (req, res) => {
-  res.set('Content-Type', 'application/xml; charset=utf-8')
-  res.send(String(
+  sendSitemap(res,
     <urlset xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'>
       <url>
         <loc>https://sarahtherad.com/</loc>
@@ -57,14 +55,13 @@ index.get('/sitemap/index.xml', (req, res) => {
         <changefreq>weekly</changefreq>
       </url>
     </urlset>
-  ))
+  )
 })
 
 index.get('/sitemap/graphics.xml', wrap(async (req, res) => {
   let graphics = await fetch(`${API_BASE}/graphics?sitemap=1`).then(r => r.json())
 
-  res.set('Content-Type', 'application/xml; charset=utf-8')
-  res.send(String(
+  sendSitemap(res,
     <urlset
         xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
         xmlns_image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -103,14 +100,13 @@ index.get('/sitemap/graphics.xml', wrap(async (req, res) => {
           )
       }
     </urlset>
-  ))
+  )
 }))
 
 index.get('/sitemap/blog.xml', wrap(async (req, res) => {
   let graphics = await fetch(`${API_BASE}/posts?sitemap=1`).then(r => r.json())
 
-  res.set('Content-Type', 'application/xml; charset=utf-8')
-  res.send(String(
+  sendSitemap(res,
     <urlset
         xmlns='http://www.sitemaps.org/schemas/sitemap/0.9'
         xmlns_image="http://www.google.com/schemas/sitemap-image/1.1">
@@ -126,7 +122,7 @@ index.get('/sitemap/blog.xml', wrap(async (req, res) => {
         )
       }
     </urlset>
-  ))
+  )
 }))
 
 class Node {
@@ -188,4 +184,14 @@ class Node {
 
 function createElement(tagName, attrs, ...children) {
   return new Node(tagName, attrs, children)
+}
+
+function setSitemapHeaders(res) {
+  res.set('Content-Type', 'application/xml; charset=utf-8')
+  res.set('X-Robots-Tag', 'noindex')
+}
+
+function sendSitemap(res, xml) {
+  setSitemapHeaders(res)
+  res.send(String(xml))
 }
