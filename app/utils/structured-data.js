@@ -8,8 +8,14 @@ const aboutURL = 'https://sarahtherad.com/about'
 export const organization = {
   '@type': 'Organization',
   email,
+  name: 'Christener Graphics & Communications',
   legalName: 'Christener Graphics & Communications',
-  logo: 'https://sarahtherad.com/app-logos/logo512.png',
+  logo: {
+    '@type': 'ImageObject',
+    width: '512',
+    height: '512',
+    url: 'https://sarahtherad.com/app-logos/logo512.png',
+  },
   sameAs: socialMedia,
   url: aboutURL,
   location: {
