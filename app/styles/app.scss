@@ -266,7 +266,7 @@ article {
 
 .img-lazy {
   opacity: 0;
-  transition: 200ms background-color;
+  transition: background-color 200ms;
 }
 .img-lazy--loading {
   opacity: 1;
