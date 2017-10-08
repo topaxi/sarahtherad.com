@@ -8,6 +8,7 @@ module.exports = function(/* environment, appConfig */) {
   return {
     name: 'sarahtherad.com',
     short_name: 'sarahtherad',
+    lang: 'en',
     description: '',
     start_url: '/',
     display: 'standalone',
