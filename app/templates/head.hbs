@@ -4,6 +4,9 @@
 
 <meta name="msapplication-navbutton-color" content="#000000">
 
+<meta name="theme-color"
+    content={{if model.themeColor model.themeColor '#000'}}>
+
 <meta property="og:site_name" content="sarahtherad.com">
 <meta property="og:type" content="website">
 {{~#with model.description as |description|~}}

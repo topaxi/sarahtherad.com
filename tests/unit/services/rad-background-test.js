@@ -10,6 +10,9 @@ const RadService = Service.extend({
   }
 })
 
+const HeadDataService = Service.extend({
+})
+
 const FastbootService = Service.extend({
   isFastBoot: false,
   shoebox: {
@@ -21,6 +24,7 @@ const FastbootService = Service.extend({
 moduleFor('service:rad-background', 'Unit | Service | rad background', {
   beforeEach() {
     this.register('service:rad', RadService)
+    this.register('service:headData', HeadDataService)
     this.register('service:fastboot', FastbootService)
   }
 });

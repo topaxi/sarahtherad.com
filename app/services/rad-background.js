@@ -5,6 +5,7 @@ import wait from '../utils/wait'
 const { Promise } = RSVP
 
 export default Service.extend({
+  headData: service(),
   rad: service(),
   fastboot: service(),
   initial: true,
@@ -16,12 +17,14 @@ export default Service.extend({
   clear() {
     this.set('background', null)
     this.set('backgroundColor', null)
+    this.set('headData.themeColor', null)
     this.set('color', '#000')
   },
 
   setBackground(background, color, backgroundColor = null) {
     this.set('background', background)
     this.set('backgroundColor', backgroundColor)
+    this.set('headData.themeColor', backgroundColor)
     this.set('color', color)
   },
 

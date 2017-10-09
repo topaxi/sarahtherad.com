@@ -13,7 +13,6 @@ module.exports = function(/* environment, appConfig */) {
     start_url: '/',
     display: 'standalone',
     background_color: '#000',
-    theme_color: '#000',
     icons: [
       {
         src: 'app-logos/logo192.png',
