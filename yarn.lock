@@ -3163,12 +3163,12 @@ ember-cli-deploy@^1.0.1:
     silent-error "^1.0.0"
 
 ember-cli-eslint@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-eslint/-/ember-cli-eslint-4.2.0.tgz#3ecb7b0e67fdadd1e68eaba05fbaffb03bcd7864"
+  version "4.2.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-eslint/-/ember-cli-eslint-4.2.1.tgz#1718875632b3c10fa0da2f665d294c08f24b8ca3"
   dependencies:
     broccoli-lint-eslint "^4.1.0"
-    ember-cli-version-checker "^2.0.0"
-    rsvp "^3.2.1"
+    ember-cli-version-checker "^2.1.0"
+    rsvp "^4.6.1"
     walk-sync "^0.3.0"
 
 ember-cli-fastboot@^1.0.5:
@@ -8173,6 +8173,10 @@ route-recognizer@^0.3.3:
 rsvp@^3.0.14, rsvp@^3.0.16, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.6, rsvp@^3.1.0, rsvp@^3.2.1, rsvp@^3.3.3, rsvp@^3.5.0, rsvp@^3.6.1:
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
+
+rsvp@^4.6.1:
+  version "4.7.0"
+  resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.7.0.tgz#dc1b0b1a536f7dec9d2be45e0a12ad4197c9fd96"
 
 rsvp@~3.0.6:
   version "3.0.21"
