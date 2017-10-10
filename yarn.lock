@@ -3808,8 +3808,8 @@ ember-try@^0.2.15:
     semver "^5.1.0"
 
 ember-web-app@^2.0.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ember-web-app/-/ember-web-app-2.1.0.tgz#ac827eb1b97b9b3a09cdee32fccc8847a70984fe"
+  version "2.2.0"
+  resolved "https://registry.yarnpkg.com/ember-web-app/-/ember-web-app-2.2.0.tgz#98ddb962b71ce6df535edc45b169bb3a741c2f2d"
   dependencies:
     broccoli-asset-rev "^2.5.0"
     broccoli-caching-writer "^3.0.3"
