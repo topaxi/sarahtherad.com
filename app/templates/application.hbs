@@ -28,16 +28,16 @@
       <nav role="navigation">
         <ul role="menubar">
           <li role="presentation">
-            {{link-to 'Graphics' 'graphics' role='menuitem'}}
+            {{~link-to 'Graphics' 'graphics' role='menuitem'~}}
           </li>
           <li role="presentation">
-            {{link-to 'Radio Show' 'radio-show' role='menuitem'}}
+            {{~link-to 'Radio Show' 'radio-show' role='menuitem'~}}
           </li>
           <li role="presentation">
-            {{link-to 'Blog' 'blog' role='menuitem'}}
+            {{~link-to 'Blog' 'blog' role='menuitem'~}}
           </li>
           <li role="presentation">
-            {{link-to 'About' 'about' role='menuitem'}}
+            {{~link-to 'About' 'about' role='menuitem'~}}
           </li>
         </ul>
       </nav>
@@ -46,6 +46,8 @@
       <h1 class="menu-title"><a href={{href-to menuTitle.route}}>{{menuTitle.title}}</a></h1>
     {{~/if~}}
   </header>
-  <main role="main">{{liquid-outlet}}</main>
+  <main role="main">
+    {{~liquid-outlet~}}
+  </main>
 </div>
 {{~s-mixcloud-player~}}
