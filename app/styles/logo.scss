@@ -27,6 +27,7 @@
   height: 120px;
   transition: transform 200ms;
   transform-origin: top right;
+  transform: scale(1.2);
 }
 .header-icon {
   width: 3rem;
@@ -57,15 +58,9 @@
   .logo .rect {
     display: none;
   }
-  .logo > svg {
-    transform: scale(1.667);
-  }
 }
 
 @media screen and (min-width: 800px) {
-  .home .logo > svg {
-    transform: scale(2.5);
-  }
   .home .header-icon {
     top: 20rem;
 
@@ -77,6 +72,10 @@
 
 /* extra space for logo */
 @supports (display: grid) {
+  .logo > svg {
+    transform: scale(1);
+  }
+
   s-article-list::before {
     content: '';
     pointer-events: none;
@@ -90,6 +89,16 @@
     s-article-list::before {
       width: calc(300px - 4rem);
       height: calc(300px - 4rem);
+    }
+  }
+  @media screen and (min-width: 640px) {
+    .logo > svg {
+      transform: scale(1.667);
+    }
+  }
+  @media screen and (min-width: 800px) {
+    .home .logo > svg {
+      transform: scale(2.5);
     }
   }
 }
