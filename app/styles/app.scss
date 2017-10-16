@@ -215,6 +215,7 @@ article {
       height: auto;
       max-width: 100%;
       max-height: 100%;
+      flex: 1; // IE fix
     }
   }
   @media screen and (min-width: 768px) {
