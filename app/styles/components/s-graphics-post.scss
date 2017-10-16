@@ -42,6 +42,7 @@
     height: auto;
     max-width: 100%;
     max-height: calc(100% - 3.5rem - 0.83em);
+    flex: 1; // IE stretching fix
   }
   img[src$=".svg"] {
     width: 100%;
