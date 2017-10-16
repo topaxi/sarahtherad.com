@@ -10,9 +10,12 @@ export default Component.extend({
     'aria-haspopup',
     'accesskey',
     '_ariaExpanded:aria-expanded',
+    '_ariaLabel:aria-label',
   ],
 
   touched: false,
+
+  _ariaLabel: 'Menu',
 
   closed: computed('open', 'touched', function() {
     return this.get('touched') && !this.get('open')
