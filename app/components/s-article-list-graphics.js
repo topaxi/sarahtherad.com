@@ -1,14 +1,14 @@
-import { inject as service } from '@ember/service';
-import { computed } from '@ember/object';
-import { htmlSafe } from '@ember/string';
+import { inject as service } from '@ember/service'
+import { computed } from '@ember/object'
+import { htmlSafe } from '@ember/string'
 import fetch from 'fetch'
 import ArticleListItemComponent from './s-article-list-item'
 
 export default ArticleListItemComponent.extend({
   fastboot: service(),
-  classNames: [ 'list-item--graphics' ],
-  classNameBindings: [ 'isWide:list-item--wide' ],
-  attributeBindings: [ 'style' ],
+  classNames: ['list-item--graphics'],
+  classNameBindings: ['isWide:list-item--wide'],
+  attributeBindings: ['style'],
   model: null,
 
   style: computed('picture.backgroundColor', function() {

@@ -1,6 +1,6 @@
-import { helper } from '@ember/component/helper';
+import { helper } from '@ember/component/helper'
 
-export function jsonStringify([ obj ]) {
+export function jsonStringify([obj]) {
   return JSON.stringify(obj)
 }
 

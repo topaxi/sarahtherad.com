@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from '@ember/routing/route'
 import shoebox from '../../utils/shoebox'
 import stripHtml from '../../utils/strip-html'
 import { breadcrumb, sarah, organization } from '../../utils/structured-data'

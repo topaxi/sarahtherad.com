@@ -1,4 +1,4 @@
-import Route from '@ember/routing/route';
+import Route from '@ember/routing/route'
 import shoebox from '../../utils/shoebox'
 import scrollTo from '../../utils/scroll-to'
 import { breadcrumb } from '../../utils/structured-data'

@@ -1,5 +1,5 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@ember/component'
+import { computed } from '@ember/object'
 
 export default Component.extend({
   init() {
@@ -8,8 +8,10 @@ export default Component.extend({
   },
 
   networkError: computed('error', function() {
-    return !this.get('onLine') ||
+    return (
+      !this.get('onLine') ||
       /network request failed/i.test(this.get('error.message'))
+    )
   }),
 
   onLine: computed(() => navigator.onLine).volatile(),
@@ -19,12 +21,12 @@ export default Component.extend({
   },
 
   didInsertElement() {
-    window.addEventListener('online',  this.updateOnlineStatus);
-    window.addEventListener('offline', this.updateOnlineStatus);
+    window.addEventListener('online', this.updateOnlineStatus)
+    window.addEventListener('offline', this.updateOnlineStatus)
   },
 
   willDestroyElement() {
-    window.removeEventListener('online',  this.updateOnlineStatus);
-    window.removeEventListener('offline', this.updateOnlineStatus);
-  }
+    window.removeEventListener('online', this.updateOnlineStatus)
+    window.removeEventListener('offline', this.updateOnlineStatus)
+  },
 })

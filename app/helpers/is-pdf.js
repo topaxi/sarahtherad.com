@@ -1,6 +1,6 @@
-import { helper } from '@ember/component/helper';
+import { helper } from '@ember/component/helper'
 
-export function isPdf([ str ]) {
+export function isPdf([str]) {
   return /\.pdf$/i.test(str)
 }
 

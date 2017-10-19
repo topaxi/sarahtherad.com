@@ -3,6 +3,5 @@ export default function stripHtml(str) {
     return ''
   }
 
-  return str.replace(/<(?:.|\n)*?>/gm, '')
-    .replace(/^\s+|\s+$/gm, '')
+  return str.replace(/<(?:.|\n)*?>/gm, '').replace(/^\s+|\s+$/gm, '')
 }

@@ -42,7 +42,8 @@ Author: sarahtherad.com + topaxi.codes
 }
 
 .about {
-  dt, dd {
+  dt,
+  dd {
     display: inline;
   }
 
@@ -70,7 +71,8 @@ Author: sarahtherad.com + topaxi.codes
   > header {
     position: relative;
     transition: color 200ms;
-    padding: constant(safe-area-inset-top) constant(safe-area-inset-right) constant(safe-area-inset-left);
+    padding: constant(safe-area-inset-top) constant(safe-area-inset-right)
+      constant(safe-area-inset-left);
   }
 }
 
@@ -86,7 +88,8 @@ Author: sarahtherad.com + topaxi.codes
   right: 0;
   height: 100vh;
 
-  .liquid-child, .background {
+  .liquid-child,
+  .background {
     width: 100%;
     height: 100%;
   }
@@ -134,8 +137,13 @@ main {
   }
 }
 
-header > time + {
-  h1, h2, h3, h4, h5, h6 {
+header > time +  {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     margin-top: 0;
   }
 }
@@ -167,7 +175,7 @@ article {
 }
 
 .graphics-overlay {
-  background: rgba(0,0,0,.5);
+  background: rgba(0, 0, 0, 0.5);
 }
 
 .graphics-outlet {

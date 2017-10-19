@@ -1,17 +1,17 @@
-import Route from '@ember/routing/route';
+import Route from '@ember/routing/route'
 import fetch from 'fetch'
 import query from '../utils/query'
 import shoebox from '../utils/shoebox'
 import scrollTo from '../utils/scroll-to'
 import { breadcrumb } from '../utils/structured-data'
 
-const LIMIT = 20;
+const LIMIT = 20
 
 export default Route.extend({
   queryParams: {
     page: {
-      refreshModel: true
-    }
+      refreshModel: true,
+    },
   },
 
   beforeModel() {
@@ -26,8 +26,7 @@ export default Route.extend({
     let params = query({ offset: page * LIMIT, limit: LIMIT })
     let url = `https://api.mixcloud.com/derdienstagmorgen/cloudcasts/${params}`
 
-    return fetch(url)
-      .then(res => res.json())
+    return fetch(url).then(res => res.json())
   },
 
   afterModel() {

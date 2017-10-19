@@ -5,7 +5,10 @@ export default function query(params) {
     return ''
   }
 
-  return '?' + keys
-    .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
-    .join('&')
+  return (
+    '?' +
+    keys
+      .map(k => encodeURIComponent(k) + '=' + encodeURIComponent(params[k]))
+      .join('&')
+  )
 }

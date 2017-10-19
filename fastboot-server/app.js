@@ -4,9 +4,7 @@ const FastBootAppServer = require('fastboot-app-server')
 const FastBootWatchNotifier = require('fastboot-watch-notifier')
 
 require('babel-register')({
-  plugins: [
-    [ 'transform-react-jsx', { pragma: 'createElement' } ],
-  ],
+  plugins: [['transform-react-jsx', { pragma: 'createElement' }]],
 })
 
 const distPath = '../frontend'

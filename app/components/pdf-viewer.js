@@ -1,6 +1,6 @@
-import { inject as service } from '@ember/service';
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { inject as service } from '@ember/service'
+import Component from '@ember/component'
+import { computed } from '@ember/object'
 
 export default Component.extend({
   fastboot: service(),
@@ -10,8 +10,11 @@ export default Component.extend({
   hasPdfJs() {
     let userAgent = navigator.userAgent
 
-    return (/Firefox/.test(userAgent) || window.chrome) &&
-      !/Android/.test(userAgent) && !/iPad|iPhone/.test(userAgent)
+    return (
+      (/Firefox/.test(userAgent) || window.chrome) &&
+      !/Android/.test(userAgent) &&
+      !/iPad|iPhone/.test(userAgent)
+    )
   },
 
   src: computed({
@@ -31,9 +34,11 @@ export default Component.extend({
         return val
       }
 
-      return 'https://docs.google.com/viewer' +
+      return (
+        'https://docs.google.com/viewer' +
         `?url=${encodeURIComponent(val)}` +
         '&embedded=true'
+      )
     },
   }),
 })

@@ -1,4 +1,4 @@
-import Service from '@ember/service';
+import Service from '@ember/service'
 import fetch from 'fetch'
 import query from '../utils/query'
 import ENV from '../config/environment'

@@ -20,7 +20,9 @@
   display: block;
 }
 
-main { transition: transform 100ms }
+main {
+  transition: transform 100ms;
+}
 .menu-open {
   overflow-x: hidden;
 }

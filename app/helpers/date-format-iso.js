@@ -1,9 +1,9 @@
-import { helper } from '@ember/component/helper';
+import { helper } from '@ember/component/helper'
 
-export function dateFormatIso([ dateLike ]) {
+export function dateFormatIso([dateLike]) {
   let date = dateLike instanceof Date ? dateLike : new Date(dateLike)
 
   return date.toISOString()
 }
 
-export default helper(dateFormatIso);
+export default helper(dateFormatIso)

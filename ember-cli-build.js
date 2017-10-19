@@ -1,27 +1,29 @@
 /* eslint-env node */
-'use strict';
+'use strict'
 
-const EmberApp = require('ember-cli/lib/broccoli/ember-app');
-const cssnext = require('postcss-cssnext');
-const targets = require('./config/targets');
+const EmberApp = require('ember-cli/lib/broccoli/ember-app')
+const cssnext = require('postcss-cssnext')
+const targets = require('./config/targets')
 
 module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     babel: {
-      plugins: [ 'babel-plugin-transform-decorators-legacy' ],
+      plugins: ['babel-plugin-transform-decorators-legacy'],
     },
     fingerprint: {
-      extensions: [ 'ico', 'js', 'css', 'png', 'jpg', 'svg', 'gif' ],
+      extensions: ['ico', 'js', 'css', 'png', 'jpg', 'svg', 'gif'],
     },
     minifyHTML: {
       minifierOptions: {
-        ignoreCustomComments: [ /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD|EMBER_APP_SHELL_PLACEHOLDER/ ],
+        ignoreCustomComments: [
+          /^\s*EMBER_CLI_FASTBOOT_BODY|EMBER_CLI_FASTBOOT_HEAD|EMBER_APP_SHELL_PLACEHOLDER/,
+        ],
       },
     },
     'ember-app-shell': {
       outputFile: 'app-shell.html',
       criticalCSSOptions: {
-        ignore: [ /font-face/, /font-family/ ],
+        ignore: [/font-face/, /font-family/],
       },
     },
     'ember-service-worker': {
@@ -61,19 +63,19 @@ module.exports = function(defaults) {
       plugins: [
         require('imagemin-jpegtran')({ progressive: true }),
         require('imagemin-optipng')(),
-        require('imagemin-svgo')()
-      ]
+        require('imagemin-svgo')(),
+      ],
     },
     vendorFiles: { 'jquery.js': null },
     jquery: {
-      slim: true
+      slim: true,
     },
     sassOptions: {
-      includePaths: [ 'node_modules/swiper/dist/css' ],
+      includePaths: ['node_modules/swiper/dist/css'],
     },
     postcssOptions: {
       compile: {
-        enabled: false
+        enabled: false,
       },
       filter: {
         enabled: true,
@@ -84,14 +86,14 @@ module.exports = function(defaults) {
             options: {
               browsers: targets.browsers,
               features: {
-                customProperties: false
-              }
-            }
-          }
-        ]
-      }
-    }
-  });
+                customProperties: false,
+              },
+            },
+          },
+        ],
+      },
+    },
+  })
 
-  return app.toTree();
-};
+  return app.toTree()
+}

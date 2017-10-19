@@ -1,7 +1,7 @@
-import { inject as service } from '@ember/service';
-import Controller from '@ember/controller';
-import { htmlSafe } from '@ember/string';
-import { computed } from '@ember/object';
+import { inject as service } from '@ember/service'
+import Controller from '@ember/controller'
+import { htmlSafe } from '@ember/string'
+import { computed } from '@ember/object'
 
 const ESC_KEYCODE = 27
 
@@ -22,20 +22,18 @@ export default Controller.extend({
     },
     set(key, value) {
       if (!this.get('fastboot.isFastBoot')) {
-        let addRemoveEventListener =
-          `${value ? 'add' : 'remove'}EventListener`
+        let addRemoveEventListener = `${value ? 'add' : 'remove'}EventListener`
         window[addRemoveEventListener]('keypress', this.escClose)
       }
 
       if (value) {
         this.get('rootclass').add('menu-open')
-      }
-      else {
+      } else {
         this.get('rootclass').remove('menu-open')
       }
 
       return value
-    }
+    },
   }),
 
   escClose(e) {
@@ -44,18 +42,21 @@ export default Controller.extend({
     }
   },
 
-  backgroundStyle: computed('radBackground.{background,backgroundColor}', function() {
-    let url = this.get('radBackground.background')
-    let backgroundColor = this.get('radBackground.backgroundColor')
+  backgroundStyle: computed(
+    'radBackground.{background,backgroundColor}',
+    function() {
+      let url = this.get('radBackground.background')
+      let backgroundColor = this.get('radBackground.backgroundColor')
 
-    if (!/^#[\da-f]{6}$/.test(backgroundColor)) {
-      backgroundColor = 'transparent'
-    }
+      if (!/^#[\da-f]{6}$/.test(backgroundColor)) {
+        backgroundColor = 'transparent'
+      }
 
-    return url !== null ?
-      htmlSafe(`background: ${backgroundColor} url(${url})`) :
-      null
-  }),
+      return url !== null
+        ? htmlSafe(`background: ${backgroundColor} url(${url})`)
+        : null
+    },
+  ),
 
   headerStyle: computed('radBackground.color', function() {
     return htmlSafe(`color: ${this.get('radBackground.color')}`)

@@ -1,1 +1,1 @@
-export { shoeboxModel as default } from 'ember-shoebox-decorator';
+export { shoeboxModel as default } from 'ember-shoebox-decorator'

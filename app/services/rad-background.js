@@ -1,4 +1,4 @@
-import Service, { inject as service } from '@ember/service';
+import Service, { inject as service } from '@ember/service'
 import RSVP from 'rsvp'
 import wait from '../utils/wait'
 
@@ -29,7 +29,7 @@ export default Service.extend({
   },
 
   preload(url) {
-    return Promise.race([ fetchImage(url), wait(150) ])
+    return Promise.race([fetchImage(url), wait(150)])
   },
 
   reload(background) {
@@ -44,10 +44,9 @@ export default Service.extend({
       }
     }
 
-    return (
-      background ?
-      Promise.resolve({ data: background }) :
-      this.get('rad').background()
+    return (background
+      ? Promise.resolve({ data: background })
+      : this.get('rad').background()
     )
       .then(res => res.data)
       .then(data => {
@@ -69,13 +68,12 @@ export default Service.extend({
 
 function fetchImage(url) {
   return new Promise((resolve, _reject) => {
-    let img = new Image
+    let img = new Image()
     img.src = url
 
     if (img.complete || img.readyState === 4) {
       resolve(url)
-    }
-    else {
+    } else {
       img.onload = () => resolve(url)
     }
   })

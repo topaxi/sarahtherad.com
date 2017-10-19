@@ -29,7 +29,7 @@ export const organization = {
   contactPoint: {
     availableLanguage: {
       '@type': 'Language',
-      name: [ 'German', 'English' ],
+      name: ['German', 'English'],
     },
     contactType: 'sales',
     telephone: null,

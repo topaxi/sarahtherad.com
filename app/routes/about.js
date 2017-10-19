@@ -1,11 +1,7 @@
 import Route from '@ember/routing/route'
 import scrollTo from '../utils/scroll-to'
 
-import {
-  organization,
-  sarah,
-  breadcrumb,
-} from '../utils/structured-data'
+import { organization, sarah, breadcrumb } from '../utils/structured-data'
 
 export default Route.extend({
   model() {

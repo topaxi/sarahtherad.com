@@ -1,11 +1,11 @@
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import Component from '@ember/component'
+import { computed } from '@ember/object'
 
 export default Component.extend({
   tagName: 'button',
 
   classNames: 'hamburglar',
-  classNameBindings: [ 'open:is-open', 'closed:is-closed' ],
+  classNameBindings: ['open:is-open', 'closed:is-closed'],
   attributeBindings: [
     'aria-haspopup',
     'accesskey',
@@ -22,11 +22,11 @@ export default Component.extend({
   }),
 
   _ariaExpanded: computed('open', function() {
-    return this.get('open') ? 'true' : 'false';
+    return this.get('open') ? 'true' : 'false'
   }),
 
   click() {
     this.set('touched', true)
     this.toggleProperty('open')
-  }
-});
+  },
+})

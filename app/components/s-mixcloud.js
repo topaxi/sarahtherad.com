@@ -1,5 +1,5 @@
-import { inject as service } from '@ember/service';
-import Component from '@ember/component';
+import { inject as service } from '@ember/service'
+import Component from '@ember/component'
 
 export default Component.extend({
   tagName: 's-mixcloud',
@@ -8,6 +8,6 @@ export default Component.extend({
   actions: {
     play(cast) {
       this.set('mixcloud.cast', cast)
-    }
-  }
+    },
+  },
 })

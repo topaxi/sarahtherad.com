@@ -1,8 +1,8 @@
-import { inject as service } from '@ember/service';
-import EmberRouter from '@ember/routing/router';
-import Route from '@ember/routing/route';
-import { run } from '@ember/runloop';
-import config from './config/environment';
+import { inject as service } from '@ember/service'
+import EmberRouter from '@ember/routing/router'
+import Route from '@ember/routing/route'
+import { run } from '@ember/runloop'
+import config from './config/environment'
 
 const Router = EmberRouter.extend({
   location: config.locationType,
@@ -15,11 +15,11 @@ const Router = EmberRouter.extend({
       run.schedule('afterRender', () => {
         window.ga('send', 'pageview', {
           page: this.get('url'),
-          title: this.get('url')
+          title: this.get('url'),
         })
       })
     }
-  }
+  },
 })
 
 Route.reopen({
@@ -27,29 +27,29 @@ Route.reopen({
 
   activate() {
     if (this.routeName !== 'application') {
-      let routeName = this.routeName;
-      if (routeName === 'index') routeName = 'home';
+      let routeName = this.routeName
+      if (routeName === 'index') routeName = 'home'
       this.get('rootclass').add(routeName)
     }
   },
   deactivate() {
-    let routeName = this.routeName;
-    if (routeName === 'index') routeName = 'home';
+    let routeName = this.routeName
+    if (routeName === 'index') routeName = 'home'
     this.get('rootclass').remove(routeName)
   },
 })
 
 Router.map(function() {
   this.route('graphics', function() {
-    this.route('post', { path: ':slug' });
-  });
-  this.route('radio-show');
+    this.route('post', { path: ':slug' })
+  })
+  this.route('radio-show')
   this.route('blog', function() {
-    this.route('post', { path: ':slug' });
-  });
-  this.route('about');
-  this.route('not-found', { path: '/*path' });
-  this.route('app-shell');
-});
+    this.route('post', { path: ':slug' })
+  })
+  this.route('about')
+  this.route('not-found', { path: '/*path' })
+  this.route('app-shell')
+})
 
-export default Router;
+export default Router

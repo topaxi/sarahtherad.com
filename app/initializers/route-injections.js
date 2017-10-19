@@ -7,5 +7,5 @@ export function initialize(application) {
 
 export default {
   name: 'route-injections',
-  initialize
+  initialize,
 }

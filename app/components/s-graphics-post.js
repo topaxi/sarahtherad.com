@@ -1,13 +1,13 @@
-import { inject as service } from '@ember/service';
-import Component from '@ember/component';
-import { computed } from '@ember/object';
+import { inject as service } from '@ember/service'
+import Component from '@ember/component'
+import { computed } from '@ember/object'
 
 const ESC_KEYCODE = 27
 
 export default Component.extend({
   router: service(),
-  classNames: [ 'graphics-post' ],
-  classNameBindings: [ 'isSVG:graphics-post--svg' ],
+  classNames: ['graphics-post'],
+  classNameBindings: ['isSVG:graphics-post--svg'],
   model: null,
   showContent: false,
 
@@ -22,12 +22,18 @@ export default Component.extend({
 
   currentPictureIndex: 0,
 
-  currentPicture: computed('model.pictures.[]', 'currentPictureIndex', function() {
-    return this.get('model.pictures')[this.get('currentPictureIndex')]
-  }),
+  currentPicture: computed(
+    'model.pictures.[]',
+    'currentPictureIndex',
+    function() {
+      return this.get('model.pictures')[this.get('currentPictureIndex')]
+    },
+  ),
 
   hasNext: computed('model.pictures.[]', 'currentPictureIndex', function() {
-    return this.get('currentPictureIndex') < this.get('model.pictures.length') - 1
+    return (
+      this.get('currentPictureIndex') < this.get('model.pictures.length') - 1
+    )
   }),
 
   hasMultiple: computed('model.pictures.[]', function() {
@@ -59,6 +65,6 @@ export default Component.extend({
     },
     next() {
       this.set('currentPictureIndex', this.get('currentPictureIndex') + 1)
-    }
-  }
+    },
+  },
 })

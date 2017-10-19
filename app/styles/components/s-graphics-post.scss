@@ -44,7 +44,7 @@
     max-height: calc(100% - 3.5rem - 0.83em);
     flex: 1; // IE stretching fix
   }
-  img[src$=".svg"] {
+  img[src$='.svg'] {
     width: 100%;
     height: calc(100% - 3.5rem - 0.83em);
   }
@@ -109,7 +109,7 @@
   right: 2rem;
   z-index: 1;
   appearance: none;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   border: none;
   padding: 0.5rem;
@@ -127,7 +127,7 @@
   transform: translateY(100%);
   transition: transform 200ms;
   z-index: 1;
-  background: rgba(0,0,0,.8);
+  background: rgba(0, 0, 0, 0.8);
   padding: 1rem;
   width: 280px;
   color: #fff;
