@@ -3228,16 +3228,6 @@ ember-cli-htmlbars-inline-precompile@^1.0.2:
     heimdalljs-logger "^0.1.7"
     silent-error "^1.1.0"
 
-ember-cli-htmlbars@1.1.1:
-  version "1.1.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-1.1.1.tgz#8776cf59796dac8f32e8625fc6d1ea45ffa55de1"
-  dependencies:
-    broccoli-persistent-filter "^1.0.3"
-    ember-cli-version-checker "^1.0.2"
-    hash-for-dep "^1.0.2"
-    json-stable-stringify "^1.0.0"
-    strip-bom "^2.0.0"
-
 ember-cli-htmlbars@^2.0.1, ember-cli-htmlbars@^2.0.3:
   version "2.0.3"
   resolved "https://registry.yarnpkg.com/ember-cli-htmlbars/-/ember-cli-htmlbars-2.0.3.tgz#e116e1500dba12f29c94b05b9ec90f52cb8bb042"
@@ -3400,12 +3390,12 @@ ember-cli-string-utils@^1.0.0, ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
 
-"ember-cli-swiper@github:outdoorsy/ember-cli-swiper":
-  version "0.6.0"
-  resolved "https://codeload.github.com/outdoorsy/ember-cli-swiper/tar.gz/f6a7a47092156e4913d91cbc8bf2a8a42bd5a99f"
+ember-cli-swiper@^0.6.4:
+  version "0.6.4"
+  resolved "https://registry.yarnpkg.com/ember-cli-swiper/-/ember-cli-swiper-0.6.4.tgz#f723afd033623f7c3a54a29e2c840ab0bb2ef6d6"
   dependencies:
-    ember-cli-babel "^5.1.7"
-    ember-cli-htmlbars "1.1.1"
+    ember-cli-babel "^6.3.0"
+    ember-cli-htmlbars "^2.0.1"
     swiper "^3.4.2"
 
 ember-cli-template-lint@^0.7.3:
