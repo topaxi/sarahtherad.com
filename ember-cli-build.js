@@ -31,6 +31,7 @@ module.exports = function(defaults) {
     },
     'esw-index': {
       version: '2',
+      location: 'app-shell.html',
       excludeScope: [
         /\.php/, // any php files
         /\bwp-\w+\//, // any wordpress content
@@ -40,7 +41,6 @@ module.exports = function(defaults) {
         /favicon-.*$/,
         /app-logos\//,
         /jobs\//,
-        /app-shell.html$/,
         /\.xml/, // any xml files (sitemaps)
       ],
     },
