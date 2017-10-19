@@ -3057,7 +3057,7 @@ ember-cli-babel@^5.1.5, ember-cli-babel@^5.1.6, ember-cli-babel@^5.1.7:
     ember-cli-version-checker "^1.0.2"
     resolve "^1.1.2"
 
-ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.1.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.4.1, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.0, ember-cli-babel@^6.8.1, ember-cli-babel@^6.8.2:
+ember-cli-babel@^6, ember-cli-babel@^6.0.0, ember-cli-babel@^6.0.0-beta.7, ember-cli-babel@^6.1.0, ember-cli-babel@^6.3.0, ember-cli-babel@^6.4.1, ember-cli-babel@^6.7.2, ember-cli-babel@^6.8.0, ember-cli-babel@^6.8.1, ember-cli-babel@^6.8.2:
   version "6.8.2"
   resolved "https://registry.yarnpkg.com/ember-cli-babel/-/ember-cli-babel-6.8.2.tgz#eac2785964f4743f4c815cd53c6288f00cc087d7"
   dependencies:
@@ -3609,10 +3609,10 @@ ember-hbs-minifier@^0.1.0:
     ember-cli-babel "^5.1.7"
 
 ember-href-to@^1.13.0:
-  version "1.13.0"
-  resolved "https://registry.yarnpkg.com/ember-href-to/-/ember-href-to-1.13.0.tgz#308ab4803d9d08e30a92af888cc67412a800468d"
+  version "1.14.0"
+  resolved "https://registry.yarnpkg.com/ember-href-to/-/ember-href-to-1.14.0.tgz#12cbfb1de3f95ecd015a072b242f2e0a929feb84"
   dependencies:
-    ember-cli-babel "^5.1.6"
+    ember-cli-babel "^6"
 
 ember-img-lazy@^2.0.0:
   version "2.0.2"
