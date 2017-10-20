@@ -30,8 +30,13 @@ module.exports = function(defaults) {
       registrationStrategy: 'inline',
     },
     'esw-index': {
-      version: '2',
-      location: 'app-shell.html',
+      version: '3',
+      // Use default index.html in development, otherwise the ember proxy will
+      // cache the prod app-shell in case of --proxy=https://sarahtherad.com/
+      location:
+        process.env.EMBER_ENV === 'production'
+          ? 'app-shell.html'
+          : 'index.html',
       excludeScope: [
         /\.php/, // any php files
         /\bwp-\w+\//, // any wordpress content
