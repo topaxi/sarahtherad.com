@@ -2,7 +2,7 @@
   <h2>{{model.title}}</h2>
   {{~img-lazy
     src=picture.src
-    alt=picture.title
+    alt=(concat 'Thumbnail of ' model.title)
     width=picture.width
     height=picture.height
     ~}}
