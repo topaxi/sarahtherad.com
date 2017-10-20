@@ -8,52 +8,59 @@ const serverFiles = [
   'yarn.lock',
 ]
 
-const wordpressFiles = [
-  'style.css',
-  'index.php',
-  'functions.php',
-]
+const wordpressFiles = ['style.css', 'index.php', 'functions.php']
 
 module.exports = function(deployTarget) {
   var ENV = {
-    build: {}
+    build: {},
     // include other plugin configuration that applies to all deploy targets here
-  };
+  }
 
   if (deployTarget === 'development') {
-    ENV.build.environment = 'development';
+    ENV.build.environment = 'development'
     // configure other plugins for development deploy target here
   }
 
   if (deployTarget === 'staging') {
-    ENV.build.environment = 'production';
+    ENV.build.environment = 'production'
     // configure other plugins for staging deploy target here
   }
 
   if (deployTarget === 'production') {
-    ENV.build.environment = 'production';
+    ENV.build.environment = 'production'
     ENV['scp'] = {
-      username: 'sarah',
-      host: 'sarahtherad.com',
-      path: '/home/sarah/sarahtherad.com/wp-content/themes/sarahtherad.com',
-      beforeUpload() {
-        fs.mkdirSync('tmp/sarahtherad.com')
-        fs.mkdirSync('tmp/sarahtherad.com/server')
-        fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
-        serverFiles.forEach(file =>
-          fs.copyFileSync(`fastboot-server/${file}`, `tmp/sarahtherad.com/server/${file}`)
-        )
-        fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
-        wordpressFiles.forEach(file =>
-          fs.copyFileSync(`wordpress-theme/${file}`, `tmp/sarahtherad.com/${file}`)
-        )
-        fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
-      }
+      nodes: [
+        {
+          username: 'sarah',
+          host: 'sarahtherad.com',
+          path:
+            '/home/sarah/sarahtherad.com/wp-content/themes/sarahtherad.com',
+          beforeUpload() {
+            fs.mkdirSync('tmp/sarahtherad.com')
+            fs.mkdirSync('tmp/sarahtherad.com/server')
+            fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
+            serverFiles.forEach(file =>
+              fs.copyFileSync(
+                `fastboot-server/${file}`,
+                `tmp/sarahtherad.com/server/${file}`,
+              ),
+            )
+            fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
+            wordpressFiles.forEach(file =>
+              fs.copyFileSync(
+                `wordpress-theme/${file}`,
+                `tmp/sarahtherad.com/${file}`,
+              ),
+            )
+            fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
+          },
+        },
+      ],
     }
   }
 
   // Note: if you need to build some configuration asynchronously, you can return
   // a promise that resolves with the ENV object instead of returning the
   // ENV object synchronously.
-  return ENV;
-};
+  return ENV
+}
