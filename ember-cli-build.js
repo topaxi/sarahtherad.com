@@ -42,6 +42,7 @@ module.exports = function(defaults) {
         /app-logos\//,
         /jobs\//,
         /\.xml/, // any xml files (sitemaps)
+        /sw.js$/, // chrome triggers sw even in view-source..
       ],
     },
     'asset-cache': {
