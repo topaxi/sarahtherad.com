@@ -6,32 +6,20 @@ module.exports = {
   parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 2017,
-    sourceType: 'module'
+    sourceType: 'module',
   },
-  plugins: [
-    'prettier',
-  ],
-  extends: [
-    'eslint:recommended',
-    'plugin:ember/recommended',
-    'prettier',
-  ],
+  plugins: ['prettier'],
+  extends: ['eslint:recommended', 'plugin:ember/recommended', 'prettier'],
   env: {
-    browser: true
+    browser: true,
   },
   rules: {
-    'quotes': [
-      'error',
-      'single',
-    ],
-    'quote-props': [
-      'error',
-      'as-needed',
-    ],
+    'quote-props': ['error', 'as-needed'],
     'no-unused-vars': [
-      'error', {
+      'error',
+      {
         argsIgnorePattern: '^_',
-      }
+      },
     ],
     'ember/alias-model-in-controller': 0,
     'ember/use-ember-get-and-set': 0,
@@ -42,5 +30,5 @@ module.exports = {
     'ember/order-in-components': 0,
     'ember/order-in-controllers': 0,
     'ember/order-in-routes': 0,
-  }
-};
+  },
+}
