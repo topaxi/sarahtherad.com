@@ -9,6 +9,7 @@ export default Component.extend({
   attributeBindings: [
     'aria-haspopup',
     'accesskey',
+    '_type:type',
     '_ariaExpanded:aria-expanded',
     '_ariaLabel:aria-label',
   ],
@@ -16,6 +17,7 @@ export default Component.extend({
   touched: false,
 
   _ariaLabel: 'Menu',
+  _type: 'button',
 
   closed: computed('open', 'touched', function() {
     return this.get('touched') && !this.get('open')
