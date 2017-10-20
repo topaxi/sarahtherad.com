@@ -1,13 +1,13 @@
 import { helper } from '@ember/component/helper'
-import { padStart } from 'ember-pad/utils/pad'
+import pad from '../utils/pad'
 
 export function dateFormat([dateLike]) {
   let date = dateLike instanceof Date ? dateLike : new Date(dateLike)
 
   return (
-    padStart(date.getDate(), 2) +
+    pad(date.getDate()) +
     '.' +
-    padStart(date.getMonth() + 1, 2) +
+    pad(date.getMonth() + 1) +
     '.' +
     date.getFullYear()
   )

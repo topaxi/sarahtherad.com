@@ -3642,12 +3642,6 @@ ember-lodash@^4.17.3:
     ember-cli-babel "^6.4.1"
     lodash-es "^4.17.4"
 
-ember-pad@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/ember-pad/-/ember-pad-1.2.2.tgz#1c8ed9e7e93d2176f049eb8b3d3836aea9672a81"
-  dependencies:
-    ember-cli-babel "^5.1.5"
-
 ember-page-title@^3.2.2:
   version "3.2.2"
   resolved "https://registry.yarnpkg.com/ember-page-title/-/ember-page-title-3.2.2.tgz#241effbc8228ecfb75e33540f6707003fdf6db31"
