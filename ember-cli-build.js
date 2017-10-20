@@ -67,7 +67,7 @@ module.exports = function(defaults) {
         require('imagemin-svgo')(),
       ],
     },
-    vendorFiles: { 'jquery.js': null },
+    vendorFiles: { 'jquery.js': null, 'app-shims.js': null },
     jquery: {
       slim: true,
     },

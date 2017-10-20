@@ -3286,23 +3286,23 @@ ember-cli-lodash-subset@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/ember-cli-lodash-subset/-/ember-cli-lodash-subset-2.0.1.tgz#20cb68a790fe0fde2488ddfd8efbb7df6fe766f2"
 
-ember-cli-mirage@^0.3.4:
+ember-cli-mirage@^0.3.4, "ember-cli-mirage@github:samselikoff/ember-cli-mirage#5a40018":
   version "0.3.4"
-  resolved "https://registry.yarnpkg.com/ember-cli-mirage/-/ember-cli-mirage-0.3.4.tgz#eeb9d6e02c0c49c81915762178bab9a42d86ada8"
+  resolved "https://codeload.github.com/samselikoff/ember-cli-mirage/tar.gz/5a40018951c7d5db2245c27ae364972cdc88ce60"
   dependencies:
     broccoli-funnel "^1.0.2"
     broccoli-merge-trees "^1.1.0"
     broccoli-stew "^1.5.0"
     chalk "^1.1.1"
-    ember-cli-babel "^5.1.7"
+    ember-cli-babel "^6.8.2"
     ember-cli-node-assets "^0.1.4"
-    ember-get-config "0.2.1"
+    ember-get-config "^0.2.2"
     ember-inflector "^2.0.0"
     ember-lodash "^4.17.3"
     exists-sync "0.0.3"
     fake-xml-http-request "^1.4.0"
     faker "^3.0.0"
-    pretender "^1.4.2"
+    pretender "^1.5.1"
     route-recognizer "^0.2.3"
 
 ember-cli-node-assets@^0.1.4:
@@ -3371,14 +3371,6 @@ ember-cli-sass@^7.0.0:
     broccoli-merge-trees "^1.1.0"
     broccoli-sass-source-maps "^2.0.0"
     ember-cli-version-checker "^1.0.2"
-
-ember-cli-shims@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-shims/-/ember-cli-shims-1.1.0.tgz#0e3b8a048be865b4f81cc81d397ff1eeb13f75b6"
-  dependencies:
-    ember-cli-babel "^6.0.0-beta.7"
-    ember-cli-version-checker "^1.2.0"
-    silent-error "^1.0.1"
 
 ember-cli-sri@^2.1.0:
   version "2.1.1"
@@ -3571,12 +3563,12 @@ ember-fetch@^3.3.1:
     node-fetch "^2.0.0-alpha.9"
     whatwg-fetch "^2.0.3"
 
-ember-get-config@0.2.1:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.1.tgz#a1325cceefcb4534c78fc6ccb2be87a3feda6817"
+ember-get-config@^0.2.2:
+  version "0.2.3"
+  resolved "https://registry.yarnpkg.com/ember-get-config/-/ember-get-config-0.2.3.tgz#546e77c991792fffde2f6757a5edb0c5dd122c0e"
   dependencies:
     broccoli-file-creator "^1.1.1"
-    ember-cli-babel "^5.1.6"
+    ember-cli-babel "^6.3.0"
 
 ember-getowner-polyfill@1.2.2, ember-getowner-polyfill@2.0.1, ember-getowner-polyfill@^2.0.1:
   version "2.0.1"
@@ -7549,7 +7541,7 @@ preserve@^0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/preserve/-/preserve-0.2.0.tgz#815ed1f6ebc65926f865b310c0713bcb3315ce4b"
 
-pretender@^1.4.2:
+pretender@^1.5.1:
   version "1.6.0"
   resolved "https://registry.yarnpkg.com/pretender/-/pretender-1.6.0.tgz#0bb6dc9622b576772938814bc36f7cf2f86660dd"
   dependencies:

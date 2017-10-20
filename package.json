@@ -41,7 +41,6 @@
     "ember-cli-postcss": "^3.5.2",
     "ember-cli-qunit": "^4.0.1",
     "ember-cli-sass": "^7.0.0",
-    "ember-cli-shims": "^1.1.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-swiper": "^0.6.4",
     "ember-cli-template-lint": "^0.7.3",
@@ -80,6 +79,7 @@
   },
   "resolutions": {
     "ember-getowner-polyfill": "2.0.1",
-    "ember-cli-head": "0.4.0"
+    "ember-cli-head": "0.4.0",
+    "ember-cli-mirage": "github:samselikoff/ember-cli-mirage#5a40018"
   }
 }
