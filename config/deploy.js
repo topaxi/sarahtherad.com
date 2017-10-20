@@ -35,27 +35,27 @@ module.exports = function(deployTarget) {
           host: 'sarahtherad.com',
           path:
             '/home/sarah/sarahtherad.com/wp-content/themes/sarahtherad.com',
-          beforeUpload() {
-            fs.mkdirSync('tmp/sarahtherad.com')
-            fs.mkdirSync('tmp/sarahtherad.com/server')
-            fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
-            serverFiles.forEach(file =>
-              fs.copyFileSync(
-                `fastboot-server/${file}`,
-                `tmp/sarahtherad.com/server/${file}`,
-              ),
-            )
-            fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
-            wordpressFiles.forEach(file =>
-              fs.copyFileSync(
-                `wordpress-theme/${file}`,
-                `tmp/sarahtherad.com/${file}`,
-              ),
-            )
-            fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
-          },
         },
       ],
+      beforeUpload() {
+        fs.mkdirSync('tmp/sarahtherad.com')
+        fs.mkdirSync('tmp/sarahtherad.com/server')
+        fs.mkdirSync('tmp/sarahtherad.com/server/sitemap')
+        serverFiles.forEach(file =>
+          fs.copyFileSync(
+            `fastboot-server/${file}`,
+            `tmp/sarahtherad.com/server/${file}`,
+          ),
+        )
+        fs.renameSync('tmp/deploy-dist', 'tmp/sarahtherad.com/frontend')
+        wordpressFiles.forEach(file =>
+          fs.copyFileSync(
+            `wordpress-theme/${file}`,
+            `tmp/sarahtherad.com/${file}`,
+          ),
+        )
+        fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
+      },
     }
   }
 
