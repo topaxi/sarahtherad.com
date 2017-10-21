@@ -54,6 +54,7 @@ module.exports = function(deployTarget) {
             `tmp/sarahtherad.com/${file}`,
           ),
         )
+        patchThemeColor('tmp/sarahtherad.com/frontend/manifest.webmanifest')
         fs.renameSync('tmp/sarahtherad.com', 'tmp/deploy-dist')
       },
     }
@@ -63,4 +64,10 @@ module.exports = function(deployTarget) {
   // a promise that resolves with the ENV object instead of returning the
   // ENV object synchronously.
   return ENV
+}
+
+function patchThemeColor(manifestFile) {
+  const manifest = JSON.parse(fs.readFileSync(manifestFile))
+  manifest.theme_color = '#000'
+  fs.writeFileSync(manifestFile, JSON.stringify(manifest))
 }
