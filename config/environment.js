@@ -23,6 +23,8 @@ module.exports = function(environment) {
       // when it is created
     },
 
+    exportApplicationGlobal: true,
+
     'ember-img-lazy': {
       lazyFastBoot: true,
     },
