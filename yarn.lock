@@ -1968,8 +1968,8 @@ caniuse-api@^2.0.0:
     lodash.uniq "^4.5.0"
 
 caniuse-lite@^1.0.0, caniuse-lite@^1.0.30000718, caniuse-lite@^1.0.30000726, caniuse-lite@^1.0.30000744:
-  version "1.0.30000748"
-  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000748.tgz#44c8d6da52ad65a5d7b9dca4efebd0bdd982ba09"
+  version "1.0.30000749"
+  resolved "https://registry.yarnpkg.com/caniuse-lite/-/caniuse-lite-1.0.30000749.tgz#2ff382865aead8cca35dacfbab04f58effa4c01c"
 
 capture-exit@^1.1.0:
   version "1.2.0"
@@ -3573,11 +3573,11 @@ ember-getowner-polyfill@1.2.2, ember-getowner-polyfill@2.0.1, ember-getowner-pol
     ember-cli-version-checker "^1.2.0"
     ember-factory-for-polyfill "^1.1.0"
 
-ember-hash-helper-polyfill@^0.1.2:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/ember-hash-helper-polyfill/-/ember-hash-helper-polyfill-0.1.2.tgz#bc8ee6fa59e9541fce07d2cf4f263cf785e9e1db"
+ember-hash-helper-polyfill@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/ember-hash-helper-polyfill/-/ember-hash-helper-polyfill-0.2.0.tgz#0913a06ad59147f345dff0edda04b112deba0f7e"
   dependencies:
-    ember-cli-babel "^5.1.7"
+    ember-cli-babel "^6.8.2"
     ember-cli-version-checker "^1.2.0"
 
 ember-hbs-minifier@^0.1.0:
@@ -4993,8 +4993,8 @@ has-unicode@^2.0.0:
   resolved "https://registry.yarnpkg.com/has-unicode/-/has-unicode-2.0.1.tgz#e0e6fe6a28cf51138855e086d1691e771de2a8b9"
 
 hash-for-dep@^1.0.2:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/hash-for-dep/-/hash-for-dep-1.2.1.tgz#6bb45822342af46cf87bf91dcdcaeb6f14103f80"
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/hash-for-dep/-/hash-for-dep-1.2.2.tgz#264ceefc4e0ec74248c47ed259c2454fa205112a"
   dependencies:
     broccoli-kitchen-sink-helpers "^0.3.1"
     heimdalljs "^0.2.3"
@@ -5866,8 +5866,8 @@ linkify-it@^2.0.0:
     uc.micro "^1.0.1"
 
 liquid-fire@^0.28.0:
-  version "0.28.0"
-  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.28.0.tgz#2db5058d30656449f54b6ab4fe85ef6572ecdec2"
+  version "0.28.1"
+  resolved "https://registry.yarnpkg.com/liquid-fire/-/liquid-fire-0.28.1.tgz#62f03e145e0ae7ca8ecdeadddc0e6939fc1ff4cd"
   dependencies:
     broccoli-funnel "^1.0.1"
     broccoli-merge-trees "^1.0.0"
@@ -5876,7 +5876,7 @@ liquid-fire@^0.28.0:
     ember-cli-htmlbars "^2.0.1"
     ember-cli-version-checker "^2.0.0"
     ember-getowner-polyfill "^2.0.1"
-    ember-hash-helper-polyfill "^0.1.2"
+    ember-hash-helper-polyfill "^0.2.0"
     match-media "^0.2.0"
     velocity-animate ">= 0.11.8"
 
@@ -7606,8 +7606,8 @@ punycode@^1.4.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
 q@^1.1.2:
-  version "1.5.0"
-  resolved "https://registry.yarnpkg.com/q/-/q-1.5.0.tgz#dd01bac9d06d30e6f219aecb8253ee9ebdc308f1"
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
 
 qs@6.5.1, qs@^6.2.0, qs@^6.4.0, qs@~6.5.1:
   version "6.5.1"
