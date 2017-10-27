@@ -37,7 +37,7 @@
     "ember-cli-htmlbars-inline-precompile": "^1.0.2",
     "ember-cli-imagemin": "^1.0.0",
     "ember-cli-inject-live-reload": "^1.4.1",
-    "ember-cli-mirage": "^0.3.4",
+    "ember-cli-mirage": "^0.4.0",
     "ember-cli-postcss": "^3.5.2",
     "ember-cli-qunit": "^4.0.1",
     "ember-cli-sass": "^7.0.0",
@@ -79,7 +79,6 @@
   },
   "resolutions": {
     "ember-getowner-polyfill": "2.0.1",
-    "ember-cli-head": "0.4.0",
-    "ember-cli-mirage": "github:samselikoff/ember-cli-mirage#5a40018"
+    "ember-cli-head": "0.4.0"
   }
 }
