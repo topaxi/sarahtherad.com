@@ -35,11 +35,10 @@ add_action('rest_api_init', function() {
       $post = get_rad_post($req['slug'], 'blog');
 
       if (!$post) {
-        status_header(404);
-        return [
+        return json_error(404, [
           'error' => true,
           'message' => 'Post not found',
-        ];
+        ]);
       }
 
       return serialize_post($post, true);
@@ -51,11 +50,10 @@ add_action('rest_api_init', function() {
       $post = get_rad_post($req['slug'], 'graphics');
 
       if (!$post) {
-        status_header(404);
-        return [
+        return json_error(404, [
           'error' => true,
           'message' => 'Graphic not found',
-        ];
+        ]);
       }
 
       return serialize_graphic($post, true);
@@ -248,4 +246,13 @@ function get_rad_post($slug, $category_name) {
 
 function format_date($date) {
   return str_replace(' ', 'T', $date);
+}
+
+function json_error($status, $data) {
+  $data['httpStatus'] = $status;
+
+  $res = new WP_REST_Response($data);
+  $res->set_status($status);
+
+  return $res;
 }

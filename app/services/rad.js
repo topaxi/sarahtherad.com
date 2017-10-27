@@ -2,6 +2,7 @@ import Service from '@ember/service'
 import fetch from 'fetch'
 import query from '../utils/query'
 import ENV from '../config/environment'
+import { reject } from 'rsvp'
 
 export default Service.extend({
   _url: ENV.apiHost || '',
@@ -15,7 +16,9 @@ export default Service.extend({
   },
 
   fetchJSON(path, q) {
-    return this.fetch(path, q).then(res => res.json())
+    return this.fetch(path, q).then(
+      res => (res.ok ? res.json() : res.json().then(reject)),
+    )
   },
 
   home() {

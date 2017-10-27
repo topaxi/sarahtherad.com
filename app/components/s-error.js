@@ -1,10 +1,19 @@
 import Component from '@ember/component'
 import { computed } from '@ember/object'
+import { inject as service } from '@ember/service'
+
+const isFastBoot = typeof FastBoot !== 'undefined'
 
 export default Component.extend({
+  fastboot: service(),
+
   init() {
     this._super(...arguments)
     this.updateOnlineStatus = this.updateOnlineStatus.bind(this)
+
+    if (isFastBoot && this.get('error.httpStatus')) {
+      this.set('fastboot.response.statusCode', this.get('error.httpStatus'))
+    }
   },
 
   networkError: computed('error', function() {
@@ -14,10 +23,10 @@ export default Component.extend({
     )
   }),
 
-  onLine: computed(() => navigator.onLine).volatile(),
+  onLine: computed(() => isFastBoot || navigator.onLine).volatile(),
 
   updateOnlineStatus(_event) {
-    this.set('onLine', navigator.onLine)
+    this.set('onLine', isFastBoot || navigator.onLine)
   },
 
   didInsertElement() {
