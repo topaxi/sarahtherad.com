@@ -26,4 +26,10 @@ install:
   - yarn install --non-interactive
 
 script:
-  - yarn test
+  - yarn test --test-port 7000
+
+addons:
+  sauce_connect:
+    username: topaxi
+  jwt:
+    secure: K9qYZuZTF2D1y5B7yNC8hn2iyeMAW5bbN58VfE67sPmvVxqLyrAWKi8yAiA4dluT5f0xUaOa6O/XTOe7exHsVlNO9vLAh9/vWrWO2PohacpXHRZAWC3aanpoHiUbNVvle5Z37G+UhnZ+dnYkVO8GoloiUYQdBEel8jXNtOCJokik4Yt+OiJjnwgr0WPsS3r6k8SIxyAiQuRICjTpQo1z3BNiUigqlhLUet7nLi4bRT68UZB3PC4haz7mEiPk4UvU+Fq705e+TBDh/nCrvasj0ReecT2rJLLiUaTlwqpCitT+9rR1mRL/e+rN8N6nIa6sGlF2ZfXnmMBfB/0nPoDG9NalMHa8RrMdhRDmP++YZ9zLi/Uh+MvkIZtqYFrvCZqb2we8LfYdjskF6u8+pVCkCfiU0I8DtHT/cBEWa5v81xDo0R9eKaRcg6D0HcjzK4iLYkmlKkBCfOenFSTZJcOgbzflmwtcaF+5nSCEdH9GgooDxRPTcnz2XkXpsVvS1XLL1IG59tHmdIBEBA7YBEROT51nRIs46WPovLQ3luOF009W9BJj0raZ8jOTRG7vZjj4nwr0UAn7WgCW5CHDbTBav/oUdbTbYBD+h/dkA8C0793+iOhCeHs9IxII0o4ZNBT1vyvBgtcTFaZfjXEDfCh38xHgWWpycHCWPN7OTUwrB/Q=

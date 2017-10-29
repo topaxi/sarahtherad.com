@@ -19,6 +19,7 @@ module.exports = {
       'error',
       {
         argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
       },
     ],
     'ember/alias-model-in-controller': 0,

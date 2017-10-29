@@ -5,7 +5,8 @@ export default function hasPdfjs() {
   return (
     (/Firefox/.test(navigator.userAgent) || navigator.chrome) &&
     !/Android/.test(navigator.userAgent) &&
-    !/iPad|iPhone/.test(navigator.userAgent)
+    !/iPad|iPhone/.test(navigator.userAgent) &&
+    !/Edge/.test(navigator.userAgent)
   )
 }
 

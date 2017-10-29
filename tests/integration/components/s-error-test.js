@@ -11,7 +11,7 @@ test('it renders', function(assert) {
   assert.ok(
     this.$()
       .text()
-      .includes('Unknown error'),
+      .indexOf('Unknown error') !== -1,
   )
   assert.ok(
     this.$('a')

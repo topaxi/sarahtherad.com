@@ -13,7 +13,8 @@ export default Component.extend({
     return (
       (/Firefox/.test(userAgent) || window.chrome) &&
       !/Android/.test(userAgent) &&
-      !/iPad|iPhone/.test(userAgent)
+      !/iPad|iPhone/.test(userAgent) &&
+      !/Edge/.test(userAgent)
     )
   },
 
