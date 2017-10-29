@@ -15,17 +15,17 @@ module.exports = {
     SL_MS_Edge: {
       command:
         "ember sauce:launch -b microsoftedge -v latest --visibility public --no-connect -u '<url>'",
-      protocol: 'browser',
+      protocol: 'tap',
     },
     SL_IE_11: {
       command:
         "ember sauce:launch -b 'internet explorer' -v 11 --visibility public --no-connect -u '<url>'",
-      protocol: 'browser',
+      protocol: 'tap',
     },
     SL_Firefox_ESR: {
       command:
         "ember sauce:launch -b firefox -v 52 --visibility public --no-connect -u '<url>'",
-      protocol: 'browser',
+      protocol: 'tap',
     },
   },
   browser_args: {

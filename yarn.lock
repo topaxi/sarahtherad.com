@@ -3424,11 +3424,11 @@ ember-cli-sass@^7.0.0:
     ember-cli-version-checker "^1.0.2"
 
 ember-cli-sauce@^2.1.0:
-  version "2.1.0"
-  resolved "https://registry.yarnpkg.com/ember-cli-sauce/-/ember-cli-sauce-2.1.0.tgz#ecafc2bc7c2cd63fd7b98fb2296fa96809907b79"
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/ember-cli-sauce/-/ember-cli-sauce-2.1.1.tgz#24559dfb017ffdefac1a48c86eb8bf706eebe6ad"
   dependencies:
     recast "^0.12.0"
-    rsvp "^3.6.1"
+    rsvp "^4.7.0"
     saucie "^3.2.0"
 
 ember-cli-sri@^2.1.0:
@@ -8249,7 +8249,7 @@ rsvp@^3.0.14, rsvp@^3.0.16, rsvp@^3.0.17, rsvp@^3.0.18, rsvp@^3.0.21, rsvp@^3.0.
   version "3.6.2"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-3.6.2.tgz#2e96491599a96cde1b515d5674a8f7a91452926a"
 
-rsvp@^4.6.1:
+rsvp@^4.6.1, rsvp@^4.7.0:
   version "4.7.0"
   resolved "https://registry.yarnpkg.com/rsvp/-/rsvp-4.7.0.tgz#dc1b0b1a536f7dec9d2be45e0a12ad4197c9fd96"
 
@@ -8311,8 +8311,8 @@ sass-graph@^2.1.1:
     yargs "^7.0.0"
 
 sauce-connect-launcher@^1.2.2:
-  version "1.2.2"
-  resolved "https://registry.yarnpkg.com/sauce-connect-launcher/-/sauce-connect-launcher-1.2.2.tgz#7346cc8fbdc443191323439b0733451f5f3521f2"
+  version "1.2.3"
+  resolved "https://registry.yarnpkg.com/sauce-connect-launcher/-/sauce-connect-launcher-1.2.3.tgz#d2f931ad7ae8fdabf1968a440e7b20417aca7f86"
   dependencies:
     adm-zip "~0.4.3"
     async "^2.1.2"
