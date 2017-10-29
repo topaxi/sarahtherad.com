@@ -1,13 +1,13 @@
-import Service from '@ember/service';
+import Service from '@ember/service'
 import RSVP from 'rsvp'
-import { moduleFor, test } from 'ember-qunit';
+import { moduleFor, test } from 'ember-qunit'
 
 const { Promise } = RSVP
 
 const RadService = Service.extend({
   background() {
     return Promise.resolve({ url: '', color: '#000' })
-  }
+  },
 })
 
 moduleFor('route:radio-show', 'Unit | Route | radio show', {
@@ -15,10 +15,10 @@ moduleFor('route:radio-show', 'Unit | Route | radio show', {
 
   beforeEach() {
     this.register('service:rad', RadService)
-  }
-});
+  },
+})
 
 test('it exists', function(assert) {
-  let route = this.subject();
-  assert.ok(route);
-});
+  let route = this.subject()
+  assert.ok(route)
+})

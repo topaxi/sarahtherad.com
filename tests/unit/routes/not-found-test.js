@@ -1,4 +1,4 @@
-import Service from '@ember/service';
+import Service from '@ember/service'
 import { moduleFor, test } from 'ember-qunit'
 
 const FastbootService = Service.extend({
@@ -6,13 +6,13 @@ const FastbootService = Service.extend({
 })
 
 moduleFor('route:not-found', 'Unit | Route | not found', {
-  needs: [ 'service:rootclass' ],
+  needs: ['service:rootclass'],
   beforeEach() {
     this.register('service:fastboot', FastbootService)
-  }
-});
+  },
+})
 
 test('it exists', function(assert) {
-  let route = this.subject();
-  assert.ok(route);
-});
+  let route = this.subject()
+  assert.ok(route)
+})

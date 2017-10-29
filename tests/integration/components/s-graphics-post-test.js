@@ -1,25 +1,38 @@
-import { moduleForComponent, skip } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { moduleForComponent, skip } from 'ember-qunit'
+import hbs from 'htmlbars-inline-precompile'
 
-moduleForComponent('s-graphics-post', 'Integration | Component | s graphics post', {
-  integration: true
-});
+moduleForComponent(
+  's-graphics-post',
+  'Integration | Component | s graphics post',
+  {
+    integration: true,
+  },
+)
 
 skip('it renders', function(assert) {
-
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{s-graphics-post}}`);
+  this.render(hbs`{{s-graphics-post}}`)
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    '',
+  )
 
   // Template block usage:
   this.render(hbs`
     {{#s-graphics-post}}
       template block text
     {{/s-graphics-post}}
-  `);
+  `)
 
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'template block text',
+  )
+})

@@ -1,21 +1,30 @@
-
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { moduleForComponent, test } from 'ember-qunit'
+import hbs from 'htmlbars-inline-precompile'
 
 moduleForComponent('is-pdf', 'helper:is-pdf', {
-  integration: true
-});
+  integration: true,
+})
 
 test('it works', function(assert) {
-  this.set('inputValue', '1234pdf');
+  this.set('inputValue', '1234pdf')
 
-  this.render(hbs`{{is-pdf inputValue}}`);
+  this.render(hbs`{{is-pdf inputValue}}`)
 
-  assert.equal(this.$().text().trim(), 'false');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'false',
+  )
 
-  this.set('inputValue', '1234.pdf');
+  this.set('inputValue', '1234.pdf')
 
-  this.render(hbs`{{is-pdf inputValue}}`);
+  this.render(hbs`{{is-pdf inputValue}}`)
 
-  assert.equal(this.$().text().trim(), 'true');
-});
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'true',
+  )
+})

@@ -1,25 +1,38 @@
-import { moduleForComponent, skip } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { moduleForComponent, skip } from 'ember-qunit'
+import hbs from 'htmlbars-inline-precompile'
 
-moduleForComponent('s-article-list-radio-shows', 'Integration | Component | s article list radio shows', {
-  integration: true
-});
+moduleForComponent(
+  's-article-list-radio-shows',
+  'Integration | Component | s article list radio shows',
+  {
+    integration: true,
+  },
+)
 
 skip('it renders', function(assert) {
-
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{s-article-list-radio-shows}}`);
+  this.render(hbs`{{s-article-list-radio-shows}}`)
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    '',
+  )
 
   // Template block usage:
   this.render(hbs`
     {{#s-article-list-radio-shows}}
       template block text
     {{/s-article-list-radio-shows}}
-  `);
+  `)
 
-  assert.equal(this.$().text().trim(), 'template block text');
-});
+  assert.equal(
+    this.$()
+      .text()
+      .trim(),
+    'template block text',
+  )
+})

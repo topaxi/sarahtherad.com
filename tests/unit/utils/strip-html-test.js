@@ -1,7 +1,7 @@
-import stripHtml from 'sarahtherad/utils/strip-html';
-import { module, test } from 'qunit';
+import stripHtml from 'sarahtherad/utils/strip-html'
+import { module, test } from 'qunit'
 
-module('Unit | Utility | strip html');
+module('Unit | Utility | strip html')
 
 test('it works', function(assert) {
   assert.equal(stripHtml('<p>Something</p>'), 'Something')
@@ -10,7 +10,8 @@ test('it works', function(assert) {
   // Keep html entities
   assert.equal(stripHtml('<p>&nbsp;</p>'), '&nbsp;')
   // Newlines
-  assert.equal(stripHtml(`
+  assert.equal(
+    stripHtml(`
     <p
     >
       <a href="asdf"
@@ -18,7 +19,9 @@ test('it works', function(assert) {
         Something
       </a>
     </p>
-  `), 'Something')
+  `),
+    'Something',
+  )
 
   // Does not die on non-string values
   assert.equal(stripHtml(null), '')
@@ -27,4 +30,4 @@ test('it works', function(assert) {
   assert.equal(stripHtml(true), '')
   assert.equal(stripHtml({}), '')
   assert.equal(stripHtml([]), '')
-});
+})

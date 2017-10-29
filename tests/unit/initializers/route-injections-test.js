@@ -1,25 +1,25 @@
-import Application from '@ember/application';
-import { run } from '@ember/runloop';
-import { initialize } from 'sarahtherad/initializers/route-injections';
-import { module, test } from 'qunit';
-import destroyApp from '../../helpers/destroy-app';
+import Application from '@ember/application'
+import { run } from '@ember/runloop'
+import { initialize } from 'sarahtherad/initializers/route-injections'
+import { module, test } from 'qunit'
+import destroyApp from '../../helpers/destroy-app'
 
 module('Unit | Initializer | route injections', {
   beforeEach() {
     run(() => {
-      this.application = Application.create();
-      this.application.deferReadiness();
-    });
+      this.application = Application.create()
+      this.application.deferReadiness()
+    })
   },
   afterEach() {
-    destroyApp(this.application);
-  }
-});
+    destroyApp(this.application)
+  },
+})
 
 // Replace this with your real tests.
 test('it works', function(assert) {
-  initialize(this.application);
+  initialize(this.application)
 
   // you would normally confirm the results of the initializer here
-  assert.ok(true);
-});
+  assert.ok(true)
+})

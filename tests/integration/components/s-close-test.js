@@ -1,9 +1,9 @@
-import { moduleForComponent, test } from 'ember-qunit';
-import hbs from 'htmlbars-inline-precompile';
+import { moduleForComponent, test } from 'ember-qunit'
+import hbs from 'htmlbars-inline-precompile'
 
 moduleForComponent('s-close', 'Integration | Component | s close', {
-  integration: true
-});
+  integration: true,
+})
 
 test('it renders', function(assert) {
   this.render(hbs`{{s-close}}`)
