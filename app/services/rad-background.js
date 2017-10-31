@@ -15,6 +15,8 @@ export default Service.extend({
   },
 
   clear() {
+    if (this.isDestroyed) return
+
     this.set('background', null)
     this.set('backgroundColor', null)
     this.set('headData.themeColor', null)
@@ -22,6 +24,8 @@ export default Service.extend({
   },
 
   setBackground(background, color, backgroundColor = null) {
+    if (this.isDestroyed) return
+
     this.set('background', background)
     this.set('backgroundColor', backgroundColor)
     this.set('headData.themeColor', backgroundColor)

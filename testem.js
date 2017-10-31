@@ -3,13 +3,9 @@ module.exports = {
   test_page: 'tests/index.html?hidepassed',
   disable_watching: true,
   parallel: 5,
-  launch_in_ci: [
-    'Chrome',
-    'Firefox',
-    'SL_MS_Edge',
-    'SL_IE_11',
-    'SL_Firefox_ESR',
-  ],
+  launch_in_ci: process.env.SAUCE_TEST
+    ? ['Chrome', 'Firefox', 'SL_MS_Edge', 'SL_IE_11', 'SL_Firefox_ESR']
+    : ['Chrome', 'Firefox'],
   launch_in_dev: ['Chrome'],
   launchers: {
     SL_MS_Edge: {

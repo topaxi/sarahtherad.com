@@ -3,16 +3,20 @@ import moduleForAcceptance from 'sarahtherad/tests/helpers/module-for-acceptance
 
 moduleForAcceptance('Acceptance | graphics/post')
 
-test('visiting /graphics/post', function(assert) {
-  visit('/graphics/post')
+test('ESC returns to /graphics', async function(assert) {
+  await visit('/graphics/post')
 
-  andThen(function() {
-    assert.equal(currentURL(), '/graphics/post')
+  assert.equal(currentURL(), '/graphics/post')
 
-    keyEvent(window.document.documentElement, 'keypress', 27)
-  })
+  await keyEvent(window.document.documentElement, 'keypress', 27)
 
-  andThen(function() {
-    assert.equal(currentURL(), '/graphics')
-  })
+  assert.equal(currentURL(), '/graphics')
+})
+
+test('Close button returns to /graphics', async function(assert) {
+  await visit('/graphics/post')
+
+  await click('[test-graphics-post-close]')
+
+  assert.equal(currentURL(), '/graphics')
 })

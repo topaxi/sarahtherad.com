@@ -32,4 +32,14 @@ module.exports = {
     'ember/order-in-controllers': 0,
     'ember/order-in-routes': 0,
   },
+  overrides: [
+    {
+      files: ['app/**/*.js'],
+      plugins: ['disable-features'],
+      rules: {
+        'disable-features/disable-async-await': 'error',
+        'disable-features/disable-generator-functions': 'error',
+      },
+    },
+  ],
 }
