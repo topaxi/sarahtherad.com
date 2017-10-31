@@ -1,7 +1,7 @@
-import RSVP from 'rsvp'
+import { Promise } from 'rsvp'
 
 export default function wait(timeout, resolveWith) {
-  return new RSVP.Promise(resolve =>
+  return new Promise(resolve =>
     setTimeout(resolve.bind(null, resolveWith), timeout),
   )
 }
