@@ -3,6 +3,7 @@ const fs = require('fs')
 
 const serverFiles = [
   'app.js',
+  'config.js',
   'package.json',
   'sitemap/index.jsx',
   'yarn.lock',
