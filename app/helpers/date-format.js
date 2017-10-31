@@ -2,8 +2,7 @@ import { helper } from '@ember/component/helper'
 import pad from '../utils/pad'
 
 export function dateFormat([dateLike]) {
-  let date =
-    dateLike instanceof Date ? dateLike : new Date(Date.parse(dateLike))
+  let date = dateLike instanceof Date ? dateLike : new Date(dateLike)
 
   return (
     pad(date.getDate()) +

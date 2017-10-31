@@ -6,7 +6,7 @@ moduleForComponent('date-format-iso', 'helper:date-format-iso', {
 })
 
 test('it renders', function(assert) {
-  this.set('inputValue', '2017-07-01T12:23:45+0200')
+  this.set('inputValue', '2017-07-01T12:23:45+02:00')
 
   this.render(hbs`{{date-format-iso inputValue}}`)
 

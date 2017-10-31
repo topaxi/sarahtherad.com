@@ -245,7 +245,7 @@ function get_rad_post($slug, $category_name) {
 }
 
 function format_date($date) {
-  return str_replace(' ', 'T', $date) . '+0200';
+  return (new DateTime($date, new DateTimeZone('Europe/Zurich')))->format('c');
 }
 
 function json_error($status, $data) {
