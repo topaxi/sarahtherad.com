@@ -6,6 +6,10 @@
   "repository": "https://github.com/topaxi/sarahtherad.com.git",
   "author": "Damian Senn <damian.senn@topaxi.codes>",
   "license": "MIT",
+  "scripts": {
+    "start": "node ./app.js",
+    "start:dev": "LOCAL_DEV=1 node ./app.js"
+  },
   "dependencies": {
     "async-middleware": "^1.2.1",
     "babel-plugin-transform-react-jsx": "^6.24.1",

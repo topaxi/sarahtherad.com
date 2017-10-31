@@ -4,8 +4,9 @@ const XMLWriter = require('xml-writer')
 const fetch = require('node-fetch')
 const wrap = require('async-middleware').wrap
 const flatMap = require('lodash.flatmap')
-const API_BASE = 'https://sarahtherad.com/wp-json/rad'
+const config = require('../config')
 
+const { apiBase } = config
 const { Router } = express
 
 const index = (module.exports = new Router())
@@ -63,7 +64,7 @@ index.get('/sitemap/index.xml', (req, res) => {
 index.get(
   '/sitemap/graphics.xml',
   wrap(async (req, res) => {
-    let graphics = await fetch(`${API_BASE}/graphics?sitemap=1`).then(r =>
+    let graphics = await fetch(`${apiBase}/graphics?sitemap=1`).then(r =>
       r.json(),
     )
 
@@ -76,6 +77,7 @@ index.get(
         {graphics.data.map(post => (
           <url>
             <loc>https://sarahtherad.com/graphics/{post.slug}</loc>
+            <lastmod>{new Date(post.modified).toISOString()}</lastmod>
             <changefreq>monthly</changefreq>
             {post.thumbnail && (
               <image_image>
@@ -108,7 +110,7 @@ index.get(
 index.get(
   '/sitemap/blog.xml',
   wrap(async (req, res) => {
-    let graphics = await fetch(`${API_BASE}/posts?sitemap=1`).then(r =>
+    let graphics = await fetch(`${apiBase}/posts?sitemap=1`).then(r =>
       r.json(),
     )
 
@@ -121,6 +123,7 @@ index.get(
         {graphics.data.map(post => (
           <url>
             <loc>https://sarahtherad.com/blog/{post.slug}</loc>
+            <lastmod>{new Date(post.modified).toISOString()}</lastmod>
             <changefreq>monthly</changefreq>
             <image_image>
               <image_loc>{post.background.url}</image_loc>
