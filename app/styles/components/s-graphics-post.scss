@@ -1,3 +1,10 @@
+@keyframes graphics-post-in {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) translateY(-10%);
+  }
+}
+
 .graphics-post {
   display: flex;
   flex-direction: column;
@@ -15,6 +22,8 @@
     background-color: #fff;
     padding: 0.5rem 2rem 2rem;
     pointer-events: auto;
+    transform-origin: top center;
+    animation: graphics-post-in ease-in-out 150ms forwards;
     @media screen and (min-width: 360px) {
       max-width: 98vw;
       max-height: 98vh;

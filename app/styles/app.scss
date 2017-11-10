@@ -8,6 +8,7 @@ Author: sarahtherad.com + topaxi.codes
 @import 'reset';
 @import 'logo';
 @import 'liquid-fire';
+@import 'animations';
 @import 'components/s-burger';
 @import 'components/s-close';
 @import 'components/s-chevron';
@@ -176,6 +177,7 @@ article {
 
 .graphics-overlay {
   background: rgba(0, 0, 0, 0.5);
+  animation: overlay-fade-in ease-in-out 150ms forwards;
 }
 
 .graphics-outlet {
