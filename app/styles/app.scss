@@ -177,7 +177,7 @@ article {
 
 .graphics-overlay {
   background: rgba(0, 0, 0, 0.5);
-  animation: overlay-fade-in ease-in-out 150ms forwards;
+  animation: fade-in ease-in-out 150ms forwards;
 }
 
 .graphics-outlet {
@@ -267,12 +267,6 @@ article {
 .swiper-slide {
   display: flex;
   justify-content: center;
-}
-
-@keyframes fade-in {
-  to {
-    opacity: 1;
-  }
 }
 
 .img-lazy {
