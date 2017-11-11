@@ -2,9 +2,13 @@ s-mixcloud {
   display: block;
   background: #fff;
 
-  @media screen and (min-width: 420px) {
+  @media screen and (min-width: 410px) {
     display: flex;
     justify-content: flex-start;
+
+    > .info {
+      margin-top: 0;
+    }
   }
 
   img {
@@ -15,6 +19,7 @@ s-mixcloud {
     flex-direction: column;
     justify-content: space-between;
     flex: 1;
+    margin-top: 1rem;
     margin-left: 1rem;
   }
   > .info > .title-row {
