@@ -1,5 +1,5 @@
 /* eslint-env node */
-'use strict';
+'use strict'
 
 module.exports = function(environment) {
   let ENV = {
@@ -14,8 +14,8 @@ module.exports = function(environment) {
       },
       EXTEND_PROTOTYPES: false,
       pageTitle: {
-        separator: ' – '
-      }
+        separator: ' – ',
+      },
     },
 
     APP: {
@@ -28,7 +28,7 @@ module.exports = function(environment) {
     'ember-img-lazy': {
       lazyFastBoot: true,
     },
-  };
+  }
 
   if (environment === 'development') {
     // ENV.APP.LOG_RESOLVER = true;
@@ -41,19 +41,28 @@ module.exports = function(environment) {
 
   if (environment === 'test') {
     // Testem prefers this...
-    ENV.locationType = 'none';
+    ENV.locationType = 'none'
 
     // keep test console output quieter
-    ENV.APP.LOG_ACTIVE_GENERATION = false;
-    ENV.APP.LOG_VIEW_LOOKUPS = false;
+    ENV.APP.LOG_ACTIVE_GENERATION = false
+    ENV.APP.LOG_VIEW_LOOKUPS = false
 
-    ENV.APP.rootElement = '#ember-testing';
+    ENV.APP.rootElement = '#ember-testing'
     ENV.apiHost = ''
+    ENV.percy = {
+      breakpointsConfig: {
+        mobile: 375,
+        'mobile-high': 420,
+        tablet: 768,
+        desktop: 1280,
+      },
+      defaultBreakpoints: ['mobile', 'desktop'],
+    }
   }
 
   if (environment === 'production') {
     ENV.apiHost = 'https://sarahtherad.com'
   }
 
-  return ENV;
-};
+  return ENV
+}

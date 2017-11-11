@@ -8,5 +8,7 @@ test('visiting /radio-show', async function(assert) {
 
   assert.equal(currentURL(), '/radio-show')
 
-  percySnapshot(assert)
+  percySnapshot(assert, {
+    breakpoints: ['mobile', 'mobile-high', 'desktop']
+  })
 })
