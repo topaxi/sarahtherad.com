@@ -85,6 +85,7 @@
   },
   "resolutions": {
     "ember-getowner-polyfill": "2.2.0",
-    "ember-cli-head": "0.4.0"
+    "ember-cli-head": "0.4.0",
+    "ember-cli-swiper": "github:topaxi/ember-cli-swiper#fix-older-browsers"
   }
 }

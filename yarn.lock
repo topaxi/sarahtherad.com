@@ -3488,9 +3488,9 @@ ember-cli-string-utils@^1.0.0, ember-cli-string-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/ember-cli-string-utils/-/ember-cli-string-utils-1.1.0.tgz#39b677fc2805f55173735376fcef278eaa4452a1"
 
-ember-cli-swiper@^0.7.1:
+ember-cli-swiper@^0.7.1, "ember-cli-swiper@github:topaxi/ember-cli-swiper#fix-older-browsers":
   version "0.7.1"
-  resolved "https://registry.yarnpkg.com/ember-cli-swiper/-/ember-cli-swiper-0.7.1.tgz#a11cc89717e56f42041002f86ba3243889752200"
+  resolved "https://codeload.github.com/topaxi/ember-cli-swiper/tar.gz/6d48c651adcc7a8cd1db2eaf7d19528b20cfa99c"
   dependencies:
     ember-cli-babel "^6.3.0"
     ember-cli-htmlbars "^2.0.1"
