@@ -5,7 +5,7 @@ import ENV from '../config/environment'
 import { reject } from 'rsvp'
 
 export default Service.extend({
-  _url: ENV.apiHost || '',
+  _url: `${ENV.apiHost || ''}`,
 
   url(path, q = {}) {
     return `${this._url}/wp-json/${path}${query(q)}`
