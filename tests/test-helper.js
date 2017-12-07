@@ -1,7 +1,12 @@
-import Application from '../app';
-import { setApplication } from '@ember/test-helpers';
-import { start } from 'ember-qunit';
+import Application from '../app'
+import { setApplication } from '@ember/test-helpers'
+import { start } from 'ember-qunit'
+import { Promise } from 'rsvp'
 
-setApplication(Application.create({ autoboot: false }));
+if (!window.Promise) {
+  window.Promise = Promise
+}
 
-start();
+setApplication(Application.create({ autoboot: false }))
+
+start()
