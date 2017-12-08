@@ -36,7 +36,7 @@ $animation: 0.6s;
   height: 68px;
   width: 68px;
   mask: url(#mask);
-  -webkit-mask-box-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 68"><path fill="none" stroke="#F00" stroke-width="4" stroke-miterlimit="10" d="M34 2c11.6 0 21.8 6.2 27.4 15.5 2.9 4.8 5 16.5-9.4 16.5h-4"/></svg>');
+  -webkit-mask-box-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%2068%2068%22%3E%3Cpath%20fill%3D%22none%22%20stroke%3D%22%23F00%22%20stroke-width%3D%224%22%20stroke-miterlimit%3D%2210%22%20d%3D%22M34%202c11.6%200%2021.8%206.2%2027.4%2015.5%202.9%204.8%205%2016.5-9.4%2016.5h-4%22%2F%3E%3C%2Fsvg%3E');
   display: none;
   @supports (mask: url('')) or (-webkit-mask-box-image: url('')) {
     display: block;
