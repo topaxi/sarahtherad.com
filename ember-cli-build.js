@@ -26,6 +26,23 @@ module.exports = function(defaults) {
     'ember-app-shell': {
       outputFile: 'app-shell.html',
       criticalCSSOptions: {
+        // For some reason critical (or penthouse) does not pick these up
+        include: [
+          'a',
+          'main',
+          /\.liquid-container/,
+          '.hamburglar',
+          '.burger-icon',
+          '.burger-container',
+          '.burger-bun-top',
+          '.burger-filling',
+          '.burger-bun-bot',
+          '.logo',
+          '.header-icon',
+          '.header-icon.email',
+          '.menu',
+          /\.app-shell/
+        ],
         ignore: [/font-face/, /font-family/, /mask/],
       },
     },
