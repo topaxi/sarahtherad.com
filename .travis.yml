@@ -25,6 +25,7 @@ before_install:
 
 install:
   - yarn install --non-interactive
+  - yarn lint:js
 
 script:
   - yarn test --test-port 7000

@@ -1,4 +1,3 @@
-/* eslint node: true */
 const fs = require('fs')
 
 const serverFiles = [
