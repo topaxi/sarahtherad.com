@@ -85,6 +85,7 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "resolutions": {
-    "ember-getowner-polyfill": "2.2.0"
+    "ember-getowner-polyfill": "2.2.0",
+    "eslint": "4.13.1"
   }
 }
