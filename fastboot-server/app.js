@@ -27,6 +27,7 @@ const server = new FastBootAppServer({
   notifier,
   host,
   port,
+  chunkedResponse: true,
 })
 
 server.start()
